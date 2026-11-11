@@ -1,4 +1,2031 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.554381,
+          44.854465
+        ]
+      },
+      "properties": {
+        "id": "adieu-panurge-bordeaux",
+        "nom": "ADIEU PANURGE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : production spectacle.",
+        "adresse": "10 quai de Brazza",
+        "code_postal": "33100",
+        "commune": "Bordeaux",
+        "email": "adieupanurge@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "82819533900043",
+        "rna": "W332018991",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.569984,
+          44.835783
+        ]
+      },
+      "properties": {
+        "id": "admaa-allez-les-filles-bordeaux",
+        "nom": "ADMAA / Allez Les Filles",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : action culturelle, développement d’artistes, prestations techniques.",
+        "adresse": "9 rue Teulère",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "allezlesfilles@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "48956307200029",
+        "rna": "W332000749",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.552383,
+          44.813085
+        ]
+      },
+      "properties": {
+        "id": "aquitaine-groupement-employeurs-culture-agec-begles",
+        "nom": "AQUITAINE GROUPEMENT EMPLOYEURS CULTURE (AGEC)",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement). Activités : formation professionnelle, mise en réseau, services aux professionnels.",
+        "adresse": "16 rue des Terres Neuves",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "site": "https://www.agec-culture.com",
+        "email": "mediation@agec-culture.com",
+        "telephone": "05 56 88 72 07",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "49848483100058",
+        "rna": "W332002702",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.259541,
+          44.585128
+        ]
+      },
+      "properties": {
+        "id": "association-constance-verdelais",
+        "nom": "Association CONSTANCE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant, musique enregistrée. Activités : enregistrement, production phonographique, action culturelle.",
+        "adresse": "118 chemin de Liloy",
+        "code_postal": "33490",
+        "commune": "Verdelais",
+        "email": "assoconstance@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "84233455900031",
+        "rna": "W343022820",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.530339,
+          44.8684
+        ]
+      },
+      "properties": {
+        "id": "association-la-kolectiva-lormont",
+        "nom": "Association La Kolectiva",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant, musique enregistrée. Activités : développement d’artistes, enseignement.",
+        "adresse": "1 chemin des Iris",
+        "code_postal": "33310",
+        "commune": "Lormont",
+        "site": "https://www.kolingo.fr",
+        "email": "production@kolingo.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "83164706000035",
+        "rna": "W332020317",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.201191,
+          44.989876
+        ]
+      },
+      "properties": {
+        "id": "association-mkp-musik-a-pile-festival-musik-a-pile-saint-den",
+        "nom": "ASSOCIATION MKP -MUSIK À PILE | Festival Musik à Pile",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : action culturelle.",
+        "adresse": "Mairie",
+        "code_postal": "33910",
+        "commune": "Saint-Denis-de-Pile",
+        "site": "https://www.musikapile.fr",
+        "email": "contact@musikapile.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "48021911200012",
+        "rna": "W335000530",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.006304,
+          44.644417
+        ]
+      },
+      "properties": {
+        "id": "atelier-acoustique-neuffons",
+        "nom": "ATELIER ACOUSTIQUE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : cafés-culture, festivals, action culturelle.",
+        "adresse": "7 les Moureaux",
+        "code_postal": "33580",
+        "commune": "Neuffons",
+        "email": "lanineproduction@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "89892064000015",
+        "rna": "W333007196",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.579377,
+          44.821457
+        ]
+      },
+      "properties": {
+        "id": "babord-le-circuit-court-musiques-actuelles-bordeaux",
+        "nom": "BABORD, LE CIRCUIT COURT MUSIQUES  ACTUELLES",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement).",
+        "adresse": "49 rue Dubourdieu",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "email": "babord@mailo.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "91292666400034",
+        "rna": "W332031732",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.560313,
+          44.804472
+        ]
+      },
+      "properties": {
+        "id": "balterno-production-begles",
+        "nom": "BALTERNO! Production",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant.",
+        "adresse": "18 avenue Saint Paulin",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "51127430000025",
+        "rna": "W332000847",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.041113,
+          45.081485
+        ]
+      },
+      "properties": {
+        "id": "bamstage-carcans",
+        "nom": "Bamstage",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : enseignement.",
+        "adresse": "39 rue des Vanneaux",
+        "code_postal": "33121",
+        "commune": "Carcans",
+        "email": "contact.bamstage@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "93845591200015",
+        "rna": "W334006178",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.571354,
+          44.841065
+        ]
+      },
+      "properties": {
+        "id": "banzai-lab-bordeaux",
+        "nom": "BANZAÏ LAB",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée. Activités : action culturelle, ressources, développement d’artistes.",
+        "adresse": "9 rue des Capérans",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "banzai.lab@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "91894632800013",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.571977,
+          44.836902
+        ]
+      },
+      "properties": {
+        "id": "bordeaux-open-air-festival-bordeaux",
+        "nom": "BORDEAUX OPEN AIR (FESTIVAL)",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : action culturelle, production spectacle.",
+        "adresse": "11 place Fernand Lafargue",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "82135493300029",
+        "rna": "W332018582",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.575825,
+          44.833898
+        ]
+      },
+      "properties": {
+        "id": "bordeaux-rock-festivals-bordeaux-rock-musical-ecran-bordeaux",
+        "nom": "BORDEAUX ROCK | Festivals Bordeaux Rock, Musical Écran",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : festivals, production spectacle.",
+        "adresse": "38 rue Paul Louis Lande",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.bordeauxrock.com",
+        "email": "contact@bordeauxrock.com",
+        "telephone": "09 67 42 72 12",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "48029371100036",
+        "rna": "W332007022",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.568812,
+          44.835408
+        ]
+      },
+      "properties": {
+        "id": "bruit-a-l-interieur-bordeaux",
+        "nom": "BRUIT À L ´INTÉRIEUR",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant, musique enregistrée, médias. Activités : radios.",
+        "adresse": "56 cours Victor Hugo",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "bruitalinterieur@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "94383893800018",
+        "rna": "W332036125",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.569619,
+          44.834069
+        ]
+      },
+      "properties": {
+        "id": "ciam-bordeaux",
+        "nom": "CIAM",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : développement d’artistes, prestations techniques, résidence, aide à la création.",
+        "adresse": "35 rue Leyteire",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.le-ciam.com",
+        "email": "info@le-ciam.com",
+        "telephone": "05 56 91 26 65",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "33400865300027",
+        "rna": "W332029993",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.564931,
+          44.831648
+        ]
+      },
+      "properties": {
+        "id": "crous-de-bordeaux-aquitaine-bordeaux",
+        "nom": "Crous de Bordeaux-Aquitaine",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : festivals, action culturelle, résidence, aide à la création.",
+        "adresse": "18 rue du Hamel",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "site": "https://www.crous-bordeaux.fr",
+        "email": "service.culturel@crous-bordeaux.fr",
+        "telephone": "05 56 80 78 28",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "18330008600091",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.509867,
+          44.673744
+        ]
+      },
+      "properties": {
+        "id": "de-la-neige-en-ete-la-brede",
+        "nom": "DE LA NEIGE EN ÉTÉ",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement). Activités : ressources, formation professionnelle, mise en réseau, services aux professionnels.",
+        "adresse": "24 chemin de Gales",
+        "code_postal": "33650",
+        "commune": "La Brède",
+        "site": "https://dlnee.fr",
+        "email": "contact@dlnee.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "83415848700035",
+        "rna": "W332022822",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.562551,
+          44.831516
+        ]
+      },
+      "properties": {
+        "id": "deluge-bordeaux",
+        "nom": "DÉLUGE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée, transmission (accompagnement, enseignement), médias.",
+        "adresse": "12 rue du Portail",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "email": "collectifdeluge@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "53343084900034",
+        "rna": "W332012225",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.551934,
+          44.812506
+        ]
+      },
+      "properties": {
+        "id": "docteur-larsene-begles",
+        "nom": "DOCTEUR LARSENE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : répétitions, action culturelle, mise en réseau, services aux professionnels.",
+        "adresse": "Rue Django Reinhardt",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "email": "doc.larsene@gmail.com",
+        "telephone": "05 56 85 25 01",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "92850255800010",
+        "rna": "W332034708",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.569367,
+          44.832979
+        ]
+      },
+      "properties": {
+        "id": "einstein-on-the-beach-bordeaux",
+        "nom": "EINSTEIN ON THE BEACH",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : développement d’artistes, production spectacle.",
+        "adresse": "8 rue Bergeret",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.einsteinonthebeach.net",
+        "email": "info@einsteinonthebeach.net",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "47751889800093",
+        "rna": "W401001031",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.573335,
+          45.224058
+        ]
+      },
+      "properties": {
+        "id": "federation-queskonfabrik-etauliers",
+        "nom": "Fédération Queskonfabrik",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : festivals, action culturelle, développement d’artistes.",
+        "adresse": "1 place de la Halle",
+        "code_postal": "33820",
+        "commune": "Étauliers",
+        "email": "queskonfabrik@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "88172938800028",
+        "rna": "W331005176",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.540963,
+          44.840026
+        ]
+      },
+      "properties": {
+        "id": "felin-la-floirac",
+        "nom": "FELIN (LA)",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles).",
+        "adresse": "25 rue du 8 Mai 1945",
+        "code_postal": "33270",
+        "commune": "Floirac",
+        "site": "https://fede-felin.org",
+        "email": "contact@fede-felin.org",
+        "telephone": "05 57 59 15 85",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "53909624800023",
+        "rna": "W332009179",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.593559,
+          44.845278
+        ]
+      },
+      "properties": {
+        "id": "fuzz-corporation-bordeaux",
+        "nom": "FUZZ CORPORATION",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : cafés-culture, festivals, développement d’artistes.",
+        "adresse": "78 rue de la Bénatte",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "lastrodome@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "84057557500039",
+        "rna": "W332021845",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.666006,
+          44.861025
+        ]
+      },
+      "properties": {
+        "id": "jam-high-recordz-eysines",
+        "nom": "JAM HIGH RECORDZ",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée, transmission (accompagnement, enseignement). Activités : enregistrement, management, production phonographique.",
+        "adresse": "250 avenue Jean Mermoz",
+        "code_postal": "33320",
+        "commune": "Eysines",
+        "email": "jamhigh@live.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "80901666000023",
+        "rna": "W332017469",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.463495,
+          44.77908
+        ]
+      },
+      "properties": {
+        "id": "jazz360-cenac",
+        "nom": "JAZZ360",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : action culturelle, résidence, aide à la création.",
+        "adresse": "50 avenue de Bordeaux",
+        "code_postal": "33360",
+        "commune": "Cénac",
+        "email": "festivaljazz360@orange.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "80540868900018",
+        "rna": "W332016739",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.624387,
+          44.823476
+        ]
+      },
+      "properties": {
+        "id": "krakatoa-transrock-merignac",
+        "nom": "KRAKATOA – TRANSROCK",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : cafés-culture, booking / tour, action culturelle.",
+        "adresse": "18 avenue Victor Hugo",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.krakatoa.org",
+        "email": "transrock@krakatoa.org",
+        "telephone": "05 56 24 34 29",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "10981492100010",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.204517,
+          44.99335
+        ]
+      },
+      "properties": {
+        "id": "l-accordeur-saint-denis-de-pile",
+        "nom": "L'ACCORDEUR",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant, musique enregistrée. Activités : action culturelle, développement d’artistes, résidence, aide à la création.",
+        "adresse": "17 route de Paris",
+        "code_postal": "33910",
+        "commune": "Saint-Denis-de-Pile",
+        "site": "https://www.laccordeurlasalle.com",
+        "email": "contact@laccordeurlasalle.com",
+        "telephone": "05 24 08 43 45",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "45300849200044",
+        "rna": "W281003455",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.587355,
+          44.792667
+        ]
+      },
+      "properties": {
+        "id": "l-inconnue-talence",
+        "nom": "L'INCONNUE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : action culturelle, développement d’artistes, résidence, aide à la création.",
+        "adresse": "181 rue François Boucher",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "site": "https://www.linconnue.fr",
+        "email": "bonjour@linconnue.fr",
+        "telephone": "05 57 35 32 32",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "33413028300016",
+        "rna": "W332001345",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.558824,
+          44.861404
+        ]
+      },
+      "properties": {
+        "id": "la-cle-des-ondes-bordeaux",
+        "nom": "LA CLÉ DES ONDES",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : médias.",
+        "adresse": "71 cours Édouard Vaillant",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://www.lacledesondes.fr",
+        "email": "radio@lacledesondes.fr",
+        "telephone": "05 56 39 87 57",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "33064045900039",
+        "rna": "W332005008",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.03843,
+          44.581957
+        ]
+      },
+      "properties": {
+        "id": "la-petite-populaire-la-reole",
+        "nom": "LA PETITE POPULAIRE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : cafés-culture, action culturelle, prestations techniques.",
+        "adresse": "33 rue Armand Caduc",
+        "code_postal": "33190",
+        "commune": "La Réole",
+        "email": "lapetitepopulaire@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "82469875700021",
+        "rna": "W333003311",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.575806,
+          44.820454
+        ]
+      },
+      "properties": {
+        "id": "la-reverb-bordeaux",
+        "nom": "La Reverb",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement). Activités : action culturelle, développement d’artistes, prestations techniques.",
+        "adresse": "70 rue Terrasson",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "telephone": "05 56 92 06 39",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "53930315600035",
+        "rna": "W332010582",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.561914,
+          44.808688
+        ]
+      },
+      "properties": {
+        "id": "la-tangente-begles",
+        "nom": "LA TANGENTE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), musique enregistrée, spectacle vivant. Activités : développement d’artistes, édition phonographique.",
+        "adresse": "135 cours Victor Hugo",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "83367348600035",
+        "rna": "W332022595",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.242585,
+          44.915557
+        ]
+      },
+      "properties": {
+        "id": "laba-le-libourne",
+        "nom": "LABA (LE )",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement). Activités : formation professionnelle, mise en réseau, services aux professionnels.",
+        "adresse": "46 rue Gambetta",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "telephone": "05 56 74 52 94",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "49162008400013",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.567513,
+          44.826573
+        ]
+      },
+      "properties": {
+        "id": "lagon-noir-bordeaux",
+        "nom": "LAGON NOIR",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée. Activités : développement d’artistes, édition phonographique.",
+        "adresse": "63 rue de Begles",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "82783352600045",
+        "rna": "W335003457",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.102803,
+          44.640374
+        ]
+      },
+      "properties": {
+        "id": "le-type-association-kultoural-gujan-mestras",
+        "nom": "Le Type (association Kultoural)",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : médias, spectacle vivant. Activités : webzines.",
+        "adresse": "84 B allée de la Pelouse",
+        "code_postal": "33470",
+        "commune": "Gujan-Mestras",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "83145036600016",
+        "rna": "W336003380",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.568893,
+          44.825696
+        ]
+      },
+      "properties": {
+        "id": "les-assonances-bordeaux",
+        "nom": "LES ASSONANCES",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : festivals, action culturelle, développement d’artistes.",
+        "adresse": "70 rue Fonfrède",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "email": "lesassonances@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "92378465600020",
+        "rna": "W332033488",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.582988,
+          44.842682
+        ]
+      },
+      "properties": {
+        "id": "les-disques-alienor-bordeaux",
+        "nom": "LES DISQUES ALIENOR",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique, export, commerces culturels de proximité.",
+        "adresse": "70 rue Abbé de l'Épée",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "contact@platinumrds.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "40858426600030",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.226554,
+          44.565683
+        ]
+      },
+      "properties": {
+        "id": "les-nuits-atypiques-saint-macaire",
+        "nom": "Les Nuits atypiques",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement).",
+        "adresse": "7 allées des Tilleuls",
+        "code_postal": "33490",
+        "commune": "Saint-Macaire",
+        "email": "lesnuitsatypiques@gmail.com",
+        "telephone": "05 57 36 49 07",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "40249223500021",
+        "rna": "W333001581",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.242245,
+          44.907933
+        ]
+      },
+      "properties": {
+        "id": "lucane-musiques-libourne",
+        "nom": "LUCANE MUSIQUES",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement). Activités : festivals, répétitions, ressources.",
+        "adresse": "36 rue du 1er R.A.C.",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "email": "lucanemusic@gmail.com",
+        "telephone": "05 57 25 36 65",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "44171591900045",
+        "rna": "W335000310",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.571742,
+          44.847421
+        ]
+      },
+      "properties": {
+        "id": "mazeto-square-bordeaux",
+        "nom": "MAZETO SQUARE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée, spectacle vivant. Activités : développement d’artistes, édition phonographique, production phonographique.",
+        "adresse": "7 allée de Chartres",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.mazeto-square.com",
+        "email": "mazeto@mazeto-square.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "51450179000034",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.487257,
+          44.913798
+        ]
+      },
+      "properties": {
+        "id": "mci-memoire-du-cir-et-de-l-irma-carbon-blanc",
+        "nom": "MCI - MÉMOIRE DU CIR ET DE L'IRMA",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement). Activités : action culturelle, mise en réseau, services aux professionnels.",
+        "adresse": "44 rue des Frères Lumière",
+        "code_postal": "33560",
+        "commune": "Carbon-Blanc",
+        "site": "https://mci-mdma.fr",
+        "email": "contact@mci-mdma.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "63201725700585",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.56095,
+          44.832222
+        ]
+      },
+      "properties": {
+        "id": "medusyne-bordeaux",
+        "nom": "MEDUSYNE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, médias. Activités : action culturelle, développement d’artistes.",
+        "adresse": "3 rue du Port",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "site": "https://www.medusyne.com",
+        "email": "contact@medusyne.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "84054768100030",
+        "rna": "W332023455",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.650025,
+          44.839505
+        ]
+      },
+      "properties": {
+        "id": "melodinote-merignac",
+        "nom": "MELODINOTE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée. Activités : développement d’artistes, production phonographique, production spectacle.",
+        "adresse": "3 rue Edgar Poe",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.melodinote.fr",
+        "email": "info@melodinote.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "49028748900044",
+        "rna": "W336000162",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.579388,
+          44.839494
+        ]
+      },
+      "properties": {
+        "id": "mics-la-bordeaux",
+        "nom": "MICS (La)",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant.",
+        "adresse": "39 rue des Remparts",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "smacdagglo@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "41489570600011",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.643837,
+          44.848917
+        ]
+      },
+      "properties": {
+        "id": "milk-music-merignac",
+        "nom": "MILK MUSIC",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée. Activités : ressources, édition phonographique, enregistrement.",
+        "adresse": "79 B avenue de la Libération",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.milkmusic.org",
+        "email": "info@milkmusic.org",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "75147743100041",
+        "rna": "W332013646",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.565684,
+          44.792551
+        ]
+      },
+      "properties": {
+        "id": "mrs-red-sound-begles",
+        "nom": "Mrs Red Sound",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique.",
+        "adresse": "62 rue Joseph Kosma",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "email": "mrsredsound.promo@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "79236332700026",
+        "rna": "W332015175",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.544396,
+          44.847662
+        ]
+      },
+      "properties": {
+        "id": "music-for-planet-bordeaux",
+        "nom": "Music For Planet",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), médias. Activités : mise en réseau, services aux professionnels, production spectacle.",
+        "adresse": "19 rue de Blaye",
+        "code_postal": "33100",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "91060575700012",
+        "rna": "W332030591",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.563173,
+          44.832046
+        ]
+      },
+      "properties": {
+        "id": "octofolies-bordeaux",
+        "nom": "Octofolies",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement).",
+        "adresse": "38 rue de la Porte de la Monnaie",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "82442493100023",
+        "rna": "W401005814",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.080345,
+          44.649987
+        ]
+      },
+      "properties": {
+        "id": "office-monsegurais-de-la-culture-et-des-loisirs-monsegur",
+        "nom": "Office Monségurais de la culture et des Loisirs",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant.",
+        "adresse": "24 place Robert Darniche",
+        "code_postal": "33580",
+        "commune": "Monségur",
+        "site": "https://www.swing-monsegur.com",
+        "email": "coordination@swing-monsegur.com",
+        "telephone": "05 56 61 82 91",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "38931182000044",
+        "rna": "W333001848",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3231,
+          44.443587
+        ]
+      },
+      "properties": {
+        "id": "parti-collectif-uzeste",
+        "nom": "parti Collectif",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée. Activités : booking / tour, festivals, action culturelle.",
+        "adresse": "53 rue Faza",
+        "code_postal": "33730",
+        "commune": "Uzeste",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "79911643900065",
+        "rna": "W332016262",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.571366,
+          44.877884
+        ]
+      },
+      "properties": {
+        "id": "plaque-tournante-bordeaux",
+        "nom": "PLAQUE TOURNANTE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : développement d’artistes, résidence, aide à la création, répétitions.",
+        "adresse": "23 cours de Québec",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "89792336300013",
+        "rna": "W332030457",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.564006,
+          44.872869
+        ]
+      },
+      "properties": {
+        "id": "psalmus-bordeaux",
+        "nom": "PSALMUS",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique.",
+        "adresse": "15 rue Francis Garnier",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://www.psalmus.com",
+        "email": "contact@psalmus.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "50488599700024",
+        "rna": "W332005057",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.54462,
+          44.851514
+        ]
+      },
+      "properties": {
+        "id": "ricochet-sonore-bordeaux",
+        "nom": "RICOCHET SONORE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : enseignement, action culturelle, production spectacle.",
+        "adresse": "33 rue Jean Bédouret",
+        "code_postal": "33100",
+        "commune": "Bordeaux",
+        "site": "https://www.ricochetsonore.fr",
+        "email": "info@ricochetsonore.fr",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "80910251000033",
+        "rna": "W332017792",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63102,
+          44.919877
+        ]
+      },
+      "properties": {
+        "id": "rig-fm-blanquefort",
+        "nom": "RIG FM",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : médias.",
+        "adresse": "60 rue de Maurian",
+        "code_postal": "33290",
+        "commune": "Blanquefort",
+        "email": "rigfm@wanadoo.fr",
+        "telephone": "05 56 35 31 31",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "43881661300022",
+        "rna": "W332001285",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.524003,
+          44.862146
+        ]
+      },
+      "properties": {
+        "id": "rocher-de-palmer-musiques-de-nuit-cenon",
+        "nom": "ROCHER DE PALMER - MUSIQUES DE NUIT",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : cafés-culture, festivals, action culturelle.",
+        "adresse": "1 rue Aristide Briand",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "site": "https://www.lerocherdepalmer.fr",
+        "email": "contact@lerocherdepalmer.fr",
+        "telephone": "05 56 74 80 00",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "34169319000033",
+        "rna": "W332010964",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.563161,
+          44.827563
+        ]
+      },
+      "properties": {
+        "id": "rockschool-barbey-paralleles-attitudes-diffusion-bordeaux",
+        "nom": "ROCKSCHOOL BARBEY – PARALLÈLES ATTITUDES DIFFUSION",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : festivals, action culturelle, développement d’artistes.",
+        "adresse": "18 cours Barbey",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "telephone": "05 56 33 66 00",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "35011886500046",
+        "rna": "W332016436",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.560136,
+          44.799791
+        ]
+      },
+      "properties": {
+        "id": "saxalf-music-begles",
+        "nom": "SAXALF MUSIC",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant. Activités : développement d’artistes, enseignement, répétitions.",
+        "adresse": "10 rue Montaigne",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "site": "https://www.saxalfmusic.com",
+        "email": "contact@saxalfmusic.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "44216581700036",
+        "rna": "W332012382",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.548775,
+          44.807661
+        ]
+      },
+      "properties": {
+        "id": "slowfest-begles",
+        "nom": "SLOWFEST",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant, musique enregistrée.",
+        "adresse": "1 place du Quatorze Juillet",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "85054415600035",
+        "rna": "W332027715",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.843713,
+          45.227232
+        ]
+      },
+      "properties": {
+        "id": "soulbeats-records-cissac-medoc",
+        "nom": "SOULBEATS RECORDS",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique, export.",
+        "adresse": "53 route des Gunes",
+        "code_postal": "33250",
+        "commune": "Cissac-Médoc",
+        "site": "https://www.soulbeatsmusic.com",
+        "email": "info@soulbeatsmusic.com",
+        "telephone": "05 56 69 10 30",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "52887218700018",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.576426,
+          44.830705
+        ]
+      },
+      "properties": {
+        "id": "talitres-bordeaux",
+        "nom": "TALITRES",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée, spectacle vivant. Activités : développement d’artistes, édition phonographique, enregistrement.",
+        "adresse": "2 impasse Villedieu",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "48453836800024",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.517129,
+          44.671558
+        ]
+      },
+      "properties": {
+        "id": "two-goldfishes-music-la-brede",
+        "nom": "TWO GOLDFISHES MUSIC",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement), musique enregistrée. Activités : action culturelle, développement d’artistes, prestations techniques.",
+        "adresse": "10 B avenue Rambaud",
+        "code_postal": "33650",
+        "commune": "La Brède",
+        "email": "twogoldfishes@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "92262485300011",
+        "rna": "W332032672",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.582988,
+          44.842682
+        ]
+      },
+      "properties": {
+        "id": "vicious-circle-bordeaux",
+        "nom": "VICIOUS CIRCLE",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique, export.",
+        "adresse": "70 rue Abbé de l'Épée",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "telephone": "05 57 59 14 13",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "41312416500064",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.573335,
+          45.224058
+        ]
+      },
+      "properties": {
+        "id": "victory-rolls-association-etauliers",
+        "nom": "Victory Rolls Association",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, transmission (accompagnement, enseignement), musique enregistrée. Activités : festivals, action culturelle, développement d’artistes.",
+        "adresse": "1 place de la Halle",
+        "code_postal": "33820",
+        "commune": "Étauliers",
+        "email": "victoryrollsasso@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "83966751600059",
+        "rna": "W332020197",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.657663,
+          44.764767
+        ]
+      },
+      "properties": {
+        "id": "volume-4-productions-so-good-festival-canejan",
+        "nom": "VOLUME 4 PRODUCTIONS | So Good Festival",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant.",
+        "adresse": "45 allée des Bleuets",
+        "code_postal": "33610",
+        "commune": "Canéjan",
+        "email": "volume4productions@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "50451098300035",
+        "rna": "W332006141",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.575825,
+          44.833898
+        ]
+      },
+      "properties": {
+        "id": "whynot-bordeaux",
+        "nom": "WHYNOT",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant. Activités : festivals, développement d’artistes, résidence, aide à la création.",
+        "adresse": "38 rue Paul Louis Lande",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "90345925300022",
+        "rna": "W662013250",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.567647,
+          44.824965
+        ]
+      },
+      "properties": {
+        "id": "wild-hoop-festival-bordeaux",
+        "nom": "WILD | Hoop Festival",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : spectacle vivant, musique enregistrée. Activités : développement d’artistes, édition phonographique.",
+        "adresse": "15 rue Cazemajor",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "email": "associationwild@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "81943448100035",
+        "rna": "W243004833",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.16835,
+          44.659262
+        ]
+      },
+      "properties": {
+        "id": "yearning-arcachon",
+        "nom": "YEARNING",
+        "etiquettes": [
+          "musique"
+        ],
+        "specialite_musique": "Musiques actuelles",
+        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : transmission (accompagnement, enseignement), spectacle vivant, musique enregistrée, médias.",
+        "adresse": "47 avenue Gambetta",
+        "code_postal": "33120",
+        "commune": "Arcachon",
+        "email": "yearningeal@gmail.com",
+        "reseaux": [
+          "RIM"
+        ],
+        "siret": "84115987400012",
+        "date_ajout": "2026-11-11",
+        "source": "import rim-gironde.csv"
+      }
+    }
+  ]
 }
