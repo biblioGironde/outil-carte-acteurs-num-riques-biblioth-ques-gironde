@@ -2,7 +2,8 @@ name: Vérification annuelle des acteurs
 
 # Tourne le 2 de chaque mois : les mois ordinaires, il se contente de rester actif
 # (GitHub désactive les tâches planifiées des dépôts publics après 60 jours sans activité) ;
-# le mois défini par MOIS_VERIFICATION, il vérifie chaque acteur et ouvre une issue de rapport.
+# le mois défini par MOIS_VERIFICATION, il vérifie chaque acteur, ouvre une issue de rapport
+# et propose les dates de vérification par pull request (la branche main est protégée).
 # Lancement manuel possible : onglet Actions → ce workflow → « Run workflow ».
 
 on:
@@ -16,6 +17,7 @@ env:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
   actions: write
 
 jobs:
@@ -48,19 +50,28 @@ jobs:
         if: steps.calendrier.outputs.lancer == 'oui'
         run: node scripts/verifier.mjs --rapport rapport-verification.md
 
-      - name: Enregistrer les dates de vérification
+      - name: Publier le rapport
+        id: rapport
         if: steps.calendrier.outputs.lancer == 'oui'
+        run: |
+          url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Vérification annuelle $(date -u +%Y)" --body-file rapport-verification.md)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Proposer les dates de vérification
+        if: steps.calendrier.outputs.lancer == 'oui'
+        env:
+          ISSUE: ${{ steps.rapport.outputs.url }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/acteurs.geojson
-          if git diff --cached --quiet; then
-            echo "Aucune donnée à enregistrer."
-          else
-            git commit -m "Vérification annuelle $(date -u +%Y)"
-            git push
-          fi
-
-      - name: Publier le rapport
-        if: steps.calendrier.outputs.lancer == 'oui'
-        run: gh issue create --repo "$GITHUB_REPOSITORY" --title "Vérification annuelle $(date -u +%Y)" --body-file rapport-verification.md
+          if git diff --cached --quiet; then echo "Aucune donnée à enregistrer."; exit 0; fi
+          annee=$(date -u +%Y)
+          branche="verification/${annee}-${GITHUB_RUN_ID}"
+          git switch -c "$branche"
+          git commit -m "Vérification annuelle ${annee} : dates de contrôle"
+          git push origin "$branche"
+          gh pr create --repo "$GITHUB_REPOSITORY" --head "$branche" \
+            --base "${{ github.event.repository.default_branch }}" \
+            --title "Vérification annuelle ${annee} : dates de contrôle" \
+            --body "Met à jour la date de dernière vérification de chaque acteur. Rapport et acteurs à traiter : ${ISSUE}"

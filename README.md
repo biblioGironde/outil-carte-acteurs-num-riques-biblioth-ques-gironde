@@ -29,10 +29,32 @@ Corriger une issue (menu « … » → *Edit*) relance le traitement et met à j
 2. **Settings → Pages** : *Deploy from a branch*, branche `main`, dossier `/ (root)`.
 3. **Settings → Actions → General → Workflow permissions** :
    cocher *Read and write permissions* **et** *Allow GitHub Actions to create and approve pull requests*.
-4. **Settings → Collaborators and teams** : ajouter les collaborateurs avec le rôle *Write*.
-5. (Conseillé) **Settings → Branches** : protéger `main` en exigeant une pull request.
-   Dans ce cas, autoriser `github-actions[bot]` à contourner la règle, sinon la vérification annuelle
-   ne pourra pas enregistrer ses dates de contrôle.
+4. **Settings → Collaborators and teams** : ajouter les collaborateurs avec le rôle *Triage*
+   (formulaires seulement) ou *Write* (formulaires et import de fichiers CSV).
+5. **Settings → Rules → Rulesets** : protéger `main` (voir ci-dessous).
+
+### Ruleset « Protection de main »
+
+*Settings → Rules → Rulesets → New ruleset → New branch ruleset*
+
+| Réglage | Valeur |
+| --- | --- |
+| Ruleset name | Protection de main |
+| Enforcement status | Active |
+| Bypass list | *Repository admin*, en mode *Always allow* |
+| Target branches | *Include default branch* |
+| Restrict deletions | coché |
+| Block force pushes | coché |
+| Require a pull request before merging | coché, *Required approvals* : 0 |
+| Allowed merge methods | *Squash* (un commit lisible par ajout ou import) |
+
+Rien n'arrive donc sur `main`, et sur la carte, sans pull request fusionnée par un administrateur.
+Tous les automatismes (formulaires, import CSV, vérification annuelle) passent par des pull requests :
+aucun n'a besoin de contourner la règle.
+
+Les vérifications automatiques (« Validation des données ») ne sont pas rendues obligatoires :
+GitHub ne les lance pas sur les pull requests ouvertes par les automatismes, ce qui bloquerait
+leur fusion. Les scripts valident de toute façon les données avant d'ouvrir chaque pull request.
 
 ## Ajouter, modifier, retirer un acteur
 
@@ -55,9 +77,11 @@ Pour la première alimentation, plusieurs acteurs peuvent être ajoutés d'un co
 1. Remplir un fichier sur le modèle [`docs/modele-import.csv`](docs/modele-import.csv)
    (exemple commenté : [`docs/exemple-import.csv`](docs/exemple-import.csv)).
    Pour le faire préparer par Copilot ou Claude, utiliser la consigne [`docs/consigne-ia.md`](docs/consigne-ia.md).
-2. Le déposer dans le dossier [`import/`](import/) : *Add file → Upload files*.
-3. Le workflow « Import CSV » contrôle chaque ligne, géolocalise les adresses, retire le fichier du dossier
-   et ouvre une pull request avec le rapport (acteurs ajoutés, champs ignorés, lignes refusées et pourquoi).
+2. Le déposer dans le dossier [`import/`](import/) : *Add file → Upload files*, puis
+   *Create a new branch for this commit and start a pull request* et *Propose changes*.
+3. Le workflow « Import CSV » contrôle chaque ligne, géolocalise les adresses, retire le fichier du dossier,
+   ajoute le résultat à la même branche et ouvre la pull request (ou la complète) avec le rapport :
+   acteurs ajoutés, champs ignorés, lignes refusées et pourquoi.
 
 Colonnes `etiquettes` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
 (`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `institutionnel`) ou le libellé.

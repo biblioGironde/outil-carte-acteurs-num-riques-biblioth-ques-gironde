@@ -35,7 +35,7 @@ jobs:
           permission=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$AUTEUR/permission" --jq .permission 2>/dev/null || echo "inconnue")
           echo "Permission de $AUTEUR : $permission (association : $ASSOCIATION)"
           case "$permission" in
-            admin|maintain|write) echo "autorise=oui" >> "$GITHUB_OUTPUT" ;;
+            admin|maintain|write|triage) echo "autorise=oui" >> "$GITHUB_OUTPUT" ;;
             inconnue)
               case "$ASSOCIATION" in
                 OWNER|COLLABORATOR) echo "autorise=oui" >> "$GITHUB_OUTPUT" ;;

@@ -1,13 +1,16 @@
 name: Import CSV → proposition de modification
 
-# Un fichier .csv déposé dans import/ est lu, chaque ligne contrôlée et géolocalisée,
-# puis une pull request est ouverte avec les acteurs ajoutés et le rapport d'import.
+# Un fichier .csv déposé dans import/ est lu, chaque ligne contrôlée et géolocalisée.
+# - Dépôt sur une branche (cas normal, main étant protégée) : le résultat est ajouté à cette
+#   même branche et une pull request est ouverte (ou complétée) avec le rapport d'import.
+# - Dépôt directement sur main (administrateur) : une nouvelle branche et une pull request sont créées.
 
 on:
   push:
     branches-ignore:
       - 'import/**'
       - 'formulaire/**'
+      - 'verification/**'
     paths:
       - 'import/*.csv'
 
@@ -16,7 +19,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: import-csv
+  group: import-csv-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -24,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
+      DEFAUT: ${{ github.event.repository.default_branch }}
+      AUTEUR: ${{ github.actor }}
     steps:
       - uses: actions/checkout@v4
 
@@ -32,8 +37,8 @@ jobs:
         run: |
           shopt -s nullglob
           fichiers=(import/*.csv)
-          if [ ${#fichiers[@]} -eq 0 ]; then echo "Aucun fichier à importer."; echo "nb=0" >> "$GITHUB_OUTPUT"; exit 0; fi
           echo "nb=${#fichiers[@]}" >> "$GITHUB_OUTPUT"
+          [ ${#fichiers[@]} -eq 0 ] && echo "Aucun fichier à importer." || true
 
       - uses: actions/setup-node@v4
         if: steps.fichiers.outputs.nb != '0'
@@ -50,24 +55,26 @@ jobs:
             git rm -q "$f"
           done
           node scripts/valider.mjs
+          { echo "Fichier déposé par @$AUTEUR."; echo; cat rapport-import.md; } > corps.md
 
-      - name: Ouvrir la pull request
+      - name: Enregistrer et proposer
         if: steps.fichiers.outputs.nb != '0'
-        env:
-          AUTEUR: ${{ github.actor }}
         run: |
-          branche="import/${GITHUB_RUN_ID}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$branche"
           git add data/acteurs.geojson
+          if [ "$GITHUB_REF_NAME" = "$DEFAUT" ]; then
+            branche="import/${GITHUB_RUN_ID}"
+            git switch -c "$branche"
+          else
+            branche="$GITHUB_REF_NAME"
+          fi
           git commit -m "Import CSV déposé par $AUTEUR"
-          git push origin "$branche"
-          {
-            echo "Fichier déposé par @$AUTEUR."
-            echo
-            cat rapport-import.md
-          } > corps.md
-          gh pr create --repo "$GITHUB_REPOSITORY" --head "$branche" \
-            --base "${{ github.event.repository.default_branch }}" \
-            --title "Import CSV déposé par $AUTEUR" --body-file corps.md
+          git push origin "HEAD:$branche"
+          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branche" --state open --json number --jq '.[0].number')
+          if [ -z "$pr" ]; then
+            gh pr create --repo "$GITHUB_REPOSITORY" --head "$branche" --base "$DEFAUT" \
+              --title "Import CSV déposé par $AUTEUR" --body-file corps.md
+          else
+            gh pr comment "$pr" --repo "$GITHUB_REPOSITORY" --body-file corps.md
+          fi
