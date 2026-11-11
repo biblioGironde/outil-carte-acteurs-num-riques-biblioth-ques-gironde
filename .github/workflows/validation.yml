@@ -1,0 +1,29 @@
+name: Validation des données
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - '.github/ISSUE_TEMPLATE/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  valider:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Contrôler data/acteurs.geojson
+        run: node scripts/valider.mjs
+      - name: Formulaires à jour avec les étiquettes
+        run: node scripts/generer-formulaires.mjs --verifier
+      - name: Tests
+        run: node --test "tests/*.test.mjs"

@@ -1,0 +1,66 @@
+name: Vérification annuelle des acteurs
+
+# Tourne le 2 de chaque mois : les mois ordinaires, il se contente de rester actif
+# (GitHub désactive les tâches planifiées des dépôts publics après 60 jours sans activité) ;
+# le mois défini par MOIS_VERIFICATION, il vérifie chaque acteur et ouvre une issue de rapport.
+# Lancement manuel possible : onglet Actions → ce workflow → « Run workflow ».
+
+on:
+  schedule:
+    - cron: '23 5 2 * *'
+  workflow_dispatch:
+
+env:
+  MOIS_VERIFICATION: '01' # janvier
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+jobs:
+  verifier:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Maintenir la tâche planifiée active
+        run: gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/verification-annuelle.yml/enable" || true
+
+      - name: Est-ce le mois de la vérification ?
+        id: calendrier
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%m)" = "$MOIS_VERIFICATION" ]; then
+            echo "lancer=oui" >> "$GITHUB_OUTPUT"
+          else
+            echo "Pas ce mois-ci."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.calendrier.outputs.lancer == 'oui'
+
+      - uses: actions/setup-node@v4
+        if: steps.calendrier.outputs.lancer == 'oui'
+        with:
+          node-version: 22
+
+      - name: Vérifier les acteurs
+        if: steps.calendrier.outputs.lancer == 'oui'
+        run: node scripts/verifier.mjs --rapport rapport-verification.md
+
+      - name: Enregistrer les dates de vérification
+        if: steps.calendrier.outputs.lancer == 'oui'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/acteurs.geojson
+          if git diff --cached --quiet; then
+            echo "Aucune donnée à enregistrer."
+          else
+            git commit -m "Vérification annuelle $(date -u +%Y)"
+            git push
+          fi
+
+      - name: Publier le rapport
+        if: steps.calendrier.outputs.lancer == 'oui'
+        run: gh issue create --repo "$GITHUB_REPOSITORY" --title "Vérification annuelle $(date -u +%Y)" --body-file rapport-verification.md

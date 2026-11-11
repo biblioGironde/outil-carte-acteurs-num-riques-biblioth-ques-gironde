@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-0.5792, 44.8378] },
+      "properties": { "id": "exemple-hub-inclusion-bordeaux", "nom": "Exemple — Hub inclusion numérique", "etiquettes": ["inclusion", "institutionnel"], "description": "Structure fictive pour tester l'affichage : coordination des acteurs de la médiation numérique.", "adresse": "1 rue Exemple", "code_postal": "33000", "commune": "Bordeaux", "site": "https://exemple.org", "email": "contact@exemple.org", "reseaux": ["Réseau fictif"], "public": ["Professionnels"], "date_ajout": "2026-11-11" } },
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-0.6436, 44.8417] },
+      "properties": { "id": "exemple-fablab-merignac", "nom": "Exemple — Fablab", "etiquettes": ["fabrication", "emi"], "description": "Fablab fictif : impression 3D, découpe laser, ateliers d'éducation aux médias.", "adresse": "2 rue Exemple", "code_postal": "33700", "commune": "Mérignac", "public": ["Jeunesse", "Tout public"], "date_ajout": "2026-11-11" } },
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-0.2427, 44.9153] },
+      "properties": { "id": "exemple-ecole-musique-libourne", "nom": "Exemple — École de musique", "etiquettes": ["musique"], "specialite_musique": "École de musique", "description": "École de musique fictive.", "adresse": "3 rue Exemple", "code_postal": "33500", "commune": "Libourne", "public": ["Jeunesse", "Familles"], "date_ajout": "2026-11-11", "derniere_verification": "2027-01-02", "statut_verification": "ok" } },
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-0.2172, 44.5528] },
+      "properties": { "id": "exemple-centre-social-langon", "nom": "Exemple — Centre social", "etiquettes": ["educpop", "pdn"], "description": "Centre social fictif avec un Promeneur du Net.", "adresse": "4 rue Exemple", "code_postal": "33210", "commune": "Langon", "reseaux": ["Promeneurs du Net Gironde"], "public": ["Jeunesse", "Familles"], "date_ajout": "2026-11-11" } },
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-1.1661, 44.6611] },
+      "properties": { "id": "exemple-salle-musiques-actuelles-arcachon", "nom": "Exemple — Salle de musiques actuelles", "etiquettes": ["musique"], "specialite_musique": "Musiques actuelles", "description": "Lieu fictif de diffusion et de répétition.", "adresse": "5 rue Exemple", "code_postal": "33120", "commune": "Arcachon", "public": ["Tout public"], "date_ajout": "2026-11-11" } },
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-0.6764, 45.1258] },
+      "properties": { "id": "exemple-radio-associative-blaye", "nom": "Exemple — Radio associative", "etiquettes": ["emi", "educpop"], "description": "Radio associative fictive : ateliers radio avec les collèges.", "adresse": "6 rue Exemple", "code_postal": "33390", "commune": "Blaye", "public": ["Jeunesse"], "date_ajout": "2026-11-11" } },
+    { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-0.9467, 45.3061] },
+      "properties": { "id": "exemple-tiers-lieu-lesparre", "nom": "Exemple — Tiers-lieu rural", "etiquettes": ["fabrication", "inclusion"], "description": "Tiers-lieu fictif : espace numérique, repair café.", "adresse": "7 rue Exemple", "code_postal": "33340", "commune": "Lesparre-Médoc", "public": ["Tout public", "Seniors"], "date_ajout": "2026-11-11" } }
+  ]
+}

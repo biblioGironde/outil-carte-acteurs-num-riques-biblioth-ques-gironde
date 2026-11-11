@@ -1,0 +1,96 @@
+name: Formulaire → proposition de modification
+
+# Lit les issues « [Ajout] … » et « [Modification] … » créées depuis les formulaires,
+# vérifie que l'auteur est collaborateur du dépôt, met à jour data/acteurs.geojson
+# et ouvre (ou met à jour) une pull request à valider.
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: formulaire-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  traiter:
+    if: >-
+      github.event.issue.state == 'open' &&
+      (startsWith(github.event.issue.title, '[Ajout]') || startsWith(github.event.issue.title, '[Modification]'))
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NUMERO: ${{ github.event.issue.number }}
+      AUTEUR: ${{ github.event.issue.user.login }}
+      ASSOCIATION: ${{ github.event.issue.author_association }}
+    steps:
+      - name: Vérifier que l'auteur est collaborateur
+        id: droits
+        run: |
+          permission=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$AUTEUR/permission" --jq .permission 2>/dev/null || echo "inconnue")
+          echo "Permission de $AUTEUR : $permission (association : $ASSOCIATION)"
+          case "$permission" in
+            admin|maintain|write) echo "autorise=oui" >> "$GITHUB_OUTPUT" ;;
+            inconnue)
+              case "$ASSOCIATION" in
+                OWNER|COLLABORATOR) echo "autorise=oui" >> "$GITHUB_OUTPUT" ;;
+                *) echo "autorise=non" >> "$GITHUB_OUTPUT" ;;
+              esac ;;
+            *) echo "autorise=non" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - name: Refuser poliment les non-collaborateurs
+        if: steps.droits.outputs.autorise != 'oui'
+        run: |
+          gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body "Merci pour cette proposition ! Seuls les collaborateurs du dépôt peuvent ajouter ou modifier des acteurs. Un membre de l'équipe la relira à la main."
+          gh issue edit "$NUMERO" --repo "$GITHUB_REPOSITORY" --add-label "proposition-externe" 2>/dev/null || true
+
+      - uses: actions/checkout@v4
+        if: steps.droits.outputs.autorise == 'oui'
+
+      - uses: actions/setup-node@v4
+        if: steps.droits.outputs.autorise == 'oui'
+        with:
+          node-version: 22
+
+      - name: Lire le formulaire et mettre à jour les données
+        id: traitement
+        if: steps.droits.outputs.autorise == 'oui'
+        env:
+          ISSUE_TITRE: ${{ github.event.issue.title }}
+          ISSUE_CORPS: ${{ github.event.issue.body }}
+          ISSUE_NUMERO: ${{ github.event.issue.number }}
+        run: node scripts/issue-vers-acteur.mjs
+
+      - name: Ouvrir ou mettre à jour la pull request
+        if: steps.traitement.outputs.statut == 'ok'
+        env:
+          ACTION: ${{ steps.traitement.outputs.action }}
+          NOM: ${{ steps.traitement.outputs.nom }}
+        run: |
+          branche="formulaire/issue-$NUMERO"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branche"
+          git add data/acteurs.geojson
+          git commit -m "$ACTION : $NOM (#$NUMERO)"
+          git push --force origin "$branche"
+          pr=$(gh pr list --repo "$GITHUB_REPOSITORY" --head "$branche" --state open --json number --jq '.[0].number')
+          if [ -z "$pr" ]; then
+            gh pr create --repo "$GITHUB_REPOSITORY" --head "$branche" --base "${{ github.event.repository.default_branch }}" \
+              --title "$ACTION : $NOM" \
+              --body "Proposé par @$AUTEUR via le formulaire #$NUMERO. Vérifiez la fiche dans l'onglet *Files changed*, puis fusionnez pour publier sur la carte.
+
+          Closes #$NUMERO"
+          else
+            echo "Pull request #$pr mise à jour."
+          fi
+
+      - name: Répondre sur l'issue
+        if: always() && steps.traitement.outputs.statut != ''
+        run: gh issue comment "$NUMERO" --repo "$GITHUB_REPOSITORY" --body-file message.md

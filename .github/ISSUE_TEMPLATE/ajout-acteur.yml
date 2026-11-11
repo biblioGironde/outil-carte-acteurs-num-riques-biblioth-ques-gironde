@@ -1,0 +1,129 @@
+# Fichier généré par scripts/generer-formulaires.mjs — ne pas modifier à la main.
+name: "Ajouter un acteur"
+description: "Proposer une nouvelle structure sur la carte (réservé aux collaborateurs du dépôt)."
+title: "[Ajout] "
+body:
+  - type: markdown
+    attributes:
+      value: "Complétez le titre après **[Ajout]** avec le nom de la structure. La demande est relue automatiquement, puis une proposition de modification est ouverte pour validation. Seules les demandes des collaborateurs du dépôt sont traitées."
+  - type: input
+    id: nom
+    attributes:
+      label: "Nom de la structure"
+    validations:
+      required: true
+  - type: checkboxes
+    id: etiquettes
+    attributes:
+      label: "Étiquettes"
+      description: "Cochez une ou plusieurs étiquettes."
+      options:
+        - label: "Inclusion et médiation numérique"
+        - label: "Fabrication numérique (fablabs, tiers-lieux)"
+        - label: "Éducation aux médias et à l'information"
+        - label: "Promeneurs du Net"
+        - label: "Éducation populaire"
+        - label: "Musique"
+        - label: "Institutionnel"
+  - type: dropdown
+    id: specialite_musique
+    attributes:
+      label: "Spécialité musicale (étiquette Musique uniquement)"
+      options:
+        - "Musiques actuelles"
+        - "École de musique"
+        - "Musiques de répertoire et de création"
+        - "Autre"
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description courte"
+      description: "2 ou 3 phrases : ce que fait la structure, pour qui. 500 caractères maximum."
+    validations:
+      required: true
+  - type: input
+    id: adresse
+    attributes:
+      label: "Adresse (numéro et rue)"
+    validations:
+      required: true
+  - type: input
+    id: code_postal
+    attributes:
+      label: "Code postal"
+      placeholder: "33000"
+    validations:
+      required: true
+  - type: input
+    id: commune
+    attributes:
+      label: "Commune"
+    validations:
+      required: true
+  - type: input
+    id: coordonnees
+    attributes:
+      label: "Coordonnées GPS (facultatif)"
+      description: "Format « latitude, longitude » (ex. 44.8378, -0.5792). Laissez vide : l’adresse sera géolocalisée automatiquement."
+    validations:
+      required: false
+  - type: input
+    id: site
+    attributes:
+      label: "Site web"
+      placeholder: "https://"
+    validations:
+      required: false
+  - type: input
+    id: email
+    attributes:
+      label: "Courriel de contact de la structure"
+      description: "Adresse générique uniquement (contact@…, accueil@…), jamais une adresse nominative."
+    validations:
+      required: false
+  - type: input
+    id: telephone
+    attributes:
+      label: "Téléphone de la structure"
+    validations:
+      required: false
+  - type: input
+    id: reseaux
+    attributes:
+      label: "Réseau(x) d'appartenance"
+      description: "Séparés par des virgules (ex. : Hubikoop, Promeneurs du Net Gironde)."
+    validations:
+      required: false
+  - type: checkboxes
+    id: public
+    attributes:
+      label: "Publics"
+      options:
+        - label: "Jeunesse"
+        - label: "Familles"
+        - label: "Tout public"
+        - label: "Seniors"
+        - label: "Professionnels"
+  - type: input
+    id: siret
+    attributes:
+      label: "SIRET"
+      description: "14 chiffres. Fortement conseillé : il sert à la vérification annuelle automatique."
+    validations:
+      required: false
+  - type: input
+    id: rna
+    attributes:
+      label: "Numéro RNA"
+      description: "W suivi de 9 chiffres (ex. W332012345)."
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "Je ne saisis que des informations publiques sur la structure, aucune donnée personnelle."
+          required: true

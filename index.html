@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later — © Département de la Gironde — biblio.gironde -->
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Acteurs du territoire — Gironde</title>
+  <meta name="description" content="Carte des acteurs associatifs et institutionnels du numérique, de l'éducation aux médias, de l'éducation populaire et de la musique en Gironde.">
+  <!-- Dépôt GitHub qui héberge les données et les formulaires (propriétaire/nom). -->
+  <meta name="depot" content="biblioGironde/outil-carte-acteurs-num-riques-biblioth-ques-gironde">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="assets/carte.css">
+</head>
+<body>
+  <a class="evitement" href="#liste">Aller à la liste des acteurs</a>
+
+  <aside class="panneau" id="panneau" aria-label="Recherche et liste des acteurs">
+    <button class="poignee" id="poignee" type="button" aria-controls="panneau" aria-expanded="false">
+      <span class="poignee-barre" aria-hidden="true"></span>
+      <span id="poignee-texte">Liste des acteurs</span>
+    </button>
+
+    <header class="entete">
+      <p class="surtitre">Gironde</p>
+      <h1>Acteurs du territoire</h1>
+      <p class="chapo">Numérique, éducation aux médias, éducation populaire et musique : les structures qui animent le département.</p>
+    </header>
+
+    <div class="recherche">
+      <label for="champ-recherche" class="visuellement-cache">Rechercher un acteur, une commune, un réseau</label>
+      <input id="champ-recherche" type="search" placeholder="Rechercher : nom, commune, réseau…" autocomplete="off">
+    </div>
+
+    <fieldset class="filtres">
+      <legend class="visuellement-cache">Filtrer par étiquette</legend>
+      <div id="filtres" class="puces"></div>
+      <button type="button" id="tout-afficher" class="lien-discret" hidden>Tout afficher</button>
+    </fieldset>
+
+    <p id="compteur" class="compteur" aria-live="polite"></p>
+    <ul id="liste" class="liste" tabindex="-1"></ul>
+
+    <footer class="pied">
+      <a id="lien-ajout" class="bouton-secondaire" href="#">Proposer un acteur</a>
+      <p>Données sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence/">Licence Ouverte 2.0</a> · code sous licence AGPL-3.0 · <a id="lien-depot" href="#">dépôt GitHub</a></p>
+    </footer>
+  </aside>
+
+  <main class="carte" id="carte" aria-label="Carte de la Gironde"></main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="assets/carte.js"></script>
+</body>
+</html>

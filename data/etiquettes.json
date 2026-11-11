@@ -1,0 +1,24 @@
+{
+  "etiquettes": [
+    { "id": "inclusion", "libelle": "Inclusion et médiation numérique", "court": "Inclusion numérique", "couleur": "#2563eb" },
+    { "id": "fabrication", "libelle": "Fabrication numérique (fablabs, tiers-lieux)", "court": "Fablabs & tiers-lieux", "couleur": "#ea580c" },
+    { "id": "emi", "libelle": "Éducation aux médias et à l'information", "court": "Éducation aux médias", "couleur": "#7c3aed" },
+    { "id": "pdn", "libelle": "Promeneurs du Net", "court": "Promeneurs du Net", "couleur": "#0891b2" },
+    { "id": "educpop", "libelle": "Éducation populaire", "court": "Éducation populaire", "couleur": "#16a34a" },
+    { "id": "musique", "libelle": "Musique", "court": "Musique", "couleur": "#db2777" },
+    { "id": "institutionnel", "libelle": "Institutionnel", "court": "Institutionnel", "couleur": "#475569" }
+  ],
+  "specialites_musique": [
+    "Musiques actuelles",
+    "École de musique",
+    "Musiques de répertoire et de création",
+    "Autre"
+  ],
+  "publics": [
+    "Jeunesse",
+    "Familles",
+    "Tout public",
+    "Seniors",
+    "Professionnels"
+  ]
+}

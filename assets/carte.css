@@ -1,0 +1,158 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later — © Département de la Gironde — biblio.gironde */
+:root {
+  --fond: #f6f4ef;
+  --papier: #ffffff;
+  --encre: #1c1f24;
+  --encre-douce: #5b6169;
+  --trait: #e2ded5;
+  --accent: #0f5e6b;
+  --accent-clair: #e3f0f1;
+  --ombre: 0 1px 2px rgba(28, 31, 36, .06), 0 8px 24px rgba(28, 31, 36, .08);
+  --rayon: 12px;
+  --largeur-panneau: 380px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--encre);
+  background: var(--fond);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { display: flex; overflow: hidden; background: var(--fond); }
+
+a { color: var(--accent); }
+.visuellement-cache {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.evitement { position: absolute; left: -9999px; z-index: 2000; }
+.evitement:focus { left: 1rem; top: 1rem; background: var(--papier); padding: .5rem 1rem; border-radius: 8px; }
+:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; }
+
+/* ---------- Panneau ---------- */
+.panneau {
+  width: var(--largeur-panneau); flex: none; height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--papier); border-right: 1px solid var(--trait);
+  z-index: 1000;
+}
+.poignee { display: none; }
+
+.entete { padding: 1.5rem 1.5rem .75rem; }
+.surtitre {
+  margin: 0 0 .25rem; font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent);
+}
+.entete h1 { margin: 0; font-size: 1.6rem; line-height: 1.15; letter-spacing: -.01em; }
+.chapo { margin: .5rem 0 0; color: var(--encre-douce); font-size: .9rem; line-height: 1.45; }
+
+.recherche { padding: .5rem 1.5rem; }
+.recherche input {
+  width: 100%; font: inherit; font-size: .95rem; padding: .65rem .85rem;
+  border: 1px solid var(--trait); border-radius: 10px; background: var(--fond);
+}
+.recherche input:focus { background: var(--papier); border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-clair); }
+
+.filtres { border: 0; margin: 0; padding: .5rem 1.5rem .25rem; }
+.puces { display: flex; flex-wrap: wrap; gap: .4rem; }
+.puce {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font: inherit; font-size: .8rem; line-height: 1; padding: .45rem .65rem;
+  border: 1px solid var(--trait); border-radius: 999px; background: var(--papier);
+  color: var(--encre); cursor: pointer;
+}
+.puce .pastille { width: .65rem; height: .65rem; border-radius: 50%; background: var(--couleur); flex: none; }
+.puce .nb { color: var(--encre-douce); font-variant-numeric: tabular-nums; }
+.puce[aria-pressed="true"] { background: var(--couleur); border-color: var(--couleur); color: #fff; }
+.puce[aria-pressed="true"] .pastille { background: #fff; }
+.puce[aria-pressed="true"] .nb { color: rgba(255,255,255,.85); }
+.puce:disabled { opacity: .45; cursor: default; }
+.lien-discret {
+  margin-top: .5rem; font: inherit; font-size: .8rem; background: none; border: 0; padding: 0;
+  color: var(--accent); text-decoration: underline; cursor: pointer;
+}
+
+.compteur { margin: .75rem 1.5rem .25rem; font-size: .8rem; color: var(--encre-douce); }
+
+.liste { list-style: none; margin: 0; padding: 0 .75rem .75rem; overflow-y: auto; flex: 1; min-height: 0; }
+.liste:focus { outline: none; }
+.item {
+  width: 100%; text-align: left; font: inherit; color: inherit; background: none;
+  border: 0; border-radius: 10px; padding: .7rem .75rem; cursor: pointer;
+  display: grid; grid-template-columns: auto 1fr; gap: .15rem .7rem; align-items: start;
+}
+.item:hover, .item.actif { background: var(--fond); }
+.item .marque { grid-row: span 2; margin-top: .2rem; }
+.item strong { font-size: .95rem; }
+.item .meta { font-size: .8rem; color: var(--encre-douce); }
+.vide { padding: 1.5rem .75rem; color: var(--encre-douce); font-size: .9rem; line-height: 1.5; }
+
+.pied { padding: .9rem 1.5rem 1.1rem; border-top: 1px solid var(--trait); font-size: .75rem; color: var(--encre-douce); }
+.pied p { margin: .6rem 0 0; }
+.bouton-secondaire {
+  display: inline-block; font-size: .85rem; font-weight: 600; text-decoration: none;
+  padding: .55rem .9rem; border-radius: 8px; border: 1px solid var(--accent); color: var(--accent);
+}
+.bouton-secondaire:hover { background: var(--accent-clair); }
+
+/* ---------- Carte ---------- */
+.carte { flex: 1; height: 100%; background: #dfe7ea; }
+.leaflet-container { font: inherit; }
+
+.marque {
+  display: block; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--fond-marque, #475569);
+  border: 2.5px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+.marqueur-actif .marque { transform: scale(1.35); box-shadow: 0 0 0 4px rgba(15, 94, 107, .35), 0 1px 4px rgba(0,0,0,.35); }
+.leaflet-marker-icon.marqueur { background: none; border: 0; }
+
+/* Fiche (popup) */
+.leaflet-popup-content-wrapper { border-radius: var(--rayon); box-shadow: var(--ombre); }
+.leaflet-popup-content { margin: 1rem 1.1rem; width: min(300px, 70vw) !important; font-size: .85rem; line-height: 1.45; }
+.fiche h2 { margin: 0 0 .4rem; font-size: 1.1rem; line-height: 1.25; }
+.fiche .etiquettes { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .6rem; }
+.fiche .etiquette {
+  font-size: .7rem; font-weight: 600; padding: .2rem .5rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--couleur) 14%, white); color: var(--couleur);
+}
+.fiche p { margin: 0 0 .6rem; }
+.fiche dl { margin: 0 0 .6rem; display: grid; grid-template-columns: auto 1fr; gap: .25rem .6rem; }
+.fiche dt { color: var(--encre-douce); }
+.fiche dd { margin: 0; overflow-wrap: anywhere; }
+.fiche .contacts { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .6rem; }
+.fiche .contacts a {
+  font-weight: 600; text-decoration: none; padding: .35rem .6rem; border-radius: 6px; background: var(--accent-clair);
+}
+.fiche .technique { margin: .6rem 0 0; padding-top: .5rem; border-top: 1px solid var(--trait); font-size: .72rem; color: var(--encre-douce); }
+.fiche .technique code { font-size: .72rem; }
+
+/* ---------- Mobile : panneau en tiroir ---------- */
+@media (max-width: 760px) {
+  body { flex-direction: column; }
+  .carte { position: fixed; inset: 0; height: 100%; }
+  .panneau {
+    position: fixed; left: 0; right: 0; bottom: 0; width: 100%;
+    height: 85dvh; border-right: 0; border-radius: 16px 16px 0 0;
+    box-shadow: 0 -6px 24px rgba(0,0,0,.15);
+    transform: translateY(calc(100% - 132px)); transition: transform .25s ease;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .panneau.ouvert { transform: translateY(0); }
+  .poignee {
+    display: flex; flex-direction: column; align-items: center; gap: .45rem; flex: none;
+    width: 100%; padding: .6rem 1rem .2rem; border: 0; background: none;
+    font: inherit; font-size: .8rem; font-weight: 600; color: var(--encre-douce); cursor: pointer;
+  }
+  .poignee-barre { width: 40px; height: 4px; border-radius: 4px; background: var(--trait); }
+  .entete { padding: .25rem 1rem .25rem; }
+  .entete h1 { font-size: 1.15rem; }
+  .surtitre, .chapo { display: none; }
+  .recherche, .filtres { padding-left: 1rem; padding-right: 1rem; }
+  .compteur { margin-left: 1rem; }
+  .pied { padding-left: 1rem; padding-right: 1rem; }
+  .leaflet-top.leaflet-left { top: env(safe-area-inset-top); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panneau { transition: none; }
+}
