@@ -26,16 +26,36 @@ body:
         - label: "Musique"
         - label: "Institutionnel"
   - type: dropdown
-    id: specialite_musique
+    id: domaine_musique
     attributes:
-      label: "Spécialité musicale (étiquette Musique uniquement)"
+      label: "Domaine musical (étiquette Musique uniquement)"
       options:
         - "Musiques actuelles"
-        - "École de musique"
-        - "Musiques de répertoire et de création"
-        - "Autre"
+        - "Musiques classiques et de répertoire"
+        - "Musiques traditionnelles et du monde"
+        - "Jazz et musiques improvisées"
+        - "Tous styles"
     validations:
       required: false
+  - type: checkboxes
+    id: activites_musique
+    attributes:
+      label: "Activités musicales (étiquette Musique uniquement)"
+      description: "Cochez toutes les activités de la structure."
+      options:
+        - label: "Salle de concert, lieu de diffusion"
+        - label: "Festival"
+        - label: "Producteur de spectacles, tourneur"
+        - label: "Label, production phonographique"
+        - label: "Édition musicale"
+        - label: "Studio d'enregistrement"
+        - label: "Lieu de répétition"
+        - label: "Accompagnement d'artistes"
+        - label: "Enseignement, école de musique"
+        - label: "Action culturelle, médiation"
+        - label: "Radio, média"
+        - label: "Réseau, fédération, centre de ressources"
+        - label: "Disquaire, commerce culturel"
   - type: textarea
     id: description
     attributes:

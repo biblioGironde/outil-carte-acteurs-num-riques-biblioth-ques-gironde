@@ -83,8 +83,10 @@ Pour la première alimentation, plusieurs acteurs peuvent être ajoutés d'un co
    ajoute le résultat à la même branche et ouvre la pull request (ou la complète) avec le rapport :
    acteurs ajoutés, champs ignorés, lignes refusées et pourquoi.
 
-Colonnes `etiquettes` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
-(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `institutionnel`) ou le libellé.
+Colonnes `etiquettes`, `activites_musique` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
+(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `institutionnel`) ou le libellé ;
+les activités musicales aussi (`label`, `diffusion`, `studio`… voir `docs/consigne-ia.md`), ainsi que le vocabulaire
+de l'annuaire du RIM (« Booking / tour », « Cafés-culture »…).
 Séparateur `;` ou `,`, encodage UTF-8 ou celui d'Excel : les deux sont reconnus.
 Un SIRET, un RNA, un courriel ou un site mal formé est ignoré sans bloquer la ligne.
 
@@ -129,7 +131,8 @@ Chaque acteur est un point GeoJSON dont les propriétés sont :
 | `id` | identifiant stable, généré à partir du nom et de la commune |
 | `nom`, `description`, `adresse`, `code_postal`, `commune` | obligatoires |
 | `etiquettes` | liste d'identifiants de `data/etiquettes.json` (au moins un) |
-| `specialite_musique` | si l'étiquette `musique` est présente |
+| `domaine_musique` | un domaine, si l'étiquette `musique` est présente |
+| `activites_musique` | liste d'activités (`data/etiquettes.json`), si l'étiquette `musique` est présente |
 | `site`, `email`, `telephone` | contacts de la structure |
 | `reseaux`, `public` | listes |
 | `siret`, `rna` | identifiants pour la vérification annuelle |

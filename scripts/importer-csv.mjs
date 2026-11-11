@@ -15,7 +15,7 @@ import { geocoder, lireCoordonnees } from './lib/geocodage.mjs';
 import { versProprietes, ordonner } from './issue-vers-acteur.mjs';
 
 export const COLONNES = [
-  'nom', 'etiquettes', 'specialite_musique', 'description', 'adresse', 'code_postal', 'commune',
+  'nom', 'etiquettes', 'domaine_musique', 'activites_musique', 'description', 'adresse', 'code_postal', 'commune',
   'latitude', 'longitude', 'site', 'email', 'telephone', 'reseaux', 'public', 'siret', 'rna', 'source_web',
 ];
 const OBLIGATOIRES = ['nom', 'etiquettes', 'description', 'adresse', 'code_postal', 'commune'];
@@ -67,6 +67,16 @@ export function lireCsv(texte) {
 }
 
 const liste = (v) => String(v ?? '').split(/[|,;\n]/).map((s) => s.trim()).filter(Boolean);
+/** Valeurs séparées par | ; une valeur connue contenant une virgule (« Salle de concert, lieu de diffusion »)
+ *  est gardée entière, sinon on découpe aussi sur , et ; */
+function valeurs(v, index) {
+  const r = [];
+  for (const morceau of String(v ?? '').split(/[|\n]/).map((s) => s.trim()).filter(Boolean)) {
+    if (index.has(norm(morceau))) r.push(morceau);
+    else r.push(...morceau.split(/[,;]/).map((s) => s.trim()).filter(Boolean));
+  }
+  return r;
+}
 
 const indexEtiquettes = new Map();
 for (const e of ETIQUETTES) for (const k of [e.id, e.libelle, e.court]) indexEtiquettes.set(norm(k), e.libelle);
@@ -76,7 +86,37 @@ for (const [k, id] of [['emi', 'emi'], ['education aux medias', 'emi'], ['fablab
   indexEtiquettes.set(k, ETIQUETTES.find((e) => e.id === id).libelle);
 }
 const indexPublics = new Map(REFERENTIEL.publics.map((p) => [norm(p), p]));
-const indexSpecialites = new Map(REFERENTIEL.specialites_musique.map((s) => [norm(s), s]));
+const indexDomaines = new Map(REFERENTIEL.domaines_musique.map((d) => [norm(d), d]));
+for (const [k, d] of [['actuelles', 0], ['musiques actuelles', 0], ['classique', 1], ['repertoire', 1], ['musiques de repertoire et de creation', 1],
+  ['traditionnelles', 2], ['trad', 2], ['musiques du monde', 2], ['jazz', 3], ['tous', 4]]) indexDomaines.set(k, REFERENTIEL.domaines_musique[d]);
+const indexActivites = new Map();
+for (const a of REFERENTIEL.activites_musique) for (const k of [a.id, a.libelle, a.court]) indexActivites.set(norm(k), a.libelle);
+// vocabulaire de l'annuaire du RIM et formulations courantes
+const synonymes = {
+  diffusion: ['cafes-culture', 'salle de concert', 'salle', 'lieu de diffusion', 'smac'],
+  festival: ['festivals'],
+  production: ['production spectacle', 'booking / tour', 'booking', 'tourneur', 'producteur de spectacles'],
+  label: ['production phonographique', 'maison de disques'],
+  edition: ['edition phonographique', 'editeur'],
+  studio: ['enregistrement', 'studio'],
+  repetition: ['repetitions', 'repetition'],
+  accompagnement: ['developpement d’artistes', "developpement d'artistes", 'management', 'residence, aide a la creation'],
+  enseignement: ['ecole de musique', 'cours'],
+  'action-culturelle': ['action culturelle', 'mediation'],
+  media: ['radios', 'radio', 'webzines', 'webzine', 'medias'],
+  ressource: ['mise en reseau, services aux professionnels', 'ressources', 'formation professionnelle', 'federation', 'reseau'],
+  disquaire: ['commerces culturels de proximite'],
+};
+for (const [id, mots] of Object.entries(synonymes)) {
+  const libelle = REFERENTIEL.activites_musique.find((a) => a.id === id).libelle;
+  for (const m of mots) indexActivites.set(norm(m), libelle);
+}
+// ancienne colonne specialite_musique (fichiers préparés avant 2026-11)
+const ANCIENNE_SPECIALITE = {
+  'musiques actuelles': { domaine: 'Musiques actuelles' },
+  'ecole de musique': { activite: 'Enseignement, école de musique' },
+  'musiques de repertoire et de creation': { domaine: 'Musiques classiques et de répertoire' },
+};
 
 /** Transforme une ligne CSV en propriétés, avec erreurs bloquantes et avertissements. */
 export function lireLigne(l) {
@@ -86,13 +126,13 @@ export function lireLigne(l) {
   if (/^exemple\b/i.test(l.nom ?? '')) erreurs.push('ligne d’exemple du modèle');
 
   const etiquettes = [];
-  for (const brut of liste(l.etiquettes)) {
+  for (const brut of valeurs(l.etiquettes, indexEtiquettes)) {
     const libelle = indexEtiquettes.get(norm(brut));
     if (libelle) etiquettes.push(libelle);
     else erreurs.push(`étiquette inconnue « ${brut} »`);
   }
   const publics = [];
-  for (const brut of liste(l.public)) {
+  for (const brut of valeurs(l.public, indexPublics)) {
     const p = indexPublics.get(norm(brut));
     if (p) publics.push(p); else avertissements.push(`public ignoré « ${brut} »`);
   }
@@ -102,10 +142,20 @@ export function lireLigne(l) {
   };
   if (etiquettes.length) saisie.etiquettes = [...new Set(etiquettes)];
   if (publics.length) saisie.public = [...new Set(publics)];
-  if (l.specialite_musique) {
-    const s = indexSpecialites.get(norm(l.specialite_musique));
-    if (s) saisie.specialite_musique = s; else avertissements.push(`spécialité ignorée « ${l.specialite_musique} »`);
+  const activites = [];
+  for (const brut of valeurs(l.activites_musique, indexActivites)) {
+    const a = indexActivites.get(norm(brut));
+    if (a) activites.push(a); else avertissements.push(`activité musicale ignorée « ${brut} »`);
   }
+  let domaine = l.domaine_musique ? indexDomaines.get(norm(l.domaine_musique)) : undefined;
+  if (l.domaine_musique && !domaine) avertissements.push(`domaine musical ignoré « ${l.domaine_musique} »`);
+  if (l.specialite_musique) {
+    const ancien = ANCIENNE_SPECIALITE[norm(l.specialite_musique)];
+    if (ancien?.domaine && !domaine) domaine = ancien.domaine;
+    if (ancien?.activite) activites.push(ancien.activite);
+  }
+  if (domaine) saisie.domaine_musique = domaine;
+  if (activites.length) saisie.activites_musique = [...new Set(activites)];
   for (const c of ['site', 'email', 'telephone', 'reseaux', 'siret', 'rna']) if (l[c]) saisie[c] = l[c];
 
   const p = versProprietes(saisie);
@@ -114,8 +164,9 @@ export function lireLigne(l) {
   if (p.rna && !/^W\d{9}$/.test(p.rna)) { avertissements.push(`RNA ignoré « ${l.rna} »`); delete p.rna; }
   if (p.email && !/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(p.email)) { avertissements.push(`courriel ignoré « ${l.email} »`); delete p.email; }
   if (p.site && !/^https?:\/\/[^\s/$.?#].[^\s]*$/i.test(p.site)) { avertissements.push(`site ignoré « ${l.site} »`); delete p.site; }
-  if (p.specialite_musique && !p.etiquettes?.includes('musique')) {
-    avertissements.push('spécialité musicale ignorée (pas d’étiquette Musique)'); delete p.specialite_musique;
+  if ((p.domaine_musique || p.activites_musique) && !p.etiquettes?.includes('musique')) {
+    avertissements.push('domaine et activités musicales ignorés (pas d’étiquette Musique)');
+    delete p.domaine_musique; delete p.activites_musique;
   }
   if (p.description && p.description.length > 500) {
     avertissements.push('description coupée à 500 caractères');

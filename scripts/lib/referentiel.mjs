@@ -28,8 +28,13 @@ export const CHAMPS = [
     options: ETIQUETTES.map((e) => e.libelle),
   },
   {
-    cle: 'specialite_musique', libelle: 'Spécialité musicale (étiquette Musique uniquement)', type: 'dropdown',
-    options: REFERENTIEL.specialites_musique,
+    cle: 'domaine_musique', libelle: 'Domaine musical (étiquette Musique uniquement)', type: 'dropdown',
+    options: REFERENTIEL.domaines_musique,
+  },
+  {
+    cle: 'activites_musique', libelle: 'Activités musicales (étiquette Musique uniquement)', type: 'checkboxes',
+    aide: 'Cochez toutes les activités de la structure.',
+    options: REFERENTIEL.activites_musique.map((a) => a.libelle),
   },
   {
     cle: 'description', libelle: 'Description courte', type: 'textarea', requisAjout: true,
@@ -60,7 +65,8 @@ export const CHAMPS = [
   { cle: 'rna', libelle: 'Numéro RNA', type: 'input', aide: 'W suivi de 9 chiffres (ex. W332012345).' },
 ];
 
-export const CHAMPS_LISTE = new Set(['etiquettes', 'public', 'reseaux']);
+export const CHAMPS_LISTE = new Set(['etiquettes', 'public', 'reseaux', 'activites_musique']);
+export const LIBELLES_ACTIVITES = REFERENTIEL.activites_musique.map((a) => a.libelle);
 
 export function slugifier(texte) {
   return String(texte)
@@ -110,11 +116,15 @@ export function validerActeur(f) {
   }
   if (!Array.isArray(p.etiquettes) || p.etiquettes.length === 0) err('au moins une étiquette est requise');
   else for (const e of p.etiquettes) if (!IDS_ETIQUETTES.has(e)) err(`étiquette inconnue : ${e}`);
-  if (p.specialite_musique && !REFERENTIEL.specialites_musique.includes(p.specialite_musique)) {
-    err(`spécialité musicale inconnue : ${p.specialite_musique}`);
+  if (p.domaine_musique && !REFERENTIEL.domaines_musique.includes(p.domaine_musique)) {
+    err(`domaine musical inconnu : ${p.domaine_musique}`);
   }
-  if (p.specialite_musique && !p.etiquettes?.includes('musique')) {
-    err('une spécialité musicale est renseignée sans l’étiquette Musique');
+  if (p.activites_musique !== undefined && !Array.isArray(p.activites_musique)) err('le champ activites_musique doit être une liste');
+  for (const a of p.activites_musique ?? []) {
+    if (!REFERENTIEL.activites_musique.some((x) => x.libelle === a)) err(`activité musicale inconnue : ${a}`);
+  }
+  if ((p.domaine_musique || p.activites_musique?.length) && !p.etiquettes?.includes('musique')) {
+    err('un domaine ou une activité musicale est renseigné sans l’étiquette Musique');
   }
   if (p.description && p.description.length > 500) err('description trop longue (500 caractères maximum)');
   if (p.code_postal && !/^33\d{3}$/.test(p.code_postal)) err(`code postal hors Gironde : ${p.code_postal}`);

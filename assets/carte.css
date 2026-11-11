@@ -66,6 +66,20 @@ a { color: var(--accent); }
 .puce[aria-pressed="true"] .pastille { background: #fff; }
 .puce[aria-pressed="true"] .nb { color: rgba(255,255,255,.85); }
 .puce:disabled { opacity: .45; cursor: default; }
+.sous-filtres {
+  display: flex; gap: .5rem; margin-top: .6rem; padding: .6rem; border-radius: 10px;
+  background: color-mix(in srgb, #db2777 7%, white); border: 1px solid color-mix(in srgb, #db2777 20%, white);
+}
+.sous-filtres[hidden], .choix[hidden] { display: none; }
+.choix { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .2rem; font-size: .72rem; font-weight: 600; color: #9d174d; }
+.choix select {
+  width: 100%; font: inherit; font-size: .85rem; font-weight: 400; color: var(--encre);
+  padding: .4rem .5rem; border: 1px solid var(--trait); border-radius: 8px; background: var(--papier);
+}
+.fiche .activites { display: flex; flex-wrap: wrap; gap: .3rem; margin: -.3rem 0 .6rem; }
+.fiche .activites span {
+  font-size: .7rem; padding: .15rem .45rem; border-radius: 4px; border: 1px solid color-mix(in srgb, #db2777 35%, white); color: #9d174d;
+}
 .lien-discret {
   margin-top: .5rem; font: inherit; font-size: .8rem; background: none; border: 0; padding: 0;
   color: var(--accent); text-decoration: underline; cursor: pointer;

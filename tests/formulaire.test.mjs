@@ -90,8 +90,9 @@ test('ajout refusé : erreurs listées en clair', async () => {
   );
 });
 
-test('spécialité musicale sans étiquette Musique : refusé', async () => {
-  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, specialite_musique: 'École de musique' }), /Musique/);
+test('domaine ou activité musicale sans étiquette Musique : refusé', async () => {
+  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, domaine_musique: 'Musiques actuelles' }), /Musique/);
+  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, activites_musique: ['Festival'] }), /Musique/);
 });
 
 test('doublon nom + commune : renvoie vers la modification', async () => {
@@ -109,7 +110,8 @@ test('modification : seuls les champs remplis changent, « - » vide un champ', 
     titre: '[Modification] Fablab du Port',
     corps: corpsIssue('modification-acteur.yml', {
       identifiant: 'fablab-du-port-bordeaux', action: ACTION_MODIFIER,
-      telephone: '05 56 00 00 00', email: '-', etiquettes: ['Musique'], specialite_musique: 'Musiques actuelles',
+      telephone: '05 56 00 00 00', email: '-', etiquettes: ['Musique'], domaine_musique: 'Musiques actuelles',
+      activites_musique: ['Label, production phonographique', 'Salle de concert, lieu de diffusion'],
     }),
     collection, aujourdhui: '2026-12-01', geocoderFn: geocodageFactice,
   });
@@ -118,6 +120,8 @@ test('modification : seuls les champs remplis changent, « - » vide un champ', 
   assert.equal(p.telephone, '05 56 00 00 00');
   assert.equal(p.email, undefined);
   assert.deepEqual(p.etiquettes, ['musique']);
+  assert.equal(p.domaine_musique, 'Musiques actuelles');
+  assert.deepEqual(p.activites_musique, ['Salle de concert, lieu de diffusion', 'Label, production phonographique']);
   assert.equal(p.nom, 'Fablab du Port');
   assert.equal(p.date_modification, '2026-12-01');
 });

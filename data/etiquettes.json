@@ -1,18 +1,121 @@
 {
   "etiquettes": [
-    { "id": "inclusion", "libelle": "Inclusion et médiation numérique", "court": "Inclusion numérique", "couleur": "#2563eb" },
-    { "id": "fabrication", "libelle": "Fabrication numérique (fablabs, tiers-lieux)", "court": "Fablabs & tiers-lieux", "couleur": "#ea580c" },
-    { "id": "emi", "libelle": "Éducation aux médias et à l'information", "court": "Éducation aux médias", "couleur": "#7c3aed" },
-    { "id": "pdn", "libelle": "Promeneurs du Net", "court": "Promeneurs du Net", "couleur": "#0891b2" },
-    { "id": "educpop", "libelle": "Éducation populaire", "court": "Éducation populaire", "couleur": "#16a34a" },
-    { "id": "musique", "libelle": "Musique", "court": "Musique", "couleur": "#db2777" },
-    { "id": "institutionnel", "libelle": "Institutionnel", "court": "Institutionnel", "couleur": "#475569" }
+    {
+      "id": "inclusion",
+      "libelle": "Inclusion et médiation numérique",
+      "court": "Inclusion numérique",
+      "couleur": "#2563eb"
+    },
+    {
+      "id": "fabrication",
+      "libelle": "Fabrication numérique (fablabs, tiers-lieux)",
+      "court": "Fablabs & tiers-lieux",
+      "couleur": "#ea580c"
+    },
+    {
+      "id": "emi",
+      "libelle": "Éducation aux médias et à l'information",
+      "court": "Éducation aux médias",
+      "couleur": "#7c3aed"
+    },
+    {
+      "id": "pdn",
+      "libelle": "Promeneurs du Net",
+      "court": "Promeneurs du Net",
+      "couleur": "#0891b2"
+    },
+    {
+      "id": "educpop",
+      "libelle": "Éducation populaire",
+      "court": "Éducation populaire",
+      "couleur": "#16a34a"
+    },
+    {
+      "id": "musique",
+      "libelle": "Musique",
+      "court": "Musique",
+      "couleur": "#db2777"
+    },
+    {
+      "id": "institutionnel",
+      "libelle": "Institutionnel",
+      "court": "Institutionnel",
+      "couleur": "#475569"
+    }
   ],
-  "specialites_musique": [
+  "domaines_musique": [
     "Musiques actuelles",
-    "École de musique",
-    "Musiques de répertoire et de création",
-    "Autre"
+    "Musiques classiques et de répertoire",
+    "Musiques traditionnelles et du monde",
+    "Jazz et musiques improvisées",
+    "Tous styles"
+  ],
+  "activites_musique": [
+    {
+      "id": "diffusion",
+      "libelle": "Salle de concert, lieu de diffusion",
+      "court": "Salle de concert"
+    },
+    {
+      "id": "festival",
+      "libelle": "Festival",
+      "court": "Festival"
+    },
+    {
+      "id": "production",
+      "libelle": "Producteur de spectacles, tourneur",
+      "court": "Producteur de spectacles"
+    },
+    {
+      "id": "label",
+      "libelle": "Label, production phonographique",
+      "court": "Label"
+    },
+    {
+      "id": "edition",
+      "libelle": "Édition musicale",
+      "court": "Édition musicale"
+    },
+    {
+      "id": "studio",
+      "libelle": "Studio d'enregistrement",
+      "court": "Studio d'enregistrement"
+    },
+    {
+      "id": "repetition",
+      "libelle": "Lieu de répétition",
+      "court": "Lieu de répétition"
+    },
+    {
+      "id": "accompagnement",
+      "libelle": "Accompagnement d'artistes",
+      "court": "Accompagnement d'artistes"
+    },
+    {
+      "id": "enseignement",
+      "libelle": "Enseignement, école de musique",
+      "court": "Enseignement"
+    },
+    {
+      "id": "action-culturelle",
+      "libelle": "Action culturelle, médiation",
+      "court": "Action culturelle"
+    },
+    {
+      "id": "media",
+      "libelle": "Radio, média",
+      "court": "Radio, média"
+    },
+    {
+      "id": "ressource",
+      "libelle": "Réseau, fédération, centre de ressources",
+      "court": "Réseau, ressources"
+    },
+    {
+      "id": "disquaire",
+      "libelle": "Disquaire, commerce culturel",
+      "court": "Disquaire"
+    }
   ],
   "publics": [
     "Jeunesse",

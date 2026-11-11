@@ -12,7 +12,7 @@ Tu m'aides à recenser des structures de Gironde pour une carte publique des act
 Produis un fichier CSV séparé par des points-virgules, avec exactement cette ligne d'en-tête :
 
 ```
-nom;etiquettes;specialite_musique;description;adresse;code_postal;commune;latitude;longitude;site;email;telephone;reseaux;public;siret;rna;source_web
+nom;etiquettes;domaine_musique;activites_musique;description;adresse;code_postal;commune;latitude;longitude;site;email;telephone;reseaux;public;siret;rna;source_web
 ```
 
 Règles à respecter strictement :
@@ -26,8 +26,15 @@ Règles à respecter strictement :
    `inclusion` (inclusion et médiation numérique), `fabrication` (fablabs, tiers-lieux, repair cafés),
    `emi` (éducation aux médias et à l'information), `pdn` (Promeneurs du Net), `educpop` (éducation populaire),
    `musique`, `institutionnel`.
-5. `specialite_musique`, seulement avec l'étiquette `musique` : `Musiques actuelles`, `École de musique`,
-   `Musiques de répertoire et de création` ou `Autre`.
+5. Seulement avec l'étiquette `musique` :
+   - `domaine_musique` (un seul) : `Musiques actuelles`, `Musiques classiques et de répertoire`,
+     `Musiques traditionnelles et du monde`, `Jazz et musiques improvisées` ou `Tous styles` ;
+   - `activites_musique` : un ou plusieurs de ces codes, séparés par `|` :
+     `diffusion` (salle de concert, lieu de diffusion), `festival`, `production` (producteur de spectacles, tourneur),
+     `label` (production phonographique), `edition` (édition musicale), `studio` (studio d'enregistrement),
+     `repetition` (lieu de répétition), `accompagnement` (accompagnement d'artistes), `enseignement` (école de musique),
+     `action-culturelle` (action culturelle, médiation), `media` (radio, média),
+     `ressource` (réseau, fédération, centre de ressources), `disquaire` (disquaire, commerce culturel).
 6. `public` : un ou plusieurs parmi `Jeunesse`, `Familles`, `Tout public`, `Seniors`, `Professionnels`,
    séparés par `|`.
 7. `description` : 1 à 3 phrases rédigées par toi (pas de copier-coller), 500 caractères maximum :

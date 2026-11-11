@@ -21,6 +21,9 @@
   const zoneFiltres = el('filtres');
   const toutAfficher = el('tout-afficher');
   const compteur = el('compteur');
+  const sousFiltres = el('filtres-musique');
+  const choixDomaine = el('choix-domaine');
+  const choixActivite = el('choix-activite');
 
   el('lien-ajout').href = urlFormulaire('ajout-acteur.yml');
   el('lien-depot').href = urlDepot;
@@ -57,6 +60,11 @@
   let acteurs = [];
   const choisies = new Set();
   let recherche = '';
+  let activites = [];          // référentiel des activités musicales
+  let domaine = '';            // filtre Musique : domaine (libellé)
+  let activite = '';           // filtre Musique : activité (identifiant)
+  const libelleActivite = (id) => activites.find((x) => x.id === id)?.libelle;
+  const idActivite = (libelle) => activites.find((x) => x.libelle === libelle)?.id;
   let actif = null;
 
   function lireUrl() {
@@ -64,11 +72,15 @@
     (p.get('etiquettes') || '').split(',').filter(Boolean).forEach((e) => choisies.add(e));
     recherche = p.get('q') || '';
     champ.value = recherche;
+    domaine = p.get('domaine') || '';
+    activite = p.get('activite') || '';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();
     if (choisies.size) p.set('etiquettes', [...choisies].join(','));
     if (recherche) p.set('q', recherche);
+    if (choisies.has('musique') && domaine) p.set('domaine', domaine);
+    if (choisies.has('musique') && activite) p.set('activite', activite);
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
   }
@@ -98,7 +110,7 @@
     ].filter(Boolean).join('');
     const lignes = [
       ['Adresse', `${echapper(p.adresse)}<br>${echapper(p.code_postal)} ${echapper(p.commune)}`],
-      p.specialite_musique && ['Spécialité', echapper(p.specialite_musique)],
+      p.domaine_musique && ['Domaine', echapper(p.domaine_musique)],
       p.reseaux?.length && ['Réseaux', echapper(p.reseaux.join(', '))],
       p.public?.length && ['Publics', echapper(p.public.join(', '))],
     ].filter(Boolean).map(([t, d]) => `<dt>${t}</dt><dd>${d}</dd>`).join('');
@@ -107,6 +119,7 @@
     return `<article class="fiche">
       <h2>${echapper(p.nom)}</h2>
       <div class="etiquettes">${tags}</div>
+      ${p.activites_musique?.length ? `<div class="activites">${p.activites_musique.map((l) => `<span>${echapper(activites.find((x) => x.libelle === l)?.court || l)}</span>`).join('')}</div>` : ''}
       ${p.description ? `<p>${echapper(p.description)}</p>` : ''}
       <dl>${lignes}</dl>
       ${contacts ? `<div class="contacts">${contacts}</div>` : ''}
@@ -115,11 +128,19 @@
     </article>`;
   }
 
+  const filtreMusiqueActif = () => choisies.has('musique') && (domaine || activite);
+  const correspondMusique = (p) => (!domaine || p.domaine_musique === domaine)
+    && (!activite || (p.activites_musique || []).includes(libelleActivite(activite)));
+
   function correspond(a) {
     const p = a.properties;
-    if (choisies.size && !(p.etiquettes || []).some((e) => choisies.has(e))) return false;
+    const tags = p.etiquettes || [];
+    if (choisies.size && !tags.some((e) => choisies.has(e))) return false;
+    // Le filtre Musique ne s'applique qu'aux acteurs retenus au titre de l'étiquette Musique.
+    if (filtreMusiqueActif() && !tags.some((e) => e !== 'musique' && choisies.has(e)) && !correspondMusique(p)) return false;
     if (!recherche) return true;
-    const texte = normaliser([p.nom, p.commune, p.code_postal, p.description, ...(p.reseaux || []), p.specialite_musique].join(' '));
+    const texte = normaliser([p.nom, p.commune, p.code_postal, p.description, ...(p.reseaux || []),
+      p.domaine_musique, ...(p.activites_musique || [])].join(' '));
     return normaliser(recherche).split(/\s+/).every((mot) => texte.includes(mot));
   }
 
@@ -144,7 +165,34 @@
     }
   }
 
+  /** Menus Domaine et Activité : visibles seulement avec l'étiquette Musique, valeurs présentes uniquement. */
+  function dessinerSousFiltres() {
+    const musique = acteurs.filter((a) => a.properties.etiquettes?.includes('musique'));
+    const domaines = new Map();
+    const acts = new Map();
+    for (const a of musique) {
+      const p = a.properties;
+      if (p.domaine_musique) domaines.set(p.domaine_musique, (domaines.get(p.domaine_musique) || 0) + 1);
+      for (const l of p.activites_musique || []) { const id = idActivite(l); if (id) acts.set(id, (acts.get(id) || 0) + 1); }
+    }
+    if (domaine && !domaines.has(domaine)) domaine = '';
+    if (activite && !acts.has(activite)) activite = '';
+    const option = (val, texte, nb, choisi) => `<option value="${echapper(val)}"${choisi ? ' selected' : ''}>${echapper(texte)}${nb ? ` (${nb})` : ''}</option>`;
+    choixDomaine.innerHTML = option('', 'Tous') + [...domaines]
+      .sort((x, y) => x[0].localeCompare(y[0], 'fr')).map(([d, n]) => option(d, d, n, d === domaine)).join('');
+    choixActivite.innerHTML = option('', 'Toutes') + activites
+      .filter((x) => acts.has(x.id)).map((x) => option(x.id, x.court, acts.get(x.id), x.id === activite)).join('');
+    choixDomaine.parentElement.hidden = domaines.size === 0;
+    choixActivite.parentElement.hidden = acts.size === 0;
+    sousFiltres.hidden = !choisies.has('musique') || (domaines.size === 0 && acts.size === 0);
+  }
+
+  choixDomaine.addEventListener('change', () => { domaine = choixDomaine.value; actualiser(); });
+  choixActivite.addEventListener('change', () => { activite = choixActivite.value; actualiser(); });
+
   function actualiser() {
+    if (!choisies.has('musique')) { domaine = ''; activite = ''; }
+    dessinerSousFiltres();
     const visibles = acteurs.filter(correspond);
     calque.clearLayers();
     liste.innerHTML = '';
@@ -175,7 +223,7 @@
       ? `${total} acteur${total > 1 ? 's' : ''}`
       : `${visibles.length} acteur${visibles.length > 1 ? 's' : ''} sur ${total}`;
     el('poignee-texte').textContent = `Liste des acteurs (${visibles.length})`;
-    toutAfficher.hidden = !choisies.size && !recherche;
+    toutAfficher.hidden = !choisies.size && !recherche && !domaine && !activite;
     ecrireUrl();
   }
 
@@ -209,6 +257,8 @@
   toutAfficher.addEventListener('click', () => {
     choisies.clear();
     recherche = '';
+    domaine = '';
+    activite = '';
     champ.value = '';
     dessinerFiltres();
     actualiser();
@@ -221,6 +271,7 @@
       fetch('data/acteurs.geojson', { cache: 'no-cache' }).then((r) => r.json()),
     ]);
     etiquettes = ref.etiquettes;
+    activites = ref.activites_musique || [];
     parId = new Map(etiquettes.map((e) => [e.id, e]));
     acteurs = (donnees.features || [])
       .filter((f) => f?.geometry?.type === 'Point')

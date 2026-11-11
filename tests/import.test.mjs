@@ -23,6 +23,13 @@ test('lecture CSV : point-virgule, guillemets, retours à la ligne, virgule dét
   assert.equal(lireCsv('nom,commune\nA,Blaye')[0].commune, 'Blaye');
 });
 
+test('ancienne colonne specialite_musique encore reconnue', async () => {
+  const csv = 'nom;etiquettes;specialite_musique;description;adresse;code_postal;commune\nÉcole;musique;École de musique;Cours.;1 rue;33000;Bordeaux';
+  const c = collectionVide();
+  await importer(lireCsv(csv), c, { geocoderFn: geocodageFactice });
+  assert.deepEqual(c.features[0].properties.activites_musique, ['Enseignement, école de musique']);
+});
+
 test('décodage : UTF-8 avec BOM et fichier Excel en Windows-1252', () => {
   assert.equal(decoder(new Uint8Array([0xef, 0xbb, 0xbf, 0x63, 0xc3, 0xa9])), 'cé');
   assert.equal(decoder(new Uint8Array([0x63, 0xe9])), 'cé');
@@ -32,18 +39,23 @@ test('le fichier d’exemple est refusé ligne par ligne (lignes « Exemple »)'
   const lignes = lireCsv(readFileSync(join(RACINE, 'docs', 'exemple-import.csv'), 'utf8'));
   const r = await importer(lignes, collectionVide(), { geocoderFn: geocodageFactice });
   assert.equal(r.ajoutes.length, 0);
-  assert.equal(r.refuses.length, 2);
+  assert.equal(r.refuses.length, 3);
+  // sans le préfixe « Exemple », chaque ligne est valide
+  const sansPrefixe = lignes.map((l) => ({ ...l, nom: l.nom.replace(/^Exemple — /, '') }));
+  const r2 = await importer(sansPrefixe, collectionVide(), { geocoderFn: geocodageFactice });
+  assert.equal(r2.ajoutes.length, 3, JSON.stringify(r2.refuses));
+  assert.equal(r2.avertis.length, 0, JSON.stringify(r2.avertis));
 });
 
 test('import : étiquettes souples, champs mal formés ignorés, doublons et erreurs signalés', async () => {
   const csv = [
     ENTETE,
-    'Fablab du Port;Fablabs & tiers-lieux|EMI;;Atelier ouvert.;12 rue des Bassins;33300;Bordeaux;;;fablab.example.org;pas-un-mail;;Hubikoop, Réseau fablabs;jeunesse|Inconnu;123;;https://source.example',
-    'École de musique;musique;école de musique;Cours.;1 place;33500;Libourne;44,92;-0,24;;;;;;;;',
-    'Fablab du Port;fabrication;;Doublon.;12 rue des Bassins;33300;Bordeaux;;;;;;;;;;',
-    'Sans étiquette;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
-    'Mauvaise étiquette;cinéma;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
-    'Introuvable;inclusion;;Desc.;1 rue;33000;Introuvable;;;;;;;;;;',
+    'Fablab du Port;Fablabs & tiers-lieux|EMI;;;Atelier ouvert.;12 rue des Bassins;33300;Bordeaux;;;fablab.example.org;pas-un-mail;;Hubikoop, Réseau fablabs;jeunesse|Inconnu;123;;https://source.example',
+    'École de musique;musique;classique;enseignement|Salle de concert, lieu de diffusion|Booking / tour|inconnue;Cours.;1 place;33500;Libourne;44,92;-0,24;;;;;;;;',
+    'Fablab du Port;fabrication;;;Doublon.;12 rue des Bassins;33300;Bordeaux;;;;;;;;;;',
+    'Sans étiquette;;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
+    'Mauvaise étiquette;cinéma;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
+    'Introuvable;inclusion;;;Desc.;1 rue;33000;Introuvable;;;;;;;;;;',
   ].join('\n');
   const collection = collectionVide();
   const r = await importer(lireCsv(csv), collection, { geocoderFn: geocodageFactice, aujourdhui: '2026-11-11', fichier: 'test.csv' });
@@ -58,7 +70,8 @@ test('import : étiquettes souples, champs mal formés ignorés, doublons et err
   assert.equal(fablab.siret, undefined);
   assert.equal(fablab.source, 'import test.csv');
   const musique = collection.features[1];
-  assert.equal(musique.properties.specialite_musique, 'École de musique');
+  assert.equal(musique.properties.domaine_musique, 'Musiques classiques et de répertoire');
+  assert.deepEqual(musique.properties.activites_musique, ['Enseignement, école de musique', 'Salle de concert, lieu de diffusion', 'Producteur de spectacles, tourneur']);
   assert.deepEqual(musique.geometry.coordinates, [-0.24, 44.92]);
   assert.deepEqual(validerCollection(collection), []);
 
@@ -71,5 +84,6 @@ test('import : étiquettes souples, champs mal formés ignorés, doublons et err
   const rapport = rapportImport(r, 'test.csv');
   assert.match(rapport, /2 acteur\(s\) ajouté\(s\)\*\*, 4 ligne\(s\) refusée\(s\)/);
   assert.match(rapport, /SIRET ignoré/);
+  assert.match(rapport, /activité musicale ignorée « inconnue »/);
   assert.match(rapport, /https:\/\/source\.example/);
 });
