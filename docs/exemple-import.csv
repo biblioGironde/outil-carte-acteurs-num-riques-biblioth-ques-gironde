@@ -1,0 +1,3 @@
+nom;etiquettes;specialite_musique;description;adresse;code_postal;commune;latitude;longitude;site;email;telephone;reseaux;public;siret;rna;source_web
+Exemple — Fablab associatif;fabrication|emi;;Atelier de fabrication numérique ouvert à tous : impression 3D, découpe laser, ateliers pour les collégiens.;12 rue des Exemples;33000;Bordeaux;;;https://exemple.org;contact@exemple.org;05 56 00 00 00;Réseau des fablabs;Jeunesse|Tout public;12345678900012;W332000000;https://exemple.org/qui-sommes-nous
+Exemple — École de musique;musique;École de musique;École de musique associative : éveil musical, instruments, pratique collective.;1 place des Exemples;33500;Libourne;44.9153;-0.2427;;;;;Jeunesse|Familles;;;https://exemple.org/annuaire

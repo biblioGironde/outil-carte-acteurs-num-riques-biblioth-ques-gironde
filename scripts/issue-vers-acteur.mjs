@@ -51,7 +51,7 @@ export class ErreurFormulaire extends Error {
 const libelleVersEtiquette = new Map(ETIQUETTES.map((e) => [e.libelle, e.id]));
 
 /** Convertit les valeurs saisies en propriétés GeoJSON. */
-function versProprietes(saisie) {
+export function versProprietes(saisie) {
   const p = {};
   for (const [cle, valeur] of Object.entries(saisie)) {
     if (['coordonnees', 'confirmation', 'identifiant', 'action', 'motif'].includes(cle)) continue;
@@ -87,7 +87,7 @@ function fusionner(cible, nouvelles) {
 /** Ordre stable des propriétés dans le fichier, pour des différences lisibles. */
 const ORDRE = ['id', ...CHAMPS.map((c) => c.cle).filter((c) => c !== 'coordonnees'),
   'date_ajout', 'date_modification', 'derniere_verification', 'statut_verification', 'source'];
-function ordonner(p) {
+export function ordonner(p) {
   const r = {};
   for (const cle of ORDRE) if (p[cle] !== undefined) r[cle] = p[cle];
   for (const cle of Object.keys(p)) if (!(cle in r)) r[cle] = p[cle];

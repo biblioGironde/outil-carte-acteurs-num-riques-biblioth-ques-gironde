@@ -1,0 +1,73 @@
+name: Import CSV → proposition de modification
+
+# Un fichier .csv déposé dans import/ est lu, chaque ligne contrôlée et géolocalisée,
+# puis une pull request est ouverte avec les acteurs ajoutés et le rapport d'import.
+
+on:
+  push:
+    branches-ignore:
+      - 'import/**'
+      - 'formulaire/**'
+    paths:
+      - 'import/*.csv'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: import-csv
+  cancel-in-progress: false
+
+jobs:
+  importer:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fichiers à importer
+        id: fichiers
+        run: |
+          shopt -s nullglob
+          fichiers=(import/*.csv)
+          if [ ${#fichiers[@]} -eq 0 ]; then echo "Aucun fichier à importer."; echo "nb=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo "nb=${#fichiers[@]}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@v4
+        if: steps.fichiers.outputs.nb != '0'
+        with:
+          node-version: 22
+
+      - name: Importer
+        if: steps.fichiers.outputs.nb != '0'
+        run: |
+          : > rapport-import.md
+          for f in import/*.csv; do
+            node scripts/importer-csv.mjs "$f" --rapport rapport-import.md
+            echo "" >> rapport-import.md
+            git rm -q "$f"
+          done
+          node scripts/valider.mjs
+
+      - name: Ouvrir la pull request
+        if: steps.fichiers.outputs.nb != '0'
+        env:
+          AUTEUR: ${{ github.actor }}
+        run: |
+          branche="import/${GITHUB_RUN_ID}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branche"
+          git add data/acteurs.geojson
+          git commit -m "Import CSV déposé par $AUTEUR"
+          git push origin "$branche"
+          {
+            echo "Fichier déposé par @$AUTEUR."
+            echo
+            cat rapport-import.md
+          } > corps.md
+          gh pr create --repo "$GITHUB_REPOSITORY" --head "$branche" \
+            --base "${{ github.event.repository.default_branch }}" \
+            --title "Import CSV déposé par $AUTEUR" --body-file corps.md

@@ -48,6 +48,25 @@ Si l'adresse n'est pas reconnue, indiquer les coordonnées GPS (« latitude, lon
 **Données personnelles** : ne saisir que des informations publiques sur la structure.
 Courriel générique uniquement (contact@…), jamais de nom de personne.
 
+## Import en lot (fichier CSV)
+
+Pour la première alimentation, plusieurs acteurs peuvent être ajoutés d'un coup :
+
+1. Remplir un fichier sur le modèle [`docs/modele-import.csv`](docs/modele-import.csv)
+   (exemple commenté : [`docs/exemple-import.csv`](docs/exemple-import.csv)).
+   Pour le faire préparer par Copilot ou Claude, utiliser la consigne [`docs/consigne-ia.md`](docs/consigne-ia.md).
+2. Le déposer dans le dossier [`import/`](import/) : *Add file → Upload files*.
+3. Le workflow « Import CSV » contrôle chaque ligne, géolocalise les adresses, retire le fichier du dossier
+   et ouvre une pull request avec le rapport (acteurs ajoutés, champs ignorés, lignes refusées et pourquoi).
+
+Colonnes `etiquettes` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
+(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `institutionnel`) ou le libellé.
+Séparateur `;` ou `,`, encodage UTF-8 ou celui d'Excel : les deux sont reconnus.
+Un SIRET, un RNA, un courriel ou un site mal formé est ignoré sans bloquer la ligne.
+
+Les informations trouvées par une IA doivent être relues avant fusion : la colonne `source_web`, reprise dans
+le rapport, indique où les vérifier.
+
 ## Vérification annuelle
 
 Le workflow `verification-annuelle.yml` vérifie chaque acteur en **janvier** (modifiable : `MOIS_VERIFICATION`) :
