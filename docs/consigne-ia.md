@@ -25,7 +25,7 @@ Règles à respecter strictement :
 4. `etiquettes` : un ou plusieurs de ces codes, séparés par `|` :
    `inclusion` (inclusion et médiation numérique), `fabrication` (fablabs, tiers-lieux, repair cafés),
    `emi` (éducation aux médias et à l'information), `pdn` (Promeneurs du Net), `educpop` (éducation populaire),
-   `musique`, `institutionnel`.
+   `musique`, `microfolie` (Micro-Folie, musée numérique du réseau de La Villette), `institutionnel`.
 5. Seulement avec l'étiquette `musique` :
    - `domaine_musique` (un seul) : `Musiques actuelles`, `Musiques classiques et de répertoire`,
      `Musiques traditionnelles et du monde`, `Jazz et musiques improvisées` ou `Tous styles` ;

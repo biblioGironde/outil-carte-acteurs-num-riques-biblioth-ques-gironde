@@ -82,7 +82,7 @@ const indexEtiquettes = new Map();
 for (const e of ETIQUETTES) for (const k of [e.id, e.libelle, e.court]) indexEtiquettes.set(norm(k), e.libelle);
 // formulations courantes
 for (const [k, id] of [['emi', 'emi'], ['education aux medias', 'emi'], ['fablab', 'fabrication'], ['tiers-lieu', 'fabrication'],
-  ['tiers-lieux', 'fabrication'], ['mediation numerique', 'inclusion'], ['promeneur du net', 'pdn'], ['education populaire', 'educpop']]) {
+  ['tiers-lieux', 'fabrication'], ['mediation numerique', 'inclusion'], ['micro-folie', 'microfolie'], ['micro-folies', 'microfolie'], ['micro folie', 'microfolie'], ['promeneur du net', 'pdn'], ['education populaire', 'educpop']]) {
   indexEtiquettes.set(k, ETIQUETTES.find((e) => e.id === id).libelle);
 }
 const indexPublics = new Map(REFERENTIEL.publics.map((p) => [norm(p), p]));

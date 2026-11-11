@@ -24,6 +24,7 @@ body:
         - label: "Promeneurs du Net"
         - label: "Éducation populaire"
         - label: "Musique"
+        - label: "Micro-Folie (musée numérique)"
         - label: "Institutionnel"
   - type: dropdown
     id: domaine_musique

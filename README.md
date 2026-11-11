@@ -2,7 +2,7 @@
 
 Carte interactive des structures associatives et institutionnelles de Gironde :
 inclusion et médiation numérique, fablabs et tiers-lieux, éducation aux médias,
-Promeneurs du Net, éducation populaire, musique, institutions.
+Promeneurs du Net, éducation populaire, musique, Micro-Folies, institutions.
 
 - **Carte** : page statique (GitHub Pages + Leaflet + OpenStreetMap), aucune base de données ni serveur.
 - **Données** : un seul fichier, `data/acteurs.geojson`, versionné dans ce dépôt.
@@ -84,7 +84,7 @@ Pour la première alimentation, plusieurs acteurs peuvent être ajoutés d'un co
    acteurs ajoutés, champs ignorés, lignes refusées et pourquoi.
 
 Colonnes `etiquettes`, `activites_musique` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
-(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `institutionnel`) ou le libellé ;
+(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `microfolie`, `institutionnel`) ou le libellé ;
 les activités musicales aussi (`label`, `diffusion`, `studio`… voir `docs/consigne-ia.md`), ainsi que le vocabulaire
 de l'annuaire du RIM (« Booking / tour », « Cafés-culture »…).
 Séparateur `;` ou `,`, encodage UTF-8 ou celui d'Excel : les deux sont reconnus.

@@ -37,6 +37,12 @@
       "couleur": "#db2777"
     },
     {
+      "id": "microfolie",
+      "libelle": "Micro-Folie (musée numérique)",
+      "court": "Micro-Folies",
+      "couleur": "#b45309"
+    },
+    {
       "id": "institutionnel",
       "libelle": "Institutionnel",
       "court": "Institutionnel",
