@@ -73,6 +73,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.939696,
+          45.306697
+        ]
+      },
+      "properties": {
+        "id": "aqui-fm-lesparre-medoc",
+        "nom": "Aqui FM",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du Médoc, émettant en FM sur 98.0 MHz depuis Lesparre-Médoc : information locale, musique et vie du territoire.",
+        "adresse": "1 rue Brémontier",
+        "code_postal": "33340",
+        "commune": "Lesparre-Médoc",
+        "site": "https://www.aquifm.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40123714400035",
+        "rna": "W332004426",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.552383,
           44.813085
         ]
@@ -1435,6 +1464,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.237877,
+          44.918801
+        ]
+      },
+      "properties": {
+        "id": "melodie-fm-libourne",
+        "nom": "Mélodie FM",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du Libournais, émettant en FM sur 89.3 MHz à Libourne et 89.1 MHz à Castillon-la-Bataille.",
+        "adresse": "42 rue Jules Steeg",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "38932025000019",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.650025,
           44.839505
         ]
@@ -1979,6 +2035,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.514269,
+          44.856679
+        ]
+      },
+      "properties": {
+        "id": "o2-radio-cenon",
+        "nom": "O2 Radio",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative des Hauts de Garonne (rive droite de la métropole), émettant en FM sur 91.3 MHz. Elle mène des projets radio avec les habitants, dont des ateliers pour les jeunes à partir de 10 ans.",
+        "adresse": "Rue du Loret",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "41150905200030",
+        "rna": "W332001041",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.563173,
           44.832046
         ]
@@ -2077,6 +2161,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.076747,
+          44.764491
+        ]
+      },
+      "properties": {
+        "id": "plage-fm-andernos-les-bains",
+        "nom": "Plage FM",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du bassin d'Arcachon, émettant en FM sur 89.1 MHz depuis Andernos-les-Bains : information locale, agenda et musique.",
+        "adresse": "11 rue Joseph Cugnot",
+        "code_postal": "33510",
+        "commune": "Andernos-les-Bains",
+        "site": "https://www.plagefm.fr",
+        "telephone": "05 57 70 43 16",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "41198184800038",
+        "rna": "W332014324",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.571366,
           44.877884
         ]
@@ -2137,6 +2251,122 @@
         "rna": "W332005057",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.619112,
+          44.794594
+        ]
+      },
+      "properties": {
+        "id": "radio-campus-bordeaux-pessac",
+        "nom": "Radio Campus Bordeaux",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative et étudiante du campus de Pessac-Talence, émettant en FM sur 88.1 MHz. Elle forme bénévoles et étudiants à la pratique radiophonique.",
+        "adresse": "Esplanade des Antilles",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://www.radiocampusbordeaux.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "38848405700020",
+        "rna": "W332001111",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.06859,
+          44.636984
+        ]
+      },
+      "properties": {
+        "id": "radio-dunes-gujan-mestras",
+        "nom": "Radio Dunes",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du bassin d'Arcachon, émettant en FM sur 104.4 MHz.",
+        "adresse": "15 cours de la République",
+        "code_postal": "33470",
+        "commune": "Gujan-Mestras",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78914593500027",
+        "rna": "W336001999",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.581114,
+          44.825702
+        ]
+      },
+      "properties": {
+        "id": "rcf-bordeaux-bordeaux",
+        "nom": "RCF Bordeaux",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio chrétienne locale du réseau RCF, émettant en FM à Bordeaux : information, culture, spiritualité et vie locale.",
+        "adresse": "135 rue de Saint-Genès",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.rcf.fr/bordeaux",
+        "reseaux": [
+          "RCF"
+        ],
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40107961100026",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.086161,
+          44.692246
+        ]
+      },
+      "properties": {
+        "id": "rem-radio-entre-deux-mers-sauveterre-de-guyenne",
+        "nom": "REM — Radio Entre-deux-Mers",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative de l'Entre-deux-Mers, émettant en FM sur 98.4 MHz depuis Sauveterre-de-Guyenne. Elle est portée par une association d'intérêts économiques et touristiques du territoire.",
+        "adresse": "4 rue Saint-Romain",
+        "code_postal": "33540",
+        "commune": "Sauveterre-de-Guyenne",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "37851365900029",
+        "rna": "W333000118",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
       }
     },
     {
