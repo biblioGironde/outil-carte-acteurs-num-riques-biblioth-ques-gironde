@@ -6,6 +6,95 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.550583,
+          44.814299
+        ]
+      },
+      "properties": {
+        "id": "a-de-l-e-developpement-local-et-emploi-begles",
+        "nom": "A.DE.L.E — Développement local et emploi",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association béglaise d'accompagnement vers l'emploi durable, avec un appui aux démarches et outils numériques de la recherche d'emploi.",
+        "adresse": "23 avenue Robert Schuman",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "telephone": "05 56 49 62 75",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "43383539400027",
+        "rna": "W332005496",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.554697,
+          44.813638
+        ]
+      },
+      "properties": {
+        "id": "abul-association-bordelaise-des-utilisateurs-de-logiciels-li",
+        "nom": "ABUL — Association bordelaise des utilisateurs de logiciels libres",
+        "etiquettes": [
+          "numresp",
+          "educpop"
+        ],
+        "description": "Association fondée à Bordeaux, à l'origine des Rencontres mondiales du logiciel libre : ateliers de découverte et d'installation de logiciels libres, conférences et accompagnement des particuliers, associations et collectivités.",
+        "adresse": "406 boulevard Jean-Jacques Bosc",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "site": "https://www.abul.org",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "43174683300034",
+        "rna": "W332008938",
+        "date_ajout": "2026-11-23",
+        "source": "import numerique-responsable-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.754405,
+          45.197763
+        ]
+      },
+      "properties": {
+        "id": "adar-developpement-agricole-et-rural-du-medoc-pauillac",
+        "nom": "ADAR — Développement agricole et rural du Médoc",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association de développement agricole et rural du Médoc qui propose une aide aux démarches administratives et un accompagnement aux usages numériques.",
+        "adresse": "19 Rue du Maréchal Juin",
+        "code_postal": "33250",
+        "commune": "Pauillac",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "37988468700011",
+        "rna": "W334002155",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.554381,
           44.854465
         ]
@@ -73,6 +162,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.596387,
+          44.844272
+        ]
+      },
+      "properties": {
+        "id": "afept-bordeaux",
+        "nom": "AFEPT",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association d'éducation permanente du quartier Tivoli : formations linguistiques et d'insertion, aide aux démarches administratives et apprentissage des outils numériques du quotidien.",
+        "adresse": "40 Rue de Marseille",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://afept.fr/presentation",
+        "email": "contact@afept.fr",
+        "telephone": "05 56 02 25 26",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "30016423300052",
+        "rna": "W332005003",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.585576,
           44.839794
         ]
@@ -105,6 +226,225 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.654304,
+          44.845655
+        ]
+      },
+      "properties": {
+        "id": "agirabcd-gironde-merignac",
+        "nom": "AGIRabcd Gironde",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association de retraités bénévoles qui mettent leurs compétences au service du public, notamment pour l'aide aux démarches et l'initiation au numérique.",
+        "adresse": "55 avenue du Maréchal de Lattre de Tassigny",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "email": "agirmerignac@gmail.com",
+        "telephone": "05 57 00 15 10",
+        "public": [
+          "Tout public",
+          "Seniors"
+        ],
+        "siret": "33145778800064",
+        "rna": "W751065814",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.203277,
+          44.995176
+        ]
+      },
+      "properties": {
+        "id": "alcide-portraits-de-familles-saint-denis-de-pile",
+        "nom": "ALCIDE — Portraits de familles",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre socioculturel qui propose de nombreuses activités et services aux familles, dont un accompagnement aux démarches et aux usages numériques.",
+        "adresse": "1 route de Guîtres",
+        "code_postal": "33910",
+        "commune": "Saint-Denis-de-Pile",
+        "email": "portraitsdefamilles@orange.fr",
+        "telephone": "05 57 51 92 75",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49149621200045",
+        "rna": "W335001146",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.675229,
+          44.798367
+        ]
+      },
+      "properties": {
+        "id": "alouette-animation-pessac",
+        "nom": "Alouette Animation",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Espace social d'animation collective et d'accompagnement des habitants, avec des ateliers numériques.",
+        "adresse": "45 boulevard du Haut-Livrac",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "email": "animateur4alouette@gmail.com",
+        "telephone": "05 57 26 46 46",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49010892500010",
+        "rna": "W332004119",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.573556,
+          44.854799
+        ]
+      },
+      "properties": {
+        "id": "ami-accompagnement-psychologique-et-mediation-interculturell",
+        "nom": "AMI — Accompagnement psychologique et médiation interculturelle",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association d'accompagnement psychologique et de médiation interculturelle pour les personnes migrantes et aux minima sociaux. Elle sensibilise au numérique et informe les parents sur les risques des usages numériques.",
+        "adresse": "104 cours de la Martinique",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "ami.bordeaux@gmail.com",
+        "telephone": "05 56 86 91 70",
+        "public": [
+          "Familles",
+          "Tout public"
+        ],
+        "siret": "40232080800049",
+        "rna": "W332010291",
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.546201,
+          44.8741
+        ]
+      },
+      "properties": {
+        "id": "amicale-laique-de-bacalan-bordeaux",
+        "nom": "Amicale laïque de Bacalan",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association d'éducation populaire ouverte à tous : activités, événements et accompagnement aux usages numériques.",
+        "adresse": "2 rue Duquesne",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "email": "amicalebacalan@free.fr",
+        "telephone": "05 56 50 85 60",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78183781000022",
+        "rna": "W332005648",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.621336,
+          44.836121
+        ]
+      },
+      "properties": {
+        "id": "amicale-laique-la-glaciere-merignac",
+        "nom": "Amicale laïque La Glacière",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Maison de quartier affiliée à la Ligue de l'enseignement : activités de loisirs, aide aux démarches en ligne et accompagnement aux usages numériques.",
+        "adresse": "5 Rue Georges Mandel",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.algmerignac.fr/",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "42276656800022",
+        "rna": "W332012352",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.56653,
+          44.822282
+        ]
+      },
+      "properties": {
+        "id": "apidv-nouvelle-aquitaine-bordeaux",
+        "nom": "apiDV Nouvelle-Aquitaine",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association d'accompagnement des personnes déficientes visuelles, ancien GIAA : aides techniques, formation et usages numériques adaptés.",
+        "adresse": "14 rue de la Réole",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "site": "http://www.giaa-aquitaine.fr/",
+        "email": "contact.aquitaine@apidv.org",
+        "telephone": "05 56 31 48 48",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78431322300058",
+        "rna": "W751010969",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.939696,
           45.306697
         ]
@@ -127,6 +467,36 @@
         "rna": "W332004426",
         "date_ajout": "2026-11-23",
         "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.573012,
+          44.850664
+        ]
+      },
+      "properties": {
+        "id": "aquilenet-bordeaux",
+        "nom": "Aquilenet",
+        "etiquettes": [
+          "numresp"
+        ],
+        "description": "Fournisseur d'accès à Internet associatif en Aquitaine : accès ADSL, fibre et VPN, hébergement et défense de la neutralité du net. Ses locaux accueillent des ateliers autour des logiciels libres.",
+        "adresse": "20 rue Tourat",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.aquilenet.fr",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "52777776700023",
+        "rna": "W332010849",
+        "date_ajout": "2026-11-23",
+        "source": "import numerique-responsable-gironde.csv"
       }
     },
     {
@@ -169,6 +539,134 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.5868,
+          44.76763
+        ]
+      },
+      "properties": {
+        "id": "area-association-de-recherche-pour-l-expression-artistique-v",
+        "nom": "AREA — Association de recherche pour l'expression artistique",
+        "etiquettes": [
+          "educpop",
+          "pdn"
+        ],
+        "description": "Association de Villenave-d'Ornon : ateliers artistiques et corporels, soutien à la parentalité et espace numérique Media Station. Une Promeneuse du Net Parentalité y répond en ligne aux questions des parents.",
+        "adresse": "rue du Professeur Chavannaz",
+        "code_postal": "33140",
+        "commune": "Villenave-d'Ornon",
+        "site": "http://association-area.fr",
+        "email": "association.area@gmail.com",
+        "telephone": "05 56 75 80 89",
+        "reseaux": [
+          "Promeneurs du Net Parentalité Gironde"
+        ],
+        "public": [
+          "Familles",
+          "Tout public"
+        ],
+        "siret": "78203925900042",
+        "rna": "W332034126",
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5792,
+          44.8378
+        ]
+      },
+      "properties": {
+        "id": "arkan-project-bordeaux",
+        "nom": "Arkan Project",
+        "etiquettes": [
+          "jeuvideo",
+          "inclusion"
+        ],
+        "description": "Association bordelaise qui organise tournois, rencontres et diffusions de matchs de jeu vidéo pour créer du lien et rompre l'isolement des jeunes, notamment étudiants, connaisseurs comme novices.",
+        "adresse": "Pas de local ouvert au public",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://linktr.ee/arkanproject",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "92442608300029",
+        "rna": "W332034140",
+        "date_ajout": "2026-11-23",
+        "source": "import jeu-video-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.044759,
+          44.852501
+        ]
+      },
+      "properties": {
+        "id": "arrpej-les-cygnes-de-vie-castillon-la-bataille",
+        "nom": "ARRPEJ — Les Cygnes de vie",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Point d'accueil et d'écoute pour les jeunes : information santé et droits, orientation et accompagnement, y compris sur internet.",
+        "adresse": "22 rue Émile Combes",
+        "code_postal": "33350",
+        "commune": "Castillon-la-Bataille",
+        "site": "http://www.cygnesdevie.fr/Les_cygnes_de_vie/ARRPEJ.html",
+        "email": "arrpej@wanadoo.fr",
+        "telephone": "05 57 40 15 65",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "39534995400028",
+        "rna": "W335000788",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.622884,
+          44.822711
+        ]
+      },
+      "properties": {
+        "id": "arts-et-loisirs-d-arlac-merignac",
+        "nom": "Arts et loisirs d'Arlac",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre socioculturel du quartier d'Arlac : animation, accompagnement des familles, aide aux démarches et ateliers numériques.",
+        "adresse": "20 avenue de la Chapelle Sainte-Bernadette",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://artsetloisirsarlac.centres-sociaux.fr/contact/",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "30604031200028",
+        "rna": "W332006146",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.259541,
           44.585128
         ]
@@ -197,6 +695,36 @@
         "rna": "W343022820",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.591606,
+          44.792529
+        ]
+      },
+      "properties": {
+        "id": "association-familiale-de-talence-talence",
+        "nom": "Association familiale de Talence",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui regroupe et informe les familles talençaises, et les accompagne notamment dans leurs démarches en ligne.",
+        "adresse": "211 avenue de Thouars",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "email": "assofamilialetalence@free.fr",
+        "telephone": "05 56 37 69 90",
+        "public": [
+          "Familles"
+        ],
+        "siret": "34154577000032",
+        "rna": "W332009681",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -273,6 +801,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.62738,
+          44.790546
+        ]
+      },
+      "properties": {
+        "id": "asti-pessac-pessac",
+        "nom": "ASTI Pessac",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association de solidarité avec les personnes immigrées : accompagnement social, apprentissage du français et aide aux démarches en ligne.",
+        "adresse": "63 allée des Tulipes",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "email": "asti-pessac@wanadoo.fr",
+        "telephone": "05 56 15 30 26",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40013530700033",
+        "rna": "W332001625",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.551713,
+          44.824849
+        ]
+      },
+      "properties": {
+        "id": "astrolab-bordeaux",
+        "nom": "Astrolab'",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Espace de vie sociale et d'éducation populaire du quartier Belcier : activités collectives, accompagnement et aide aux usages numériques.",
+        "adresse": "47 rue de Son Tay",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "telephone": "06 08 17 88 47",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40877248100052",
+        "rna": "W332005346",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.006304,
           44.644417
         ]
@@ -301,6 +889,38 @@
         "rna": "W333007196",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.576666,
+          44.857413
+        ]
+      },
+      "properties": {
+        "id": "atelier-graphite-bordeaux",
+        "nom": "Atelier Graphite",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association d'écrivains publics, de juristes et de médiateurs numériques qui accompagne les personnes orientées par ses partenaires dans leurs démarches, et forme les professionnels à la solidarité numérique.",
+        "adresse": "190 rue Mandron",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "http://www.atelier-graphite.fr",
+        "email": "contact@atelier-graphite.fr",
+        "telephone": "05 56 69 82 32",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "49428909300036",
+        "rna": "W332002729",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
       }
     },
     {
@@ -568,6 +1188,262 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.586152,
+          44.832768
+        ]
+      },
+      "properties": {
+        "id": "capri-centre-d-action-et-de-prevention-contre-la-radicalisat",
+        "nom": "CAPRI — Centre d'action et de prévention contre la radicalisation des individus",
+        "etiquettes": [
+          "pdn"
+        ],
+        "description": "Association bordelaise de prévention des radicalisations et des emprises, qui accompagne les jeunes et leurs familles. Une Promeneuse du Net Parentalité y répond en ligne aux questions des parents.",
+        "adresse": "36 rue Jean-Renaud Dandicolle",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "Promeneurs du Net Parentalité Gironde"
+        ],
+        "public": [
+          "Familles",
+          "Professionnels"
+        ],
+        "siret": "81365305200031",
+        "rna": "W332018673",
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.543182,
+          44.879589
+        ]
+      },
+      "properties": {
+        "id": "centre-d-animation-bacalan-bordeaux",
+        "nom": "Centre d'animation Bacalan",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre de l'association Centres d'animation de Bordeaux : activités de loisirs, accompagnement des habitants et accès accompagné au numérique.",
+        "adresse": "139 rue Joseph Brunet",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "email": "bacalan@cabordeaux.fr",
+        "telephone": "05 56 50 82 18",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Jeunesse"
+        ],
+        "rna": "W332012387",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.520125,
+          44.875642
+        ]
+      },
+      "properties": {
+        "id": "centre-d-animation-du-bois-fleuri-cgcvl-lormont",
+        "nom": "Centre d'animation du Bois Fleuri (CGCVL)",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre d'animation de proximité à vocation sociale, familiale et culturelle, qui accompagne aussi les habitants aux usages numériques.",
+        "adresse": "5, rue des Arts",
+        "code_postal": "33310",
+        "commune": "Lormont",
+        "email": "bois.fleuri.cgcvl@gmail.com",
+        "telephone": "05 47 33 05 69",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "32825387700018",
+        "rna": "W332008978",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.629371,
+          44.854159
+        ]
+      },
+      "properties": {
+        "id": "centre-d-animation-monsejour-bordeaux",
+        "nom": "Centre d'animation Monséjour",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre de l'association Centres d'animation de Bordeaux : activités de loisirs, accompagnement des habitants et accès accompagné au numérique.",
+        "adresse": "rue François Coppée",
+        "code_postal": "33200",
+        "commune": "Bordeaux",
+        "email": "monsejour@cabordeaux.fr",
+        "telephone": "05 56 97 58 10",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Jeunesse"
+        ],
+        "siret": "78184929400108",
+        "rna": "W332012387",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.572861,
+          44.839587
+        ]
+      },
+      "properties": {
+        "id": "centre-d-animation-saint-pierre-bordeaux",
+        "nom": "Centre d'animation Saint-Pierre",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre de l'association Centres d'animation de Bordeaux : activités de loisirs, accompagnement des habitants et accès accompagné au numérique.",
+        "adresse": "4 rue du Mulet",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "saintpierre@cabordeaux.fr",
+        "telephone": "05 56 48 16 39",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Jeunesse"
+        ],
+        "rna": "W332012387",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.680834,
+          44.844369
+        ]
+      },
+      "properties": {
+        "id": "centre-social-et-culturel-de-beaudesert-merignac",
+        "nom": "Centre social et culturel de Beaudésert",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social de quartier : animation, accompagnement des familles, aide aux démarches administratives et ateliers d'initiation au numérique.",
+        "adresse": "81 Avenue des Marronniers",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "telephone": "05 56 34 10 63",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49011199400029",
+        "rna": "W332012885",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7019,
+          44.818605
+        ]
+      },
+      "properties": {
+        "id": "centre-social-et-d-animation-de-beutre-merignac",
+        "nom": "Centre social et d'animation de Beutre",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social de quartier : animation, accompagnement des familles, aide aux démarches administratives et ateliers d'initiation au numérique.",
+        "adresse": "210 avenue de l'Argonne",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "telephone": "05 56 34 02 68",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49009906600014",
+        "rna": "W332006636",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.647979,
+          44.796468
+        ]
+      },
+      "properties": {
+        "id": "centre-social-et-d-animation-de-la-chataigneraie-pessac",
+        "nom": "Centre social et d'animation de la Châtaigneraie",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social de quartier : animation, accompagnement des familles et accès accompagné au numérique.",
+        "adresse": "44 avenue de la Châtaigneraie",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "http://centre-social-la-chataigneraie.portailasso.pessac.fr/1950-presentation.html",
+        "email": "cschataigneraie@wanadoo.fr",
+        "telephone": "05 57 02 23 23",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49011083000018",
+        "rna": "W332015643",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.569619,
           44.834069
         ]
@@ -596,6 +1472,38 @@
         "rna": "W332029993",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.547122,
+          44.871254
+        ]
+      },
+      "properties": {
+        "id": "clap-sud-ouest-bordeaux",
+        "nom": "CLAP Sud-Ouest",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Comité de liaison des acteurs de la promotion : évaluation linguistique, orientation, centre d'examens et soutien informatique lié à l'emploi.",
+        "adresse": "176 rue Achard",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://www.clap-so.org",
+        "email": "dplai@clap-so.org",
+        "telephone": "05 56 43 00 99",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "40228354300153",
+        "rna": "W332002350",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -665,6 +1573,70 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.084056,
+          44.745407
+        ]
+      },
+      "properties": {
+        "id": "club-informatique-andernos-nord-bassin-andernos-les-bains",
+        "nom": "Club informatique Andernos Nord Bassin",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui facilite l'accès et l'usage de l'informatique et des outils de communication au plus grand nombre, par des ateliers animés par des bénévoles.",
+        "adresse": "52 avenue des Colonies",
+        "code_postal": "33510",
+        "commune": "Andernos-les-Bains",
+        "site": "http://www.andernos-clubinfo.com",
+        "email": "andernos.clubinformatique@gmail.com",
+        "telephone": "05 56 82 02 93",
+        "public": [
+          "Tout public",
+          "Seniors"
+        ],
+        "siret": "41031285400038",
+        "rna": "W336000499",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.252594,
+          44.554344
+        ]
+      },
+      "properties": {
+        "id": "club-informatique-du-langonnais-langon",
+        "nom": "Club informatique du Langonnais",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui forme tout public à l'informatique et aux outils numériques, avec des animateurs présents du lundi au jeudi, sur rendez-vous.",
+        "adresse": "20 bis rue Abel Gourgues",
+        "code_postal": "33210",
+        "commune": "Langon",
+        "site": "https://cil-langon.net",
+        "email": "cil.langon@gmail.com",
+        "telephone": "05 56 76 17 57",
+        "public": [
+          "Tout public",
+          "Seniors"
+        ],
+        "siret": "37924716600034",
+        "rna": "W333000641",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.216215,
           44.841271
         ]
@@ -690,6 +1662,69 @@
         "date_ajout": "2026-11-23",
         "source": "import fablabs-gironde.csv",
         "date_modification": "2026-11-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.725728,
+          44.864356
+        ]
+      },
+      "properties": {
+        "id": "confluences-saint-medard-en-jalles",
+        "nom": "ConfluenceS",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association qui regroupe un centre social et deux espaces de vie sociale à Saint-Médard-en-Jalles, avec un accompagnement aux usages numériques.",
+        "adresse": "11, rue du Commandant Charcot",
+        "code_postal": "33160",
+        "commune": "Saint-Médard-en-Jalles",
+        "email": "maj@asso-confluences.fr",
+        "telephone": "05 56 05 82 19",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49861760400018",
+        "rna": "W332002808",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.546036,
+          44.87423
+        ]
+      },
+      "properties": {
+        "id": "controle-z-nouvelle-aquitaine-bordeaux",
+        "nom": "Contrôle-Z Nouvelle-Aquitaine",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Antenne régionale de l'association Contrôle-Z : formations et projets autour du numérique, de la citoyenneté et de la création.",
+        "adresse": "7 rue Joseph Brunet",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "http://www.controle-z.net",
+        "email": "aquitaine@controle-z.net",
+        "public": [
+          "Tout public",
+          "Jeunesse"
+        ],
+        "siret": "83822433500011",
+        "rna": "W332023014",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
       }
     },
     {
@@ -767,6 +1802,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.514335,
+          44.871484
+        ]
+      },
+      "properties": {
+        "id": "defi-defense-des-exclus-par-la-formation-et-l-information-lo",
+        "nom": "DEFI — Défense des exclus par la formation et l'information",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association de proximité du quartier Génicart : médiation sociale, apprentissage du français, ateliers et permanences d'autonomie numérique, accès à la citoyenneté.",
+        "adresse": "18 rue Henri Dunant",
+        "code_postal": "33310",
+        "commune": "Lormont",
+        "site": "https://www.defi-asso.fr",
+        "email": "medianum@defi-asso.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "41214436200040",
+        "rna": "W332008388",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.562551,
           44.831516
         ]
@@ -790,6 +1855,101 @@
         "rna": "W332012225",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.769231,
+          44.605319
+        ]
+      },
+      "properties": {
+        "id": "destination-multimedia-le-barp",
+        "nom": "Destination Multimédia",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui agit contre les inégalités d'accès à l'informatique, en savoir-faire comme en matériel, dans le Val de l'Eyre.",
+        "adresse": "19 rue de Castor",
+        "code_postal": "33114",
+        "commune": "Le Barp",
+        "site": "https://www.destinationmultimedia.com",
+        "email": "info@destinationmultimedia.com",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "52419833000036",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.525438,
+          44.882747
+        ]
+      },
+      "properties": {
+        "id": "didee-centre-social-de-carriet-lormont",
+        "nom": "DIDEE — centre social de Carriet",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "L'un des deux centres sociaux de Lormont gérés par DIDEE : animation globale, ateliers et accompagnement aux usages numériques.",
+        "adresse": "4 rue Jacques Thibaud",
+        "code_postal": "33310",
+        "commune": "Lormont",
+        "site": "https://www.asso-didee.org",
+        "email": "didee@asso-didee.org",
+        "telephone": "05 35 77 97 48",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49861912100011",
+        "rna": "W332002698",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.514913,
+          44.872112
+        ]
+      },
+      "properties": {
+        "id": "didee-centre-social-de-genicart-lormont",
+        "nom": "DIDEE — centre social de Génicart",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "L'un des deux centres sociaux de Lormont gérés par DIDEE : animation globale, ateliers et accompagnement aux usages numériques.",
+        "adresse": "2 rue Henri Dunant",
+        "code_postal": "33310",
+        "commune": "Lormont",
+        "site": "https://www.asso-didee.org",
+        "email": "didee@asso-didee.org",
+        "telephone": "05 56 06 06 73",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49861912100011",
+        "rna": "W332002698",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -833,6 +1993,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.240402,
+          44.914823
+        ]
+      },
+      "properties": {
+        "id": "dynamots-le-comptoir-numerique-libourne",
+        "nom": "Dynamots — le comptoir numérique",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Espace de vie sociale libournais ouvert à tous, y compris aux personnes allophones : médiation numérique, permanences chez des partenaires, ateliers sociolinguistiques et cours de français.",
+        "adresse": "146 rue du Président Doumer",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "email": "dynamots@lilo.org",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "84469402600015",
+        "rna": "W335006914",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.569367,
           44.832979
         ]
@@ -861,6 +2050,252 @@
         "rna": "W401001031",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.556836,
+          44.85208
+        ]
+      },
+      "properties": {
+        "id": "ekolo-geek-bordeaux",
+        "nom": "Ekolo[Geek]",
+        "etiquettes": [
+          "numresp",
+          "emi"
+        ],
+        "description": "Association qui sensibilise au numérique responsable et aux écogestes par le jeu : stands ludiques, jeux de plateau comme Phone Impact ou Eko-Line, ateliers sur le réemploi des équipements, pour les familles, les jeunes et les professionnels.",
+        "adresse": "2 quai de Brazza",
+        "code_postal": "33100",
+        "commune": "Bordeaux",
+        "site": "https://www.ekologeek.com",
+        "email": "contact@ekologeek.com",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Jeunesse",
+          "Professionnels"
+        ],
+        "siret": "50462256400053",
+        "rna": "W243002468",
+        "date_ajout": "2026-11-23",
+        "source": "import numerique-responsable-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.559908,
+          44.827884
+        ]
+      },
+      "properties": {
+        "id": "emmaus-connect-bordeaux-bordeaux",
+        "nom": "Emmaüs Connect Bordeaux",
+        "etiquettes": [
+          "inclusion",
+          "numresp"
+        ],
+        "description": "Antenne bordelaise d'Emmaüs Connect : ateliers numériques gratuits, accompagnement et vente de matériel reconditionné et de recharges à tarif solidaire pour les personnes en précarité sociale et numérique.",
+        "adresse": "205 cours de la Marne",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "site": "https://emmaus-connect.org/bordeaux/",
+        "email": "bordeaux@emmaus-connect.org",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "79227291600091",
+        "rna": "W751218849",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.941276,
+          45.307027
+        ]
+      },
+      "properties": {
+        "id": "envols-lesparre-medoc",
+        "nom": "Envols",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui renforce les liens de la vie locale à Lesparre par une démarche collective, avec un accompagnement aux usages numériques.",
+        "adresse": "4 rue Bien-Aimé Coiffard",
+        "code_postal": "33340",
+        "commune": "Lesparre-Médoc",
+        "email": "solenvols@orange.fr",
+        "telephone": "05 56 41 80 61",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "44943872000020",
+        "rna": "W334000119",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63286,
+          44.805276
+        ]
+      },
+      "properties": {
+        "id": "epi-sol-pessac-pessac",
+        "nom": "Épi'Sol Pessac",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Épicerie solidaire ouverte à tous, avec des animations et un accompagnement aux démarches et aux usages numériques.",
+        "adresse": "8 place Germaine Tillion",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://www.episolpessac.org/",
+        "telephone": "05 56 51 48 57",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "81318188000028",
+        "rna": "W332016054",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.628702,
+          44.791163
+        ]
+      },
+      "properties": {
+        "id": "espace-social-et-d-animation-alain-coudert-pessac",
+        "nom": "Espace social et d'animation Alain-Coudert",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social du quartier de Saige : animation, accompagnement des familles, aide aux démarches en ligne et initiation au numérique.",
+        "adresse": "68 Rue de l'Horloge",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "49010963400017",
+        "rna": "W332015644",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.646407,
+          45.103909
+        ]
+      },
+      "properties": {
+        "id": "espaces-saquary-plassac",
+        "nom": "Espaces Saquary",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Éco-tiers-lieu de l'estuaire qui propose une aide aux démarches administratives et un accompagnement aux usages numériques.",
+        "adresse": "23 Route de l’Estuaire",
+        "code_postal": "33390",
+        "commune": "Plassac",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "90207482200013",
+        "rna": "W331005328",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.692227,
+          45.254593
+        ]
+      },
+      "properties": {
+        "id": "estuaire-insertion-nouvelles-technologies-administratives-ei",
+        "nom": "Estuaire Insertion Nouvelles Technologies Administratives (EINTA)",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Structure d'insertion spécialisée dans la reprographie et la dématérialisation, qui initie aussi aux outils numériques les bénéficiaires de chèques APTIC, sur rendez-vous.",
+        "adresse": "CNPE du Blayais",
+        "code_postal": "33820",
+        "commune": "Braud-et-Saint-Louis",
+        "email": "einta.copy@gmail.com",
+        "telephone": "05 33 93 70 25",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78997880600014",
+        "rna": "W331001095",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.611857,
+          44.794597
+        ]
+      },
+      "properties": {
+        "id": "etu-recup-la-ressourcerie-du-campus-pessac",
+        "nom": "Etu'Récup — la ressourcerie du campus",
+        "etiquettes": [
+          "numresp",
+          "fabrication"
+        ],
+        "description": "Ressourcerie du campus bordelais : collecte et réemploi d'objets, boutique solidaire, ateliers participatifs de réparation de matériel électronique, informatique et de vélos, actions de sensibilisation.",
+        "adresse": "18 avenue de Bardanac",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://eturecup.org",
+        "email": "hello@eturecup.org",
+        "telephone": "05 56 91 77 11",
+        "public": [
+          "Jeunesse",
+          "Tout public"
+        ],
+        "siret": "80127165100029",
+        "rna": "W332016611",
+        "date_ajout": "2026-11-23",
+        "source": "import numerique-responsable-gironde.csv"
       }
     },
     {
@@ -1010,6 +2445,164 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.655248,
+          44.802899
+        ]
+      },
+      "properties": {
+        "id": "faits-de-c-urs-33-pessac",
+        "nom": "Faits de Cœurs 33",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui accompagne gratuitement les seniors et les aidants familiaux dans l'usage du numérique, en rendez-vous individuels et personnalisés.",
+        "adresse": "40 rue Lacordaire",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "email": "faitsdecoeurs33@gmail.com",
+        "public": [
+          "Seniors",
+          "Familles"
+        ],
+        "siret": "90354179500014",
+        "rna": "W332030919",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.24414,
+          44.872567
+        ]
+      },
+      "properties": {
+        "id": "familles-rurales-de-genissac-genissac",
+        "nom": "Familles Rurales de Génissac",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association familiale qui gère la bibliothèque du village et propose des ateliers pour comprendre le numérique et maîtriser les outils du quotidien.",
+        "adresse": "Rue du Port",
+        "code_postal": "33420",
+        "commune": "Génissac",
+        "email": "frgenissac@gmail.com",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Seniors"
+        ],
+        "siret": "42083031700012",
+        "rna": "W335000665",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.15857,
+          44.878861
+        ]
+      },
+      "properties": {
+        "id": "familles-rurales-de-saint-emilion-saint-emilion",
+        "nom": "Familles Rurales de Saint-Émilion",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association familiale qui propose des ateliers pour comprendre le numérique et maîtriser les outils du quotidien.",
+        "adresse": "Route de Simard",
+        "code_postal": "33330",
+        "commune": "Saint-Émilion",
+        "site": "https://www.webdesfamilles.fr/125/st-emilionassociation24",
+        "email": "asso.stemilion@famillesrurales.org",
+        "telephone": "05 57 55 97 36",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Seniors"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.509608,
+          44.71884
+        ]
+      },
+      "properties": {
+        "id": "familles-rurales-de-saint-medard-d-eyrans-saint-medard-d-eyr",
+        "nom": "Familles Rurales de Saint-Médard-d'Eyrans",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association familiale qui propose des ateliers pour comprendre le numérique et maîtriser les outils du quotidien.",
+        "adresse": "avenue du 8 Mai",
+        "code_postal": "33650",
+        "commune": "Saint-Médard-d'Eyrans",
+        "email": "fr.stmedard.deyrans@gmail.com",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Seniors"
+        ],
+        "siret": "31047091900013",
+        "rna": "W332004618",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.220009,
+          44.389293
+        ]
+      },
+      "properties": {
+        "id": "familles-rurales-sud-gironde-cudos",
+        "nom": "Familles Rurales Sud Gironde",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association familiale qui propose, entre autres activités, des ateliers pour comprendre le numérique et maîtriser les outils du quotidien.",
+        "adresse": "58 Route de la Fourmi",
+        "code_postal": "33430",
+        "commune": "Cudos",
+        "site": "https://www.famillesrurales.org/cudos/",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Seniors"
+        ],
+        "siret": "38230326100012",
+        "rna": "W333001214",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.573335,
           45.224058
         ]
@@ -1077,6 +2670,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.572111,
+          44.855846
+        ]
+      },
+      "properties": {
+        "id": "foyer-fraternel-centre-social-bordeaux",
+        "nom": "Foyer fraternel — centre social",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social de La Bastide : accès libre à internet, matériel informatique à prix solidaire, aide aux démarches et ateliers numériques.",
+        "adresse": "23 Rue Gouffrand",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://www.centresocial-foyerfraternel.fr/",
+        "email": "accueil@foyerfraternel.fr",
+        "telephone": "05 57 87 13 92",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "78184865000011",
+        "rna": "W332000366",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.593559,
           44.845278
         ]
@@ -1105,6 +2731,190 @@
         "rna": "W332021845",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.570762,
+          44.839176
+        ]
+      },
+      "properties": {
+        "id": "gem-grain-de-cafe-bordeaux",
+        "nom": "GEM Grain de café",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Groupe d'entraide mutuelle qui soutient la participation sociale et la citoyenneté de ses adhérents, avec un accès accompagné au numérique.",
+        "adresse": "1 rue Maucoudinat",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "gemgraindecafe@gmail.com",
+        "telephone": "05 56 81 93 22",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "82334728100029",
+        "rna": "W332017293",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.579887,
+          44.859724
+        ]
+      },
+      "properties": {
+        "id": "gp-intencite-centre-social-et-culturel-du-grand-parc-bordeau",
+        "nom": "GP Intencité — centre social et culturel du Grand Parc",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social et culturel du Grand Parc : accompagnement social, animation de la vie locale et accès accompagné au numérique.",
+        "adresse": "44 place de l'Europe",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "http://gpinten6t.fr/",
+        "email": "coordination@gpinten6t.fr",
+        "telephone": "05 56 50 38 22",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "48877502400018",
+        "rna": "W332001995",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.24573,
+          44.915332
+        ]
+      },
+      "properties": {
+        "id": "habitat-jeunes-en-pays-libournais-libourne",
+        "nom": "Habitat Jeunes en Pays libournais",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui favorise l'accès au logement et l'autonomie des jeunes, avec un accompagnement aux démarches en ligne.",
+        "adresse": "53 rue Victor Hugo",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "site": "http://hajpl.free.fr",
+        "email": "contact@portail-logement-libournais.fr",
+        "telephone": "05 57 25 73 60",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "38508245800063",
+        "rna": "W335001997",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.561474,
+          44.849528
+        ]
+      },
+      "properties": {
+        "id": "hubikoop-bordeaux",
+        "nom": "Hubikoop",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Coopérative régionale de l'inclusion numérique en Nouvelle-Aquitaine : animation du réseau des médiateurs et des structures, formation, outils partagés et appui aux collectivités.",
+        "adresse": "87 quai des Queyries",
+        "code_postal": "33100",
+        "commune": "Bordeaux",
+        "site": "https://www.hubikoop.fr",
+        "public": [
+          "Professionnels"
+        ],
+        "siret": "88374216500011",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.130251,
+          45.041287
+        ]
+      },
+      "properties": {
+        "id": "imagin-actions-coutras",
+        "nom": "Imagin'actions",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui accompagne les personnes vulnérables dans la reprise de confiance en soi par des ateliers, dont l'usage du numérique.",
+        "adresse": "6, rue Gambetta",
+        "code_postal": "33230",
+        "commune": "Coutras",
+        "site": "https://www.imaginactions.org",
+        "email": "imaginactions33@gmail.com",
+        "telephone": "06 87 92 83 58",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "81847168200026",
+        "rna": "W335003253",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.575839,
+          44.83749
+        ]
+      },
+      "properties": {
+        "id": "info-jeunes-nouvelle-aquitaine-crij-bordeaux",
+        "nom": "Info Jeunes Nouvelle-Aquitaine (CRIJ)",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Centre régional d'information jeunesse : information sur l'orientation, l'emploi, le logement et les droits, avec un accompagnement aux démarches et aux usages numériques.",
+        "adresse": "125 Cours d'Alsace et Lorraine",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.infojeunes-na.fr",
+        "email": "bordeaux@crijna.fr",
+        "telephone": "05 56 56 00 56",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "30733663600039",
+        "rna": "W863004990",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -1204,6 +3014,37 @@
         "rna": "W332016739",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.547122,
+          44.871254
+        ]
+      },
+      "properties": {
+        "id": "konexio-bordeaux-bordeaux",
+        "nom": "Konexio Bordeaux",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association et organisme de formation qui propose des formations gratuites au numérique, du niveau débutant au plus avancé, notamment pour les personnes réfugiées, les jeunes décrocheurs et les demandeurs d'emploi.",
+        "adresse": "176 rue Achard",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://www.konexio.eu",
+        "email": "bordeaux@konexio.eu",
+        "public": [
+          "Tout public",
+          "Jeunesse"
+        ],
+        "siret": "82424482600080",
+        "rna": "W751236477",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
       }
     },
     {
@@ -1343,6 +3184,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.56723,
+          44.782059
+        ]
+      },
+      "properties": {
+        "id": "l-escale-solidaire-villenave-d-ornon",
+        "nom": "L'Escale solidaire",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association de Villenave-d'Ornon engagée dans l'aide alimentaire et l'accompagnement social, dont l'accès au numérique.",
+        "adresse": "1 place Aristide Briand",
+        "code_postal": "33140",
+        "commune": "Villenave-d'Ornon",
+        "site": "https://www.escalesolidaire.com",
+        "email": "epiceriesolidaire@escalesolidaire.com",
+        "telephone": "06 58 16 78 66",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "51323782600039",
+        "rna": "W332010691",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.801892,
+          45.027387
+        ]
+      },
+      "properties": {
+        "id": "l-escale-tiers-lieu-castelnau-de-medoc",
+        "nom": "L'Escale tiers-lieu",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Tiers-lieu associatif de Castelnau-de-Médoc : espace de travail partagé, rencontres, aide aux démarches et accompagnement numérique.",
+        "adresse": "1 Avenue Pasteur",
+        "code_postal": "33480",
+        "commune": "Castelnau-de-Médoc",
+        "site": "https://www.lescale-tierslieu.fr/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "85176427400029",
+        "rna": "W334002440",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.587355,
           44.792667
         ]
@@ -1372,6 +3273,98 @@
         "rna": "W332001345",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.744358,
+          45.194968
+        ]
+      },
+      "properties": {
+        "id": "l-oiseau-lire-pauillac",
+        "nom": "L'Oiseau-Lire",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association médocaine d'accompagnement des adultes en lecture, écriture, mathématiques et français langue étrangère, qui propose aussi une médiation numérique et des animations de vie sociale.",
+        "adresse": "11 quai Paul Doumer",
+        "code_postal": "33250",
+        "commune": "Pauillac",
+        "site": "http://www.oiseaulire33.fr",
+        "email": "oiseaulire33@gmail.com",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "47936185900024",
+        "rna": "W334000882",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.556808,
+          45.040413
+        ]
+      },
+      "properties": {
+        "id": "la-c-l-e-f-des-champs-bourg",
+        "nom": "La C.L.E.F. des champs",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association qui aide les personnes à sortir de la précarité, à créer du lien social et à s'informer, y compris en ligne.",
+        "adresse": "54 rue Valentin Bernard",
+        "code_postal": "33710",
+        "commune": "Bourg",
+        "telephone": "05 57 68 39 39",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "39133338200029",
+        "rna": "W331000579",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.346778,
+          44.77609
+        ]
+      },
+      "properties": {
+        "id": "la-cabane-a-projets-creon",
+        "nom": "La Cabane à projets",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre socioculturel intercommunal du Créonnais : animation, information, services et aide aux démarches et aux usages numériques.",
+        "adresse": "36 boulevard Victor Hugo",
+        "code_postal": "33670",
+        "commune": "Créon",
+        "site": "http://www.lacabaneaprojets.fr/",
+        "email": "contact@lacabaneaprojets.fr",
+        "telephone": "05 57 34 42 52",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "43789703600038",
+        "rna": "W332001764",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -1409,6 +3402,100 @@
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv",
         "date_modification": "2026-11-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.520667,
+          44.856409
+        ]
+      },
+      "properties": {
+        "id": "la-colline-centre-social-et-culturel-cenon",
+        "nom": "La Colline — centre social et culturel",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social et culturel du plateau de Cenon : animation, accompagnement des familles et accès accompagné au numérique.",
+        "adresse": "2, rue Stéphane MALLARME",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "site": "http://www.csc-lacolline.com",
+        "email": "info@csc-lacolline.com",
+        "telephone": "05 57 77 90 30",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "48910279800027",
+        "rna": "W332001170",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.566205,
+          44.830626
+        ]
+      },
+      "properties": {
+        "id": "la-halle-des-douves-bordeaux",
+        "nom": "La Halle des Douves",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Maison de vie collective du quartier Saint-Michel, qui anime le marché des Douves et accueille un accompagnement aux usages numériques.",
+        "adresse": "4bis, rue des Douves",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "email": "contact@douves.org",
+        "telephone": "05 57 71 75 93",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "50902733000018",
+        "rna": "W332006536",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.562813,
+          44.831144
+        ]
+      },
+      "properties": {
+        "id": "la-maison-des-femmes-de-bordeaux-bordeaux",
+        "nom": "La Maison des femmes de Bordeaux",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Lieu d'accueil, d'écoute et d'accompagnement des femmes, avec un accès à des ordinateurs et une aide à l'insertion.",
+        "adresse": "5 bis rue du Noviciat",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "email": "maison.des.femmes@wanadoo.fr",
+        "telephone": "05 56 51 30 95",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "42031292800047",
+        "rna": "W332003833",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -1610,6 +3697,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.621301,
+          44.875809
+        ]
+      },
+      "properties": {
+        "id": "le-carrousel-centre-social-le-bouscat",
+        "nom": "Le Carrousel — centre social",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social du quartier de l'Hippodrome : animation, accompagnement des familles, aide aux démarches et ateliers numériques.",
+        "adresse": "136 Route du Médoc",
+        "code_postal": "33110",
+        "commune": "Le Bouscat",
+        "site": "https://www.lecarrouselasso.fr",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "45084019400036",
+        "rna": "W332002433",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.382793,
           45.066528
         ]
@@ -1639,6 +3757,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.572651,
+          44.83801
+        ]
+      },
+      "properties": {
+        "id": "le-girofard-centre-lgbti-de-bordeaux-bordeaux",
+        "nom": "Le Girofard — centre LGBTI+ de Bordeaux",
+        "etiquettes": [
+          "pdn"
+        ],
+        "description": "Centre LGBTI+ de Bordeaux et de Nouvelle-Aquitaine : accueil, écoute et accompagnement. Un Promeneur du Net Parentalité y répond en ligne aux questions des parents et proches de jeunes.",
+        "adresse": "21 rue du Loup",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "Promeneurs du Net Parentalité Gironde"
+        ],
+        "public": [
+          "Jeunesse",
+          "Familles"
+        ],
+        "siret": "50220210400043",
+        "rna": "W332004048",
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.234603,
+          44.917313
+        ]
+      },
+      "properties": {
+        "id": "le-lien-libourne",
+        "nom": "Le Lien",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accueil de jour libournais géré avec des bénévoles et des partenaires, qui propose notamment un accès accompagné au numérique.",
+        "adresse": "2 rue Lataste",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "35209654900022",
+        "rna": "W335000971",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.938679,
           45.306596
         ]
@@ -1661,6 +3839,132 @@
         "rna": "W334001864",
         "date_ajout": "2026-11-23",
         "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.648209,
+          44.85241
+        ]
+      },
+      "properties": {
+        "id": "le-puzzle-centre-social-et-culturel-merignac",
+        "nom": "Le Puzzle — centre social et culturel",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social et culturel du quartier de Capeyron : animation, accompagnement des familles, aide aux démarches et ateliers numériques.",
+        "adresse": "Rue Jean Giono",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://puzzle-capeyron.fr/",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "48980839400014",
+        "rna": "W332000071",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.595424,
+          44.796626
+        ]
+      },
+      "properties": {
+        "id": "le-relais-talencais-talence",
+        "nom": "Le Relais talençais",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Épicerie sociale et solidaire qui propose aussi des animations et un accompagnement aux usages numériques.",
+        "adresse": "25 rue du 19 Mars 1962",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "site": "https://www.le-relais-talencais.org/",
+        "email": "coordo-epicvous@orange.fr",
+        "telephone": "06 37 77 45 65",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "80988681500020",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.977902,
+          44.637339
+        ]
+      },
+      "properties": {
+        "id": "le-roseau-biganos",
+        "nom": "Le Roseau",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association qui gère un centre social et un espace de vie sociale à Biganos, avec un accompagnement aux démarches et aux usages numériques.",
+        "adresse": "14 rue de la Verrerie",
+        "code_postal": "33380",
+        "commune": "Biganos",
+        "site": "https://le-roseau.fr/",
+        "email": "accueil@le-roseau.fr",
+        "telephone": "05 57 17 54 57",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "43490218500041",
+        "rna": "W336000441",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.440623,
+          44.994796
+        ]
+      },
+      "properties": {
+        "id": "le-temps-des-familles-saint-andre-de-cubzac",
+        "nom": "Le Temps des familles",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Espace de rencontre créé par des parents à Saint-André-de-Cubzac, qui accompagne aussi les familles aux usages numériques.",
+        "adresse": "4, rue de la Fontaine",
+        "code_postal": "33240",
+        "commune": "Saint-André-de-Cubzac",
+        "site": "http://www.letempsdesfamilles.fr/",
+        "email": "letempsdesfamilles@yahoo.fr",
+        "telephone": "09 86 12 12 89",
+        "public": [
+          "Familles"
+        ],
+        "siret": "81805879400020",
+        "rna": "W331001578",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -1735,6 +4039,69 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.646407,
+          45.103909
+        ]
+      },
+      "properties": {
+        "id": "les-ateliers-du-mascaret-plassac",
+        "nom": "Les Ateliers du Mascaret",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association d'animation culturelle et sociale de l'estuaire, qui propose un accompagnement aux usages numériques.",
+        "adresse": "23 route de l'Estuaire",
+        "code_postal": "33390",
+        "commune": "Plassac",
+        "site": "http://www.ateliersdumascaret.fr",
+        "email": "les-ateliers-du-mascaret@orange.fr",
+        "telephone": "05 57 42 27 65",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "38972523500037",
+        "rna": "W331000249",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.572051,
+          45.221382
+        ]
+      },
+      "properties": {
+        "id": "les-champs-du-possible-etauliers",
+        "nom": "Les Champs du possible",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Espace de vie sociale de la Haute-Gironde, avec un atelier numérique hebdomadaire.",
+        "adresse": "6 bis route de Saint-Savin",
+        "code_postal": "33820",
+        "commune": "Étauliers",
+        "email": "association.leschampsdupossible@gmail.com",
+        "telephone": "07 84 31 10 57",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "84525024000015",
+        "rna": "W331005076",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.582988,
           44.842682
         ]
@@ -1799,6 +4166,70 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.779397,
+          44.842372
+        ]
+      },
+      "properties": {
+        "id": "les-terrasses-centre-socioculturel-martignas-sur-jalle",
+        "nom": "Les Terrasses — centre socioculturel",
+        "etiquettes": [
+          "educpop",
+          "inclusion",
+          "pdn"
+        ],
+        "description": "Centre socioculturel où habitants et salariés coopèrent autour du développement social de Martignas, avec un accompagnement aux usages numériques. Sa référente famille est Promeneuse du Net Parentalité.",
+        "adresse": "14 avenue de Verdun",
+        "code_postal": "33127",
+        "commune": "Martignas-sur-Jalle",
+        "email": "cscmartignas@gmail.com",
+        "telephone": "05 56 78 05 48",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "48899863400023",
+        "rna": "W332005353",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.772191,
+          45.259554
+        ]
+      },
+      "properties": {
+        "id": "les-tourelles-saint-estephe",
+        "nom": "Les Tourelles",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Pôle d'action culturelle et sociale en Médoc : accompagnement individuel et collectif, matériel informatique à prix solidaire et apprentissage des outils numériques.",
+        "adresse": "33 Rue de la Mairie",
+        "code_postal": "33180",
+        "commune": "Saint-Estèphe",
+        "site": "https://www.tourelles-medoc.fr/",
+        "email": "info@tourelles-medoc.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "38755565900029",
+        "rna": "W334000047",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.239365,
           44.910672
         ]
@@ -1821,6 +4252,37 @@
         "rna": "W335001758",
         "date_ajout": "2026-11-23",
         "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.497468,
+          44.857974
+        ]
+      },
+      "properties": {
+        "id": "ligue-de-l-enseignement-de-la-gironde-artigues-pres-bordeaux",
+        "nom": "Ligue de l'enseignement de la Gironde",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Fédération départementale d'éducation populaire : appui à la vie associative, accueil de volontaires en service civique, notamment les D-codeurs qui accompagnent les publics vers l'autonomie numérique.",
+        "adresse": "72 avenue de l'Église Romane",
+        "code_postal": "33370",
+        "commune": "Artigues-près-Bordeaux",
+        "site": "https://www.laligue33.org",
+        "email": "contact@laligue33.org",
+        "telephone": "05 56 44 52 25",
+        "public": [
+          "Tout public",
+          "Jeunesse"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
       }
     },
     {
@@ -1857,6 +4319,42 @@
         "rna": "W335000310",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.576184,
+          44.837027
+        ]
+      },
+      "properties": {
+        "id": "maison-des-adolescents-et-des-jeunes-adultes-de-la-gironde-b",
+        "nom": "Maison des adolescents et des jeunes adultes de la Gironde",
+        "etiquettes": [
+          "pdn"
+        ],
+        "description": "Lieu d'accueil, d'écoute et d'orientation, anonyme et gratuit, pour les 11-25 ans et leurs parents. Elle coordonne pour la CAF le réseau des Promeneurs du Net Parentalité, qui répondent en ligne aux questions des parents d'adolescents, notamment sur les écrans.",
+        "adresse": "5 rue Duffour-Dubergier",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.mda33.fr",
+        "email": "maisondesadolescents33@gmail.com",
+        "telephone": "05 56 38 48 65",
+        "reseaux": [
+          "Promeneurs du Net Parentalité Gironde"
+        ],
+        "public": [
+          "Jeunesse",
+          "Familles",
+          "Professionnels"
+        ],
+        "siret": "79080013000029",
+        "rna": "W332014853",
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
       }
     },
     {
@@ -1926,6 +4424,39 @@
         "siret": "63201725700585",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.561474,
+          44.849528
+        ]
+      },
+      "properties": {
+        "id": "medias-cite-bordeaux",
+        "nom": "Médias-Cité",
+        "etiquettes": [
+          "inclusion",
+          "emi"
+        ],
+        "description": "Coopérative d'innovation sociale et numérique installée à Darwin : formation des professionnels de la médiation et de la parentalité, ressources et événements comme « Parents d'ados 2.0 » sur l'accompagnement des familles face au numérique.",
+        "adresse": "87 quai des Queyries",
+        "code_postal": "33100",
+        "commune": "Bordeaux",
+        "site": "https://medias-cite.coop",
+        "email": "info@medias-cite.coop",
+        "telephone": "05 56 16 48 20",
+        "public": [
+          "Professionnels",
+          "Familles"
+        ],
+        "siret": "42208260200042",
+        "rna": "W332006620",
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
       }
     },
     {
@@ -2473,6 +5004,282 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.575308,
+          44.836082
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-bordeaux-avenir-jeunes-bordeaux",
+        "nom": "Mission locale Bordeaux Avenir Jeunes",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans bordelais vers l'emploi, la formation et l'autonomie, avec un appui aux usages numériques.",
+        "adresse": "14 cours Pasteur",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "http://www.missionlocalebordeaux.fr",
+        "email": "contact@missionlocalebordeaux.fr",
+        "telephone": "05 56 79 97 20",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "41000742100028",
+        "rna": "W332007854",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.660199,
+          45.12933
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-de-la-haute-gironde-blaye",
+        "nom": "Mission locale de la Haute-Gironde",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans de Haute-Gironde vers l'emploi, la formation et l'autonomie, avec un appui aux usages numériques.",
+        "adresse": "place Grasilier",
+        "code_postal": "33390",
+        "commune": "Blaye",
+        "site": "http://www.mlhautegironde.org/",
+        "email": "contact@mlhautegironde.org",
+        "telephone": "05 57 42 89 75",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "38856728100083",
+        "rna": "W331000930",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.314573,
+          44.639819
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-des-deux-rives-cadillac-sur-garonne",
+        "nom": "Mission locale des Deux Rives",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans de l'Entre-deux-Mers et des Graves vers l'emploi, la formation et l'autonomie, avec un appui aux usages numériques.",
+        "adresse": "16 route de Branne",
+        "code_postal": "33410",
+        "commune": "Cadillac-sur-Garonne",
+        "site": "http://www.missionlocaledes2rives.com",
+        "telephone": "05 57 98 02 98",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "35294187600026",
+        "rna": "W333000144",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.642242,
+          44.751119
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-des-graves-canejan",
+        "nom": "Mission locale des Graves",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans du Pays des Graves vers l'emploi, la formation et l'autonomie, avec un appui aux usages numériques.",
+        "adresse": "chemin de la House",
+        "code_postal": "33610",
+        "commune": "Canéjan",
+        "site": "https://www.missionlocaledesgraves.fr",
+        "email": "contact@mldesgraves.fr",
+        "telephone": "05 56 15 02 41",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "44827548700032",
+        "rna": "W332008589",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.934153,
+          45.305918
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-du-medoc-lesparre-medoc",
+        "nom": "Mission locale du Médoc",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans vers l'emploi, la formation et l'autonomie, avec une aide aux démarches et aux usages numériques.",
+        "adresse": "34 Cours Jean Jaurés",
+        "code_postal": "33340",
+        "commune": "Lesparre-Médoc",
+        "site": "https://www.missionlocalemedoc.fr/",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "39304718800031",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.240567,
+          44.544458
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-sud-gironde-langon",
+        "nom": "Mission locale Sud-Gironde",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans du Sud-Gironde vers l'emploi, la formation et l'autonomie, avec un Point Cyb d'accès accompagné au numérique.",
+        "adresse": "20 rue Condorcet",
+        "code_postal": "33210",
+        "commune": "Langon",
+        "site": "http://mlsg.fr/le-point-cyb/",
+        "email": "contact@mlsg.fr",
+        "telephone": "05 57 98 09 89",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "39871524300034",
+        "rna": "W333001735",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.65311,
+          44.855018
+        ]
+      },
+      "properties": {
+        "id": "mission-locale-technowest-merignac",
+        "nom": "Mission locale Technowest",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Accompagnement des 16-25 ans vers l'emploi, la formation et l'autonomie, avec une aide aux usages numériques du quotidien.",
+        "adresse": "9 Rue Montgolfier",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.mltechnowest.com/",
+        "email": "contact@missionlocaletechnowest.fr",
+        "telephone": "05 56 47 14 07",
+        "public": [
+          "Jeunesse"
+        ],
+        "siret": "37995065200055",
+        "rna": "W332008960",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.591619,
+          44.792153
+        ]
+      },
+      "properties": {
+        "id": "mix-cite-centre-social-et-culturel-talence",
+        "nom": "Mix-Cité — centre social et culturel",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social et culturel talençais où bénévoles et professionnels développent des projets et des activités, dont un accompagnement numérique.",
+        "adresse": "221 avenue de Thouars",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "email": "cstalence@wanadoo.fr",
+        "telephone": "05 56 04 04 49",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "48853851300018",
+        "rna": "W332005064",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.629912,
+          44.844822
+        ]
+      },
+      "properties": {
+        "id": "mjc-cl2v-bordeaux",
+        "nom": "MJC CL2V",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association d'éducation populaire agréée centre social, qui propose activités, accompagnement des habitants et accès au numérique.",
+        "adresse": "11 rue Erik Satie",
+        "code_postal": "33200",
+        "commune": "Bordeaux",
+        "email": "accueil@mjccl2v.fr",
+        "telephone": "05 56 97 40 00",
+        "public": [
+          "Tout public",
+          "Familles",
+          "Jeunesse"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.565684,
           44.792551
         ]
@@ -2499,6 +5306,38 @@
         "rna": "W332015175",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4797,
+          44.8106
+        ]
+      },
+      "properties": {
+        "id": "musee-replay-carignan-de-bordeaux",
+        "nom": "Musée Replay",
+        "etiquettes": [
+          "jeuvideo",
+          "emi"
+        ],
+        "description": "Association de préservation du patrimoine informatique et vidéoludique : collection de consoles, d'ordinateurs et d'archives, expositions itinérantes jouables, comme « Super vieux jeux » à Cap Sciences en 2026.",
+        "adresse": "Pas de local ouvert au public",
+        "code_postal": "33360",
+        "commune": "Carignan-de-Bordeaux",
+        "site": "https://www.museereplay.com",
+        "email": "contact@museereplay.com",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "81384578100018",
+        "rna": "W332018022",
+        "date_ajout": "2026-11-23",
+        "source": "import jeu-video-gironde.csv"
       }
     },
     {
@@ -2631,6 +5470,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.568002,
+          44.838601
+        ]
+      },
+      "properties": {
+        "id": "oxygene-bordeaux",
+        "nom": "Oxygène",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association d'insertion sociale et de lutte contre l'exclusion et l'isolement, avec un accompagnement aux démarches et aux usages numériques.",
+        "adresse": "29 quai Richelieu",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "email": "oxygene.asso@wanadoo.fr",
+        "telephone": "05 56 96 96 63",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40097769000033",
+        "rna": "W332001402",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.3231,
           44.443587
         ]
@@ -2658,6 +5527,67 @@
         "rna": "W332016262",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.55882,
+          44.827531
+        ]
+      },
+      "properties": {
+        "id": "pimms-mediation-bordeaux-bordeaux",
+        "nom": "PIMMS Médiation Bordeaux",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Point d'information et de médiation multiservices : accueil, aide aux démarches administratives en ligne et accompagnement numérique, labellisé France services.",
+        "adresse": "213 cours de la Marne",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "site": "https://www.pimmsdebordeaux.org",
+        "email": "bordeaux@pimmsmediation.fr",
+        "telephone": "05 56 85 85 45",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "79886728900026",
+        "rna": "W332016265",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.532119,
+          44.857012
+        ]
+      },
+      "properties": {
+        "id": "pimms-mediation-cenon-cenon",
+        "nom": "PIMMS Médiation Cenon",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Point d'information et de médiation multiservices : accès aux services publics et aux droits, aide aux démarches en ligne et accompagnement numérique, labellisé France services.",
+        "adresse": "89 avenue Jean Jaurès",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "email": "cenon@pimmsmediation.fr",
+        "telephone": "05 47 74 77 80",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "52354600000028",
+        "rna": "W332010685",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
       }
     },
     {
@@ -2850,6 +5780,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.440585,
+          44.993948
+        ]
+      },
+      "properties": {
+        "id": "relais-pour-l-emploi-saint-andre-de-cubzac",
+        "nom": "Relais pour l'emploi",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association d'insertion par l'activité économique qui accompagne les demandeurs d'emploi, en accès libre, y compris dans leurs démarches en ligne.",
+        "adresse": "83 rue Dantagnan",
+        "code_postal": "33240",
+        "commune": "Saint-André-de-Cubzac",
+        "site": "https://www.relaisemploi33.fr",
+        "email": "direction@relaisemploi33.fr",
+        "telephone": "05 57 43 55 72",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "34811434900023",
+        "rna": "W331000502",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.086161,
           44.692246
         ]
@@ -2871,6 +5833,126 @@
         "rna": "W333000118",
         "date_ajout": "2026-11-23",
         "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.632884,
+          44.910498
+        ]
+      },
+      "properties": {
+        "id": "repair-cafe-blanquefort-blanquefort",
+        "nom": "Repair Café Blanquefort",
+        "etiquettes": [
+          "numresp",
+          "fabrication"
+        ],
+        "description": "Association de co-réparation : des bénévoles aident à réparer petit électroménager, ordinateurs et objets du quotidien pour réduire les déchets et transmettre les savoir-faire.",
+        "adresse": "4 rue du Docteur Castéra",
+        "code_postal": "33290",
+        "commune": "Blanquefort",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "83199871100012",
+        "rna": "W332022185",
+        "date_ajout": "2026-11-23",
+        "source": "import numerique-responsable-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.630407,
+          44.801956
+        ]
+      },
+      "properties": {
+        "id": "restos-du-c-ur-centre-d-activites-de-pessac-pessac",
+        "nom": "Restos du cœur — centre d'activités de Pessac",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Centre d'activités des Restos du cœur : aide alimentaire, emploi, microcrédit, ateliers de français et accès accompagné à internet.",
+        "adresse": "3 Rue Razon",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://ad33.restosducoeur.org/centres-departementaux/ad33-centre-dactivites-pessac/",
+        "email": "ad33.pessac@restosducoeur.org",
+        "telephone": "05 56 45 85 91",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "37954994200025",
+        "rna": "W332002388",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4856,
+          44.9254
+        ]
+      },
+      "properties": {
+        "id": "retrogamers-de-bordeaux-rgb-ambares-et-lagrave",
+        "nom": "Retrogamers de Bordeaux (RGB)",
+        "etiquettes": [
+          "jeuvideo"
+        ],
+        "description": "Association de passionnés de rétrogaming : rencontres, tournois et parties en réseau sur consoles anciennes, ouvertes au public, en partenariat avec d'autres associations.",
+        "adresse": "Pas de local ouvert au public",
+        "code_postal": "33440",
+        "commune": "Ambarès-et-Lagrave",
+        "site": "https://www.facebook.com/RetroGamersdeBordeaux/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "82899465700041",
+        "rna": "W332020755",
+        "date_ajout": "2026-11-23",
+        "source": "import jeu-video-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.590973,
+          44.869758
+        ]
+      },
+      "properties": {
+        "id": "ricochet-centre-social-le-bouscat",
+        "nom": "Ricochet — centre social",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Centre social porté par des habitants : accès libre à internet et au matériel informatique, aide aux démarches et ateliers numériques.",
+        "adresse": "48 rue Pompière",
+        "code_postal": "33110",
+        "commune": "Le Bouscat",
+        "telephone": "05 54 79 86 04",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "47783237200031",
+        "rna": "W332000914",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
       }
     },
     {
@@ -3056,6 +6138,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.743842,
+          45.191754
+        ]
+      },
+      "properties": {
+        "id": "secours-populaire-comite-de-pauillac-pauillac",
+        "nom": "Secours populaire — comité de Pauillac",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Comité local du Secours populaire : aide alimentaire et vestimentaire, matériel informatique à prix solidaire et aide aux démarches en ligne.",
+        "adresse": "30 Rue de la Rivière",
+        "code_postal": "33250",
+        "commune": "Pauillac",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "48205632200027",
+        "rna": "W334000771",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.573,
+          44.8412
+        ]
+      },
+      "properties": {
+        "id": "silver-geek-bordeaux",
+        "nom": "Silver Geek",
+        "etiquettes": [
+          "jeuvideo",
+          "inclusion"
+        ],
+        "description": "Association qui utilise le jeu vidéo pour lutter contre l'isolement des seniors et créer du lien entre générations : ateliers en résidences et EHPAD, trophées et compétitions d'e-sport santé. Elle intervient en Gironde, notamment au Bordeaux Geekfest (compétition régionale seniors, mai 2026).",
+        "adresse": "Intervient en Gironde — siège : 24 boulevard du Grand Cerf, 86000 Poitiers",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "public": [
+          "Seniors",
+          "Tout public"
+        ],
+        "siret": "83808967000023",
+        "rna": "W791002526",
+        "date_ajout": "2026-11-23",
+        "source": "import jeu-video-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.548775,
           44.807661
         ]
@@ -3081,6 +6221,35 @@
         "rna": "W332027715",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.570668,
+          44.841636
+        ]
+      },
+      "properties": {
+        "id": "so-games-bordeaux",
+        "nom": "SO Games",
+        "etiquettes": [
+          "jeuvideo"
+        ],
+        "description": "Association des professionnels du jeu vidéo en Nouvelle-Aquitaine : plus de 100 studios et indépendants. Elle accompagne les porteurs de projets, fait connaître la filière et organise des événements professionnels.",
+        "adresse": "12 place de la Bourse",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.sogames.org",
+        "public": [
+          "Professionnels"
+        ],
+        "siret": "50539681200024",
+        "rna": "W332004183",
+        "date_ajout": "2026-11-23",
+        "source": "import jeu-video-gironde.csv"
       }
     },
     {
@@ -3155,6 +6324,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.637694,
+          44.816826
+        ]
+      },
+      "properties": {
+        "id": "tournesol-merignac",
+        "nom": "Tournesol",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association mérignacaise installée au château du Burck, qui propose une aide aux démarches administratives et un accompagnement aux usages numériques.",
+        "adresse": "14 Avenue Robert Schuman",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "telephone": "05 56 45 18 07",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "49010987300011",
+        "rna": "W332003629",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.517129,
           44.671558
         ]
@@ -3182,6 +6380,129 @@
         "rna": "W332032672",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.582296,
+          44.849687
+        ]
+      },
+      "properties": {
+        "id": "udaf-de-la-gironde-bordeaux",
+        "nom": "UDAF de la Gironde",
+        "etiquettes": [
+          "pdn"
+        ],
+        "description": "Union départementale des associations familiales : représentation des familles, services d'accompagnement et espace de rencontre parents-enfants à Langon, dont la coordinatrice et la psychologue sont Promeneuses du Net Parentalité.",
+        "adresse": "25 rue Francis Martin",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "reseaux": [
+          "Promeneurs du Net Parentalité Gironde"
+        ],
+        "public": [
+          "Familles"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import parentalite-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.576044,
+          44.834914
+        ]
+      },
+      "properties": {
+        "id": "unadev-bordeaux",
+        "nom": "UNADEV",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Union nationale des aveugles et déficients visuels, créée à Bordeaux en 1929 : accompagnement, accessibilité et usages numériques adaptés.",
+        "adresse": "12 rue de Cursol",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "http://www.unadev.com/",
+        "email": "unadev@unadev.com",
+        "telephone": "05 56 33 85 85",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78184684500035",
+        "rna": "W332002934",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.509406,
+          44.844483
+        ]
+      },
+      "properties": {
+        "id": "unire-floirac",
+        "nom": "UNIRE",
+        "etiquettes": [
+          "educpop",
+          "inclusion"
+        ],
+        "description": "Association qui gère un centre social et un espace de vie sociale à Floirac, avec un accompagnement aux usages numériques.",
+        "adresse": "1 rue Voltaire",
+        "code_postal": "33270",
+        "commune": "Floirac",
+        "email": "accueil.centresocial@unire.fr",
+        "telephone": "05 56 32 63 91",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "83844691200019",
+        "rna": "W332022538",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.518422,
+          44.851002
+        ]
+      },
+      "properties": {
+        "id": "unispheres-cenon",
+        "nom": "Unisphères",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Association de médiation et de développement artistique, culturel et numérique : ateliers, Digital Days et projets d'innovation sociale et technologique sur la rive droite et en Gironde.",
+        "adresse": "38 rue Pasteur",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "site": "https://unispheres.fr",
+        "email": "contact@unispheres.fr",
+        "public": [
+          "Tout public",
+          "Jeunesse"
+        ],
+        "siret": "49241238200086",
+        "rna": "W332000983",
+        "date_ajout": "2026-11-23",
+        "source": "import inclusion-numerique-gironde.csv"
       }
     },
     {
