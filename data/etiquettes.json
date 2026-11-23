@@ -43,6 +43,18 @@
       "couleur": "#b45309"
     },
     {
+      "id": "jeuvideo",
+      "libelle": "Jeu vidéo (culture, médiation, patrimoine)",
+      "court": "Jeu vidéo",
+      "couleur": "#dc2626"
+    },
+    {
+      "id": "numresp",
+      "libelle": "Numérique responsable (sobriété, réemploi, logiciel libre)",
+      "court": "Numérique responsable",
+      "couleur": "#65a30d"
+    },
+    {
       "id": "institutionnel",
       "libelle": "Institutionnel",
       "court": "Institutionnel",

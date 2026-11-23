@@ -30,6 +30,20 @@ test('ancienne colonne specialite_musique encore reconnue', async () => {
   assert.deepEqual(c.features[0].properties.activites_musique, ['Enseignement, école de musique']);
 });
 
+test('étiquettes jeu vidéo et numérique responsable : code, libellé court et formulations courantes', async () => {
+  const csv = [
+    'nom;etiquettes;description;adresse;code_postal;commune',
+    'Club rétro;jeuvideo;Rencontres.;1 rue;33000;Bordeaux',
+    'Musée du jeu;Jeu vidéo|EMI;Expositions.;2 rue;33000;Bordeaux',
+    'Asso esport;retrogaming|e-sport;Tournois.;3 rue;33000;Bordeaux',
+    'Atelier libre;logiciels libres|Réemploi;Install parties.;4 rue;33000;Bordeaux',
+  ].join('\n');
+  const c = collectionVide();
+  const r = await importer(lireCsv(csv), c, { geocoderFn: geocodageFactice });
+  assert.equal(r.refuses.length, 0, JSON.stringify(r.refuses));
+  assert.deepEqual(c.features.map((f) => f.properties.etiquettes), [['jeuvideo'], ['jeuvideo', 'emi'], ['jeuvideo'], ['numresp']]);
+});
+
 test('décodage : UTF-8 avec BOM et fichier Excel en Windows-1252', () => {
   assert.equal(decoder(new Uint8Array([0xef, 0xbb, 0xbf, 0x63, 0xc3, 0xa9])), 'cé');
   assert.equal(decoder(new Uint8Array([0x63, 0xe9])), 'cé');
