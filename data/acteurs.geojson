@@ -73,6 +73,67 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.585576,
+          44.839794
+        ]
+      },
+      "properties": {
+        "id": "afev-bordeaux-metropole-bordeaux",
+        "nom": "Afev Bordeaux Métropole",
+        "etiquettes": [
+          "educpop",
+          "emi"
+        ],
+        "description": "Antenne bordelaise de l'Association de la fondation étudiante pour la ville : mentorat d'enfants et de jeunes par des étudiants bénévoles, colocations solidaires en quartiers prioritaires (Kaps), ateliers d'orientation pour collégiens. Au niveau national, l'Afev est opératrice du plan d'éducation aux médias du ministère de la Culture.",
+        "adresse": "74 rue Georges Bonnac",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://afev.org/nouvelle-aquitaine/bordeaux-metropole",
+        "email": "bordeaux@afev.org",
+        "telephone": "05 56 32 94 67",
+        "public": [
+          "Jeunesse",
+          "Familles"
+        ],
+        "siret": "39032205500786",
+        "date_ajout": "2026-11-23",
+        "source": "import emi-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.939696,
+          45.306697
+        ]
+      },
+      "properties": {
+        "id": "aqui-fm-lesparre-medoc",
+        "nom": "Aqui FM",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du Médoc, émettant en FM sur 98.0 MHz depuis Lesparre-Médoc : information locale, musique et vie du territoire.",
+        "adresse": "1 rue Brémontier",
+        "code_postal": "33340",
+        "commune": "Lesparre-Médoc",
+        "site": "https://www.aquifm.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40123714400035",
+        "rna": "W332004426",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.552383,
           44.813085
         ]
@@ -240,6 +301,35 @@
         "rna": "W333007196",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.597347,
+          44.801207
+        ]
+      },
+      "properties": {
+        "id": "b3d-makers-talence",
+        "nom": "B3D Makers",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Association fablab étudiante de l'École des Arts et Métiers de Bordeaux : impression 3D plastique et résine, gravure laser, accompagnement de projets pour particuliers, associations et entreprises.",
+        "adresse": "8 avenue de l'Université",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "site": "https://b3d-makers.fr",
+        "email": "bordels3dasso@gmail.com",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
       }
     },
     {
@@ -513,6 +603,97 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.587024,
+          44.838852
+        ]
+      },
+      "properties": {
+        "id": "clemi-bordeaux-bordeaux",
+        "nom": "CLEMI Bordeaux",
+        "etiquettes": [
+          "emi",
+          "institutionnel"
+        ],
+        "description": "Délégation académique à l'éducation aux médias et à l'information du rectorat de Bordeaux : formation des enseignants, réseau de référents, ressources, concours et accompagnement des projets médias des classes.",
+        "adresse": "3 terrasse Front du Médoc",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.ac-bordeaux.fr/clemi-education-aux-medias-122263",
+        "telephone": "05 57 57 35 82",
+        "public": [
+          "Professionnels",
+          "Jeunesse"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import emi-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.571354,
+          44.841065
+        ]
+      },
+      "properties": {
+        "id": "club-de-la-presse-de-bordeaux-bordeaux",
+        "nom": "Club de la presse de Bordeaux",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Association des journalistes et communicants de Bordeaux et de Nouvelle-Aquitaine. Sa commission éducation aux médias met en relation écoles, associations et structures culturelles avec des journalistes qui animent des ateliers ; son Club junior, animé par des étudiants en journalisme, propose ciné-débats et ateliers d'initiation aux médias.",
+        "adresse": "9 rue des Capérans",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.club-presse-bordeaux.fr",
+        "email": "contact@club-presse-bordeaux.fr",
+        "telephone": "05 56 44 03 65",
+        "public": [
+          "Professionnels",
+          "Jeunesse"
+        ],
+        "siret": "32216213200011",
+        "rna": "W332002207",
+        "date_ajout": "2026-11-23",
+        "source": "import emi-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.216215,
+          44.841271
+        ]
+      },
+      "properties": {
+        "id": "c-ur-de-bastide-sainte-foy-la-grande",
+        "nom": "Cœur de Bastide",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Tiers-lieu associatif de Sainte-Foy-la-Grande : ateliers partagés, fablab, réparation et activités culturelles.",
+        "adresse": "44 rue Alsace-Lorraine",
+        "code_postal": "33220",
+        "commune": "Sainte-Foy-la-Grande",
+        "site": "https://www.coeurdebastide.com/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78886803200020",
+        "rna": "W335002377",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.564931,
           44.831648
         ]
@@ -684,6 +865,148 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.581381,
+          44.713184
+        ]
+      },
+      "properties": {
+        "id": "eurekafab-martillac",
+        "nom": "Eurekafab",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "FabLab de la communauté de communes de Montesquieu, au centre de ressources du site Montesquieu : impression 3D, découpe laser, ateliers et portes ouvertes.",
+        "adresse": "1 allée Jean Rostand",
+        "code_postal": "33650",
+        "commune": "Martillac",
+        "site": "https://fablab.cc-montesquieu.fr/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "24330126400038",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.612835,
+          44.791067
+        ]
+      },
+      "properties": {
+        "id": "fablab-coh-bit-gradignan",
+        "nom": "Fablab Coh@bit",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "FabLab de l'université de Bordeaux, installé à l'IUT : impression 3D, découpe laser, électronique. Ouvert aux étudiants, aux personnels et au public.",
+        "adresse": "15 rue Naudet",
+        "code_postal": "33170",
+        "commune": "Gradignan",
+        "site": "https://cohabit.fr/",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.715667,
+          44.892818
+        ]
+      },
+      "properties": {
+        "id": "fablab-copernic-saint-medard-en-jalles",
+        "nom": "Fablab Copernic",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "FabLab de l'espace de coworking Eclipse, à l'Espace Copernic : ateliers de découverte et machines partagées.",
+        "adresse": "62 place de la République",
+        "code_postal": "33160",
+        "commune": "Saint-Médard-en-Jalles",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "84425236100010",
+        "rna": "W332021057",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.557035,
+          44.859092
+        ]
+      },
+      "properties": {
+        "id": "fablab-de-cap-sciences-bordeaux",
+        "nom": "FabLab de Cap Sciences",
+        "etiquettes": [
+          "fabrication",
+          "emi"
+        ],
+        "description": "FabLab du centre de culture scientifique Cap Sciences : impression 3D, découpe laser, électronique. Ateliers grand public, scolaires et accès libre pour les membres.",
+        "adresse": "Quai de Bacalan",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://www.cap-sciences.net/au-programme/atelier/grand-public/ateliers-avec-le-fablab/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "39988425300036",
+        "rna": "W332009483",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.01719,
+          44.683141
+        ]
+      },
+      "properties": {
+        "id": "fablab-des-acacias-audenge",
+        "nom": "Fablab des Acacias",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Fablab du tiers-lieu La Maison des Acacias, sur le bassin d'Arcachon : impression 3D, initiations et formations, réservation de machines et Repair Café deux fois par mois.",
+        "adresse": "17 rue des Acacias",
+        "code_postal": "33980",
+        "commune": "Audenge",
+        "site": "https://www.lamaisondesacacias.org/fablab",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "89539702400020",
+        "rna": "W336007213",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.573335,
           45.224058
         ]
@@ -779,6 +1102,36 @@
         "rna": "W332021845",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.320142,
+          44.636854
+        ]
+      },
+      "properties": {
+        "id": "ismee-cadillac-sur-garonne",
+        "nom": "Ismée",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Média local indépendant et participatif de l'Entre-deux-Mers (magazine, site, rencontres) qui anime aussi des ateliers d'éducation aux médias et de cartographie pour petits et grands, notamment avec les bibliothèques.",
+        "adresse": "18 place de la République",
+        "code_postal": "33410",
+        "commune": "Cadillac-sur-Garonne",
+        "site": "https://ismee.info",
+        "public": [
+          "Tout public",
+          "Jeunesse"
+        ],
+        "siret": "92481920400018",
+        "rna": "W332034564",
+        "date_ajout": "2026-11-23",
+        "source": "import emi-gironde.csv"
       }
     },
     {
@@ -927,6 +1280,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.55015,
+          44.865334
+        ]
+      },
+      "properties": {
+        "id": "l-artichaut-bordeaux",
+        "nom": "L'Artichaut",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Tiers-lieu associatif de la Bastide, à Bordeaux, recensé avec un espace de fabrication partagé.",
+        "adresse": "6 place Pierre Cétois",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "site": "https://lartichaut-bordeaux.com",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "89360564200014",
+        "rna": "W332030102",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.512745,
+          44.856757
+        ]
+      },
+      "properties": {
+        "id": "l-autre-rive-l-echo-des-collines-cenon",
+        "nom": "L'Autre Rive — L'Écho des Collines",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Association qui publie depuis 1998 L'Écho des Collines, mensuel local de la rive droite bordelaise et d'une partie de l'Entre-deux-Mers, écrit avec des bénévoles et des habitants.",
+        "adresse": "1 rue des Catalpas",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "site": "https://echodescollines.fr",
+        "email": "communication.echodescollines@hotmail.fr",
+        "telephone": "05 57 34 01 96",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "42053827400044",
+        "rna": "W332001015",
+        "date_ajout": "2026-11-23",
+        "source": "import emi-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.587355,
           44.792667
         ]
@@ -1025,6 +1438,34 @@
         "rna": "W333003311",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.444189,
+          44.994567
+        ]
+      },
+      "properties": {
+        "id": "la-recre-saint-andre-de-cubzac",
+        "nom": "La Récré",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Tiers-lieu de la communauté de communes du Grand Cubzaguais consacré à « la création sous toutes ses formes » : coworking et fablab, avec notamment une brodeuse numérique.",
+        "adresse": "44 rue Dantagnan",
+        "code_postal": "33240",
+        "commune": "Saint-André-de-Cubzac",
+        "site": "https://la-recre.grand-cubzaguais.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "24330122300067",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
       }
     },
     {
@@ -1164,6 +1605,64 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.382793,
+          45.066528
+        ]
+      },
+      "properties": {
+        "id": "le-chai-2-0-marsas",
+        "nom": "Le Chai 2.0",
+        "etiquettes": [
+          "inclusion"
+        ],
+        "description": "Espace de formation numérique et de coworking de la communauté de communes Latitude Nord Gironde, avec un médiateur numérique. Accès sur adhésion annuelle.",
+        "adresse": "51 rue Jean Combret",
+        "code_postal": "33620",
+        "commune": "Marsas",
+        "site": "https://www.latitude-nord-gironde.fr/chai20/",
+        "email": "contact.lechai20@latitude-nord-gironde.fr",
+        "telephone": "05 57 32 40 34",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.938679,
+          45.306596
+        ]
+      },
+      "properties": {
+        "id": "le-poulailler-ateliers-partages-lesparre-medoc",
+        "nom": "Le Poulailler — ateliers partagés",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Tiers-lieu associatif du Médoc : librairie des transitions, ateliers partagés et fablab, médiation numérique.",
+        "adresse": "48 rue Jean-Jacques Rousseau",
+        "code_postal": "33340",
+        "commune": "Lesparre-Médoc",
+        "site": "https://www.cocotte-minute.info/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "80850674500013",
+        "rna": "W334001864",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.102803,
           44.640374
         ]
@@ -1288,6 +1787,35 @@
         "rna": "W333001581",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.239365,
+          44.910672
+        ]
+      },
+      "properties": {
+        "id": "lib-lab-libourne",
+        "nom": "Lib-Lab",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "FabLab associatif de Libourne, à la Maison Graziana : atelier partagé ouvert en semaine, avec adhésion annuelle, ateliers et formations.",
+        "adresse": "25 avenue de Verdun",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "site": "https://www.lib-lab.fr/",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "53411098600021",
+        "rna": "W335001758",
+        "date_ajout": "2026-11-23",
+        "source": "import fablabs-gironde.csv"
       }
     },
     {
@@ -1428,6 +1956,33 @@
         "rna": "W332023455",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.237877,
+          44.918801
+        ]
+      },
+      "properties": {
+        "id": "melodie-fm-libourne",
+        "nom": "Mélodie FM",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du Libournais, émettant en FM sur 89.3 MHz à Libourne et 89.1 MHz à Castillon-la-Bataille.",
+        "adresse": "42 rue Jules Steeg",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "38932025000019",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
       }
     },
     {
@@ -1979,6 +2534,34 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.514269,
+          44.856679
+        ]
+      },
+      "properties": {
+        "id": "o2-radio-cenon",
+        "nom": "O2 Radio",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative des Hauts de Garonne (rive droite de la métropole), émettant en FM sur 91.3 MHz. Elle mène des projets radio avec les habitants, dont des ateliers pour les jeunes à partir de 10 ans.",
+        "adresse": "Rue du Loret",
+        "code_postal": "33150",
+        "commune": "Cenon",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "41150905200030",
+        "rna": "W332001041",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.563173,
           44.832046
         ]
@@ -2137,6 +2720,122 @@
         "rna": "W332005057",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.619112,
+          44.794594
+        ]
+      },
+      "properties": {
+        "id": "radio-campus-bordeaux-pessac",
+        "nom": "Radio Campus Bordeaux",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative et étudiante du campus de Pessac-Talence, émettant en FM sur 88.1 MHz. Elle forme bénévoles et étudiants à la pratique radiophonique.",
+        "adresse": "Esplanade des Antilles",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://www.radiocampusbordeaux.fr",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "38848405700020",
+        "rna": "W332001111",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.06859,
+          44.636984
+        ]
+      },
+      "properties": {
+        "id": "radio-dunes-gujan-mestras",
+        "nom": "Radio Dunes",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du bassin d'Arcachon, émettant en FM sur 104.4 MHz.",
+        "adresse": "15 cours de la République",
+        "code_postal": "33470",
+        "commune": "Gujan-Mestras",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "78914593500027",
+        "rna": "W336001999",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.581114,
+          44.825702
+        ]
+      },
+      "properties": {
+        "id": "rcf-bordeaux-bordeaux",
+        "nom": "RCF Bordeaux",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio chrétienne locale du réseau RCF, émettant en FM à Bordeaux : information, culture, spiritualité et vie locale.",
+        "adresse": "135 rue de Saint-Genès",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "site": "https://www.rcf.fr/bordeaux",
+        "reseaux": [
+          "RCF"
+        ],
+        "public": [
+          "Tout public"
+        ],
+        "siret": "40107961100026",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.086161,
+          44.692246
+        ]
+      },
+      "properties": {
+        "id": "rem-radio-entre-deux-mers-sauveterre-de-guyenne",
+        "nom": "REM — Radio Entre-deux-Mers",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative de l'Entre-deux-Mers, émettant en FM sur 98.4 MHz depuis Sauveterre-de-Guyenne. Elle est portée par une association d'intérêts économiques et touristiques du territoire.",
+        "adresse": "4 rue Saint-Romain",
+        "code_postal": "33540",
+        "commune": "Sauveterre-de-Guyenne",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "37851365900029",
+        "rna": "W333000118",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
       }
     },
     {
