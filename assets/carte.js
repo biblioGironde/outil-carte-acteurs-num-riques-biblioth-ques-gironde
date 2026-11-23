@@ -54,6 +54,94 @@
 
   const calque = L.layerGroup().addTo(carte);
 
+  // ---------- Calque des communes ----------
+  // Contours sous les marqueurs (volet dédié) : ils ne gênent pas le clic sur les acteurs.
+  carte.createPane('communes').style.zIndex = 350;
+  const STYLE_COMMUNE = { pane: 'communes', color: '#0f5e6b', weight: 0.8, opacity: 0.55, fillColor: '#0f5e6b', fillOpacity: 0.01 };
+  const STYLE_COMMUNE_OCCUPEE = { fillOpacity: 0.07 };
+  const STYLE_COMMUNE_SURVOL = { weight: 2.2, opacity: 0.9, fillOpacity: 0.14 };
+  let communes = null;          // L.GeoJSON, chargé à la première demande
+  let communesVisibles = false;
+  let chargementCommunes = null;
+
+  /** Point dans un polygone (règle pair-impair) ; anneaux GeoJSON [lon, lat]. */
+  function dansAnneau([x, y], anneau) {
+    let dedans = false;
+    for (let i = 0, j = anneau.length - 1; i < anneau.length; j = i++) {
+      const [xi, yi] = anneau[i];
+      const [xj, yj] = anneau[j];
+      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) dedans = !dedans;
+    }
+    return dedans;
+  }
+  function dansGeometrie(pt, g) {
+    const polygones = g.type === 'Polygon' ? [g.coordinates] : g.type === 'MultiPolygon' ? g.coordinates : [];
+    return polygones.some(([ext, ...trous]) => dansAnneau(pt, ext) && !trous.some((t) => dansAnneau(pt, t)));
+  }
+
+  /** Nombre d'acteurs affichés par commune (contours), mis à jour à chaque filtre. */
+  function compterParCommune(visibles) {
+    if (!communes) return;
+    communes.eachLayer((couche) => {
+      const g = couche.feature.geometry;
+      const b = couche.getBounds();
+      couche.nb = visibles.filter((a) => {
+        const ll = a.marqueur.getLatLng();
+        return b.contains(ll) && dansGeometrie([ll.lng, ll.lat], g);
+      }).length;
+      couche.setStyle({ ...STYLE_COMMUNE, ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}) });
+    });
+  }
+
+  function chargerCommunes() {
+    chargementCommunes ??= fetch('data/communes-gironde.geojson').then((r) => r.json()).then((geo) => {
+      communes = L.geoJSON(geo, {
+        style: () => STYLE_COMMUNE,
+        onEachFeature: (f, couche) => {
+          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${couche.nb
+            ? `${couche.nb} acteur${couche.nb > 1 ? 's' : ''} affiché${couche.nb > 1 ? 's' : ''}` : 'Aucun acteur affiché'}`,
+          { sticky: true, direction: 'top', className: 'infobulle-commune' });
+          couche.on('mouseover', () => couche.setStyle(STYLE_COMMUNE_SURVOL));
+          couche.on('mouseout', () => couche.setStyle({ ...STYLE_COMMUNE, ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}) }));
+          couche.on('click', () => carte.fitBounds(couche.getBounds(), { padding: [30, 30], maxZoom: 14 }));
+        },
+      });
+      compterParCommune(acteurs.filter(correspond));
+      return communes;
+    });
+    return chargementCommunes;
+  }
+
+  async function afficherCommunes(oui) {
+    communesVisibles = oui;
+    boutonCommunes?.setAttribute('aria-pressed', String(oui));
+    if (oui) (await chargerCommunes()).addTo(carte);
+    else communes?.remove();
+    ecrireUrl();
+  }
+
+  let boutonCommunes;
+  const ControleCommunes = L.Control.extend({
+    options: { position: 'topright' },
+    onAdd() {
+      const div = L.DomUtil.create('div', 'leaflet-bar controle-calques');
+      boutonCommunes = L.DomUtil.create('button', 'bouton-calque', div);
+      boutonCommunes.type = 'button';
+      boutonCommunes.setAttribute('aria-pressed', 'false');
+      boutonCommunes.title = 'Afficher ou masquer les limites des communes';
+      boutonCommunes.innerHTML = '<span class="icone-calque" aria-hidden="true"></span>Communes';
+      L.DomEvent.disableClickPropagation(div);
+      L.DomEvent.on(boutonCommunes, 'click', () => {
+        afficherCommunes(!communesVisibles).catch((e) => {
+          console.error(e);
+          afficherCommunes(false);
+        });
+      });
+      return div;
+    },
+  });
+  new ControleCommunes().addTo(carte);
+
   // ---------- État ----------
   let etiquettes = [];
   let parId = new Map();
@@ -74,6 +162,7 @@
     champ.value = recherche;
     domaine = p.get('domaine') || '';
     activite = p.get('activite') || '';
+    communesVisibles = p.get('communes') === '1';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();
@@ -81,6 +170,7 @@
     if (recherche) p.set('q', recherche);
     if (choisies.has('musique') && domaine) p.set('domaine', domaine);
     if (choisies.has('musique') && activite) p.set('activite', activite);
+    if (communesVisibles) p.set('communes', '1');
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
   }
@@ -224,6 +314,7 @@
       : `${visibles.length} acteur${visibles.length > 1 ? 's' : ''} sur ${total}`;
     el('poignee-texte').textContent = `Liste des acteurs (${visibles.length})`;
     toutAfficher.hidden = !choisies.size && !recherche && !domaine && !activite;
+    compterParCommune(visibles);
     ecrireUrl();
   }
 
@@ -292,6 +383,7 @@
     lireUrl();
     dessinerFiltres();
     actualiser();
+    if (communesVisibles) afficherCommunes(true).catch((e) => { console.error(e); afficherCommunes(false); });
     if (acteurs.length) {
       const visibles = acteurs.filter(correspond);
       const groupe = L.featureGroup((visibles.length ? visibles : acteurs).map((a) => a.marqueur));

@@ -120,6 +120,25 @@ a { color: var(--accent); }
 .marqueur-actif .marque { transform: scale(1.35); box-shadow: 0 0 0 4px rgba(15, 94, 107, .35), 0 1px 4px rgba(0,0,0,.35); }
 .leaflet-marker-icon.marqueur { background: none; border: 0; }
 
+/* Calque des communes */
+.controle-calques { border: 0 !important; box-shadow: var(--ombre) !important; border-radius: 10px !important; }
+.bouton-calque {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font: inherit; font-size: .8rem; font-weight: 600; line-height: 1;
+  padding: .55rem .75rem; border: 1px solid var(--trait); border-radius: 10px;
+  background: var(--papier); color: var(--encre); cursor: pointer;
+}
+.bouton-calque:hover { background: var(--fond); }
+.bouton-calque[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.icone-calque {
+  width: 14px; height: 14px; flex: none; border-radius: 3px;
+  border: 1.5px solid currentColor;
+  background:
+    linear-gradient(currentColor, currentColor) 45% 0 / 1.5px 100% no-repeat,
+    linear-gradient(currentColor, currentColor) 0 60% / 100% 1.5px no-repeat;
+}
+.infobulle-commune { font-size: .78rem; line-height: 1.35; }
+
 /* Fiche (popup) */
 .leaflet-popup-content-wrapper { border-radius: var(--rayon); box-shadow: var(--ombre); }
 .leaflet-popup-content { margin: 1rem 1.1rem; width: min(300px, 70vw) !important; font-size: .85rem; line-height: 1.45; }

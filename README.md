@@ -111,6 +111,23 @@ Lancement manuel à tout moment : *Actions → Vérification annuelle des acteur
 > Le workflow tourne donc chaque mois pour se réactiver, et ne fait la vérification complète que le mois choisi.
 > Si un bandeau signale malgré tout qu'il est désactivé, le réactiver depuis l'onglet *Actions*.
 
+## Calque des communes
+
+Le bouton « Communes » de la carte affiche les limites des 534 communes de Gironde
+(fichier `data/communes-gironde.geojson`, chargé seulement à la demande). Au survol, une info-bulle
+donne le nom de la commune et le nombre d'acteurs affichés (selon les filtres en cours) ;
+un clic cadre la carte sur la commune. Les communes qui comptent au moins un acteur affiché sont légèrement teintées.
+Le calque est mémorisé dans l'adresse de la page (`?communes=1`).
+
+Source : contours de l'API Découpage administratif (geo.api.gouv.fr, d'après IGN Admin Express), simplifiés.
+Pour les mettre à jour (fusions de communes au 1er janvier) :
+
+```sh
+curl -o contours.geojson "https://geo.api.gouv.fr/departements/33/communes?fields=nom,code&format=geojson&geometry=contour"
+npx mapshaper contours.geojson -filter-fields nom,code -simplify 12% keep-shapes \
+  -o precision=0.00001 format=geojson data/communes-gironde.geojson
+```
+
 ## Étiquettes
 
 Elles sont définies dans `data/etiquettes.json` (identifiant, libellé, couleur), tout comme les spécialités
@@ -159,6 +176,7 @@ Pour un aperçu avec des données fictives : copier `tests/fixtures/exemple.geoj
 - Fond de carte © contributeurs OpenStreetMap ; bibliothèque Leaflet.
 - Géolocalisation : service de géocodage de la Géoplateforme (IGN).
 - Vérification : API Recherche d'entreprises (data.gouv.fr).
+- Limites communales : API Découpage administratif (geo.api.gouv.fr), IGN Admin Express, Licence Ouverte.
 
 ### Licences
 
@@ -166,6 +184,6 @@ Pour un aperçu avec des données fictives : copier `tests/fixtures/exemple.geoj
   sous licence **GNU Affero General Public License v3.0** (AGPL-3.0-or-later), voir [`LICENSE`](LICENSE).
   Vous pouvez réutiliser et modifier ce code ; toute version modifiée, redistribuée **ou mise en ligne**,
   doit être publiée sous la même licence, avec son code source.
-- **Données** (`data/acteurs.geojson`, `data/etiquettes.json`) : **Licence Ouverte Etalab 2.0**
+- **Données** (`data/acteurs.geojson`, `data/etiquettes.json`, `data/communes-gironde.geojson`) : **Licence Ouverte Etalab 2.0**
   (<https://www.etalab.gouv.fr/licence-ouverte-open-licence/>). Réutilisation libre, sous réserve de citer la source :
   « Carte des acteurs du territoire — biblio.gironde ».
