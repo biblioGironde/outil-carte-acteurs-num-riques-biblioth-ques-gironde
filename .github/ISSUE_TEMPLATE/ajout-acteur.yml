@@ -25,6 +25,7 @@ body:
         - label: "Éducation populaire"
         - label: "Musique"
         - label: "Micro-Folie (musée numérique)"
+        - label: "Jeu vidéo (culture, médiation, patrimoine)"
         - label: "Institutionnel"
   - type: dropdown
     id: domaine_musique

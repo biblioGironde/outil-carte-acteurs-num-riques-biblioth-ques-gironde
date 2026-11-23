@@ -43,6 +43,12 @@
       "couleur": "#b45309"
     },
     {
+      "id": "jeuvideo",
+      "libelle": "Jeu vidéo (culture, médiation, patrimoine)",
+      "court": "Jeu vidéo",
+      "couleur": "#dc2626"
+    },
+    {
       "id": "institutionnel",
       "libelle": "Institutionnel",
       "court": "Institutionnel",

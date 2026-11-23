@@ -673,9 +673,11 @@
         "id": "c-ur-de-bastide-sainte-foy-la-grande",
         "nom": "Cœur de Bastide",
         "etiquettes": [
-          "fabrication"
+          "fabrication",
+          "inclusion",
+          "pdn"
         ],
-        "description": "Tiers-lieu associatif de Sainte-Foy-la-Grande : ateliers partagés, fablab, réparation et activités culturelles.",
+        "description": "Tiers-lieu associatif de Sainte-Foy-la-Grande : ateliers partagés, fablab, réparation et activités culturelles. Sa conseillère numérique, Promeneuse du Net Parentalité, anime des ateliers de parentalité numérique.",
         "adresse": "44 rue Alsace-Lorraine",
         "code_postal": "33220",
         "commune": "Sainte-Foy-la-Grande",
@@ -686,7 +688,8 @@
         "siret": "78886803200020",
         "rna": "W335002377",
         "date_ajout": "2026-11-23",
-        "source": "import fablabs-gironde.csv"
+        "source": "import fablabs-gironde.csv",
+        "date_modification": "2026-11-23"
       }
     },
     {
@@ -1384,13 +1387,14 @@
         "id": "la-cle-des-ondes-bordeaux",
         "nom": "LA CLÉ DES ONDES",
         "etiquettes": [
-          "musique"
+          "musique",
+          "emi"
         ],
         "domaine_musique": "Musiques actuelles",
         "activites_musique": [
           "Radio, média"
         ],
-        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : médias.",
+        "description": "Radio associative bordelaise sans publicité, fondée en 1981 (90.1 FM), aux émissions en plusieurs langues. Elle accueille au studio des projets de radio scolaires, comme le club radio du collège Édouard-Vaillant.",
         "adresse": "71 cours Édouard Vaillant",
         "code_postal": "33300",
         "commune": "Bordeaux",
@@ -1403,7 +1407,8 @@
         "siret": "33064045900039",
         "rna": "W332005008",
         "date_ajout": "2026-11-11",
-        "source": "import rim-gironde.csv"
+        "source": "import rim-gironde.csv",
+        "date_modification": "2026-11-23"
       }
     },
     {
@@ -2653,6 +2658,36 @@
         "rna": "W332016262",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.076747,
+          44.764491
+        ]
+      },
+      "properties": {
+        "id": "plage-fm-andernos-les-bains",
+        "nom": "Plage FM",
+        "etiquettes": [
+          "emi"
+        ],
+        "description": "Radio associative du bassin d'Arcachon, émettant en FM sur 89.1 MHz depuis Andernos-les-Bains : information locale, agenda et musique.",
+        "adresse": "11 rue Joseph Cugnot",
+        "code_postal": "33510",
+        "commune": "Andernos-les-Bains",
+        "site": "https://www.plagefm.fr",
+        "telephone": "05 57 70 43 16",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "41198184800038",
+        "rna": "W332014324",
+        "date_ajout": "2026-11-23",
+        "source": "import radios-associatives-gironde.csv"
       }
     },
     {

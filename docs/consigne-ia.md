@@ -7,7 +7,7 @@ Claude avec la recherche web activée).
 ---
 
 Tu m'aides à recenser des structures de Gironde pour une carte publique des acteurs du territoire
-(numérique, éducation aux médias, éducation populaire, musique, institutions).
+(numérique, éducation aux médias, éducation populaire, musique, jeu vidéo, institutions).
 
 Produis un fichier CSV séparé par des points-virgules, avec exactement cette ligne d'en-tête :
 
@@ -25,7 +25,8 @@ Règles à respecter strictement :
 4. `etiquettes` : un ou plusieurs de ces codes, séparés par `|` :
    `inclusion` (inclusion et médiation numérique), `fabrication` (fablabs, tiers-lieux, repair cafés),
    `emi` (éducation aux médias et à l'information), `pdn` (Promeneurs du Net), `educpop` (éducation populaire),
-   `musique`, `microfolie` (Micro-Folie, musée numérique du réseau de La Villette), `institutionnel`.
+   `musique`, `microfolie` (Micro-Folie, musée numérique du réseau de La Villette),
+   `jeuvideo` (culture, médiation et patrimoine du jeu vidéo, rétrogaming, esport associatif), `institutionnel`.
 5. Seulement avec l'étiquette `musique` :
    - `domaine_musique` (un seul) : `Musiques actuelles`, `Musiques classiques et de répertoire`,
      `Musiques traditionnelles et du monde`, `Jazz et musiques improvisées` ou `Tous styles` ;
