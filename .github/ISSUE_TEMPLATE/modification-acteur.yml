@@ -49,6 +49,7 @@ body:
         - label: "Musique"
         - label: "Micro-Folie (musée numérique)"
         - label: "Jeu vidéo (culture, médiation, patrimoine)"
+        - label: "Numérique responsable (sobriété, réemploi, logiciel libre)"
         - label: "Institutionnel"
   - type: dropdown
     id: domaine_musique
