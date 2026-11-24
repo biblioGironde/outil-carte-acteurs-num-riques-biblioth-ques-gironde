@@ -2434,6 +2434,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.790357,
+          44.4978
+        ]
+      },
+      "properties": {
+        "id": "eyre-en-jeux-festival-du-jeu-belin-beliet",
+        "nom": "Eyre en Jeux — festival du jeu",
+        "etiquettes": [
+          "jeuvideo",
+          "institutionnel"
+        ],
+        "description": "Festival gratuit du jeu sous toutes ses formes, porté par la ludothèque des 4 Coins de Belin-Béliet dans le cadre de la convention territoriale du Val de l'Eyre : jeux de société et d'ambiance, escape game, petite enfance et un espace de jeux vidéo (consoles, PC, arcade, réalité virtuelle) avec tournois.",
+        "adresse": "29 avenue Aliénor",
+        "code_postal": "33830",
+        "commune": "Belin-Béliet",
+        "public": [
+          "Familles",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import festivals-jeu-video-gironde.csv",
+        "email": "ludotheque.belinbeliet@orange.fr",
+        "telephone": "05 56 88 56 99",
+        "site": "https://www.belin-beliet.fr/ludotheque"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.612835,
           44.791067
         ]
@@ -2871,6 +2902,36 @@
         "rna": "W332021845",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5805,
+          44.7137
+        ]
+      },
+      "properties": {
+        "id": "game-fest-festival-du-jeu-video-cc-montesquieu-martillac",
+        "nom": "Game Fest — festival du jeu vidéo (CC Montesquieu)",
+        "etiquettes": [
+          "jeuvideo",
+          "institutionnel"
+        ],
+        "description": "Festival gratuit organisé par la communauté de communes de Montesquieu : rétrogaming, réalité virtuelle, tournois, cosplay, robotique, drones, atelier sur l'intelligence artificielle avec Cap Sciences et concours de jeu vidéo coopératif.",
+        "adresse": "1 allée Jean Rostand",
+        "code_postal": "33650",
+        "commune": "Martillac",
+        "site": "https://www.cc-montesquieu.fr/agenda/game-fest-2026/",
+        "public": [
+          "Jeunesse",
+          "Familles",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import festivals-jeu-video-gironde.csv"
       }
     },
     {
@@ -5211,6 +5272,35 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.935,
+          44.603
+        ]
+      },
+      "properties": {
+        "id": "mios-gaming-festival-du-jeu-video-mios",
+        "nom": "Mios Gaming — festival du jeu vidéo",
+        "etiquettes": [
+          "jeuvideo",
+          "institutionnel"
+        ],
+        "description": "Festival organisé par la Ville de Mios : espace de jeu de 1 200 m² (arcade, rétrogaming, simulateurs), tournois e-sport retransmis, atelier de création de jeu vidéo, stands, écoles et métiers du secteur, cosplay.",
+        "adresse": "Complexe sportif Pierrette et Roger Mayonnade",
+        "code_postal": "33380",
+        "commune": "Mios",
+        "public": [
+          "Jeunesse",
+          "Familles",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import festivals-jeu-video-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.575308,
           44.836082
         ]
@@ -5795,6 +5885,37 @@
         "rna": "W332010685",
         "date_ajout": "2026-11-23",
         "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4262,
+          44.6852
+        ]
+      },
+      "properties": {
+        "id": "pixel-fest-festival-du-jeu-video-convergence-garonne-portets",
+        "nom": "Pixel Fest — festival du jeu vidéo (Convergence Garonne)",
+        "etiquettes": [
+          "jeuvideo",
+          "institutionnel"
+        ],
+        "description": "Festival gratuit du jeu vidéo et des loisirs numériques organisé par la communauté de communes Convergence Garonne et ses médiathèques : rétrogaming, LAN party, réalité virtuelle, espace créatif, tournoi, cosplay et espace de prévention, dès 10 ans.",
+        "adresse": "Espace culturel La Forge",
+        "code_postal": "33640",
+        "commune": "Portets",
+        "site": "https://www.convergence-garonne.fr/agenda/pixel-fest-2026/",
+        "telephone": "05 56 76 38 00",
+        "public": [
+          "Jeunesse",
+          "Familles",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import festivals-jeu-video-gironde.csv"
       }
     },
     {
