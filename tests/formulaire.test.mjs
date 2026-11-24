@@ -4,7 +4,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { corpsIssue, collectionVide, geocodageFactice } from './aides.mjs';
 import {
-  traiterFormulaire, ErreurFormulaire, ACTION_MODIFIER, ACTION_RETIRER,
+  traiterFormulaire, ErreurFormulaire, ACTION_MODIFIER, ACTION_RETIRER, versProprietes,
 } from '../scripts/issue-vers-acteur.mjs';
 import { lireFormulaire } from '../scripts/lib/formulaire.mjs';
 import { CHAMPS, validerCollection } from '../scripts/lib/referentiel.mjs';
@@ -90,9 +90,9 @@ test('ajout refusé : erreurs listées en clair', async () => {
   );
 });
 
-test('domaine ou activité musicale sans étiquette Musique : refusé', async () => {
-  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, domaine_musique: 'Musiques actuelles' }), /Musique/);
-  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, activites_musique: ['Festival'] }), /Musique/);
+test('domaine ou activité musicale sans étiquette MAO : refusé', async () => {
+  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, domaine_musique: 'Musiques actuelles' }), /MAO/);
+  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, activites_musique: ['Festival'] }), /MAO/);
 });
 
 test('doublon nom + commune : renvoie vers la modification', async () => {
@@ -110,7 +110,7 @@ test('modification : seuls les champs remplis changent, « - » vide un champ', 
     titre: '[Modification] Fablab du Port',
     corps: corpsIssue('modification-acteur.yml', {
       identifiant: 'fablab-du-port-bordeaux', action: ACTION_MODIFIER,
-      telephone: '05 56 00 00 00', email: '-', etiquettes: ['Musique'], domaine_musique: 'Musiques actuelles',
+      telephone: '05 56 00 00 00', email: '-', etiquettes: ['MAO (musique assistée par ordinateur)'], domaine_musique: 'Musiques actuelles',
       activites_musique: ['Label, production phonographique', 'Salle de concert, lieu de diffusion'],
     }),
     collection, aujourdhui: '2026-12-01', geocoderFn: geocodageFactice,
@@ -124,6 +124,10 @@ test('modification : seuls les champs remplis changent, « - » vide un champ', 
   assert.deepEqual(p.activites_musique, ['Salle de concert, lieu de diffusion', 'Label, production phonographique']);
   assert.equal(p.nom, 'Fablab du Port');
   assert.equal(p.date_modification, '2026-12-01');
+});
+
+test('étiquette renommée : l’ancien libellé « Musique » d’une issue reste reconnu', () => {
+  assert.deepEqual(versProprietes({ etiquettes: ['Musique', 'MAO', 'Jeu vidéo'] }).etiquettes, ['musique', 'musique', 'jeuvideo']);
 });
 
 test('modification : identifiant inconnu ou champ obligatoire vidé', async () => {

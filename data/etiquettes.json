@@ -32,8 +32,8 @@
     },
     {
       "id": "musique",
-      "libelle": "Musique",
-      "court": "Musique",
+      "libelle": "MAO (musique assistée par ordinateur)",
+      "court": "MAO",
       "couleur": "#db2777"
     },
     {

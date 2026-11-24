@@ -25,7 +25,7 @@ Règles à respecter strictement :
 4. `etiquettes` : un ou plusieurs de ces codes, séparés par `|` :
    `inclusion` (inclusion et médiation numérique), `fabrication` (fablabs, tiers-lieux, repair cafés),
    `emi` (éducation aux médias et à l'information), `pdn` (Promeneurs du Net), `educpop` (éducation populaire),
-   `musique`, `microfolie` (Micro-Folie, musée numérique du réseau de La Villette),
+   `musique` (filtre « MAO » de la carte : musique, MAO, lieux et acteurs musicaux), `microfolie` (Micro-Folie, musée numérique du réseau de La Villette),
    `jeuvideo` (culture, médiation et patrimoine du jeu vidéo, rétrogaming, esport associatif),
    `numresp` (numérique responsable : sobriété, réemploi et reconditionnement, logiciel libre), `institutionnel`.
 5. Seulement avec l'étiquette `musique` :

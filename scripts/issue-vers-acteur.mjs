@@ -48,7 +48,9 @@ export class ErreurFormulaire extends Error {
   }
 }
 
-const libelleVersEtiquette = new Map(ETIQUETTES.map((e) => [e.libelle, e.id]));
+// Libellé, libellé court ou identifiant (insensible à la casse) : une issue rédigée avant un
+// renommage d'étiquette (ex. « Musique », devenue « MAO ») reste lisible.
+const libelleVersEtiquette = new Map(ETIQUETTES.flatMap((e) => [e.libelle, e.court, e.id].filter(Boolean).map((l) => [l.toLowerCase(), e.id])));
 
 /** Convertit les valeurs saisies en propriétés GeoJSON. */
 export function versProprietes(saisie) {
@@ -57,7 +59,7 @@ export function versProprietes(saisie) {
     if (['coordonnees', 'confirmation', 'identifiant', 'action', 'motif'].includes(cle)) continue;
     if (valeur === EFFACER) { p[cle] = null; continue; }
     if (cle === 'etiquettes') {
-      p.etiquettes = valeur.map((l) => libelleVersEtiquette.get(l) ?? l);
+      p.etiquettes = valeur.map((l) => libelleVersEtiquette.get(l.toLowerCase()) ?? l);
     } else if (cle === 'reseaux') {
       p.reseaux = valeur.split(/[,;\n]/).map((s) => s.trim()).filter(Boolean);
     } else if (cle === 'siret') {
