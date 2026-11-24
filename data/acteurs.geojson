@@ -6336,6 +6336,43 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.594351,
+          44.804028
+        ]
+      },
+      "properties": {
+        "id": "scrime-studio-de-creation-et-de-recherche-en-informatique-et",
+        "nom": "SCRIME — Studio de création et de recherche en informatique et musiques expérimentales",
+        "etiquettes": [
+          "institutionnel",
+          "musique"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Studio d'enregistrement",
+          "Réseau, fédération, centre de ressources",
+          "Action culturelle, médiation",
+          "Enseignement, école de musique"
+        ],
+        "description": "Plateforme de l'université de Bordeaux qui réunit chercheurs en informatique et compositeurs : studio, dôme de spatialisation sonore, méta-instruments, résidences d'artistes, enseignement et projets d'éducation artistique et culturelle autour de l'informatique musicale.",
+        "adresse": "351 cours de la Libération",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "site": "https://scrime.u-bordeaux.fr",
+        "public": [
+          "Professionnels",
+          "Jeunesse",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import musique-mao-complement.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.743842,
           45.191754
         ]
