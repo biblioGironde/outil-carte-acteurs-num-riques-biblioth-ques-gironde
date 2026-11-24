@@ -2620,7 +2620,7 @@
           "educpop",
           "inclusion"
         ],
-        "description": "Association familiale qui gère la bibliothèque du village et propose des ateliers pour comprendre le numérique et maîtriser les outils du quotidien.",
+        "description": "Association, reconnue d'utilité publique qui agit en faveur des familles, qui gère la bibliothèque du village et propose des ateliers pour comprendre le numérique et maîtriser les outils du quotidien.",
         "adresse": "Rue du Port",
         "code_postal": "33420",
         "commune": "Génissac",
@@ -2633,7 +2633,8 @@
         "siret": "42083031700012",
         "rna": "W335000665",
         "date_ajout": "2026-11-23",
-        "source": "import inclusion-numerique-gironde-generalistes.csv"
+        "source": "import inclusion-numerique-gironde-generalistes.csv",
+        "date_modification": "2026-11-24"
       }
     },
     {
