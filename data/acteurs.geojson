@@ -1734,6 +1734,41 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.5611,
+          44.832634
+        ]
+      },
+      "properties": {
+        "id": "conservatoire-de-bordeaux-jacques-thibaud-bordeaux",
+        "nom": "Conservatoire de Bordeaux Jacques-Thibaud",
+        "etiquettes": [
+          "institutionnel",
+          "musique"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Enseignement, école de musique",
+          "Action culturelle, médiation"
+        ],
+        "description": "Conservatoire à rayonnement régional : plus de 2 200 élèves en musique, danse et théâtre, de la musique ancienne au jazz et aux musiques actuelles, avec un enseignement des musiques électroniques et de la création contemporaine.",
+        "adresse": "22 quai Sainte-Croix",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "site": "https://www.bordeaux.fr/le-conservatoire-de-bordeaux-jacques-thibaud",
+        "public": [
+          "Jeunesse",
+          "Tout public",
+          "Professionnels"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import ecoles-musique-mao-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.546036,
           44.87423
         ]
@@ -3543,6 +3578,40 @@
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv",
         "date_modification": "2026-11-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4284,
+          44.683
+        ]
+      },
+      "properties": {
+        "id": "la-cle-des-vignes-ecole-de-musique-portets",
+        "nom": "La Clé des Vignes — école de musique",
+        "etiquettes": [
+          "musique",
+          "educpop"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Enseignement, école de musique"
+        ],
+        "description": "École de musique associative de Castres-Gironde, Portets, Saint-Michel-de-Rieufret et Virelade : cours individuels et collectifs de MAO, guitares, piano, batterie, trompette, accordéon, violon, chant et éveil musical.",
+        "adresse": "Le Cheret",
+        "code_postal": "33640",
+        "commune": "Portets",
+        "public": [
+          "Jeunesse",
+          "Tout public"
+        ],
+        "siret": "40145699100017",
+        "rna": "W333000281",
+        "date_ajout": "2026-11-24",
+        "source": "import ecoles-musique-mao-gironde.csv"
       }
     },
     {
