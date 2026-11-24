@@ -128,11 +128,6 @@
       "id": "ressource",
       "libelle": "Réseau, fédération, centre de ressources",
       "court": "Réseau, ressources"
-    },
-    {
-      "id": "disquaire",
-      "libelle": "Disquaire, commerce culturel",
-      "court": "Disquaire"
     }
   ],
   "publics": [

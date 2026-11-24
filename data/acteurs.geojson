@@ -4324,8 +4324,7 @@
         ],
         "domaine_musique": "Musiques actuelles",
         "activites_musique": [
-          "Label, production phonographique",
-          "Disquaire, commerce culturel"
+          "Label, production phonographique"
         ],
         "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique, export, commerces culturels de proximité.",
         "adresse": "70 rue Abbé de l'Épée",
@@ -4337,7 +4336,8 @@
         ],
         "siret": "40858426600030",
         "date_ajout": "2026-11-11",
-        "source": "import rim-gironde.csv"
+        "source": "import rim-gironde.csv",
+        "date_modification": "2026-11-24"
       }
     },
     {

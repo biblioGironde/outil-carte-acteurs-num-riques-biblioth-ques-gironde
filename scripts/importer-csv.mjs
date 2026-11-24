@@ -108,7 +108,6 @@ const synonymes = {
   'action-culturelle': ['action culturelle', 'mediation'],
   media: ['radios', 'radio', 'webzines', 'webzine', 'medias'],
   ressource: ['mise en reseau, services aux professionnels', 'ressources', 'formation professionnelle', 'federation', 'reseau'],
-  disquaire: ['commerces culturels de proximite'],
 };
 for (const [id, mots] of Object.entries(synonymes)) {
   const libelle = REFERENTIEL.activites_musique.find((a) => a.id === id).libelle;
