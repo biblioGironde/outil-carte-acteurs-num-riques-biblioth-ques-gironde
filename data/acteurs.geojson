@@ -1119,35 +1119,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.568512,
-          44.898128
-        ]
-      },
-      "properties": {
-        "id": "bordeaux-geekfest-bordeaux",
-        "nom": "Bordeaux Geekfest",
-        "etiquettes": [
-          "jeuvideo"
-        ],
-        "description": "Grand festival de la culture geek au Parc des expositions de Bordeaux : jeu vidéo, e-sport, rétrogaming, créateurs, cosplay, avec notamment une compétition régionale d'e-sport pour seniors avec Silver Geek.",
-        "adresse": "Cours Jules Ladoumègue",
-        "code_postal": "33300",
-        "commune": "Bordeaux",
-        "site": "https://www.foiredebordeaux.com/temps-forts/bordeaux-geekfest",
-        "public": [
-          "Tout public",
-          "Jeunesse",
-          "Familles"
-        ],
-        "date_ajout": "2026-11-24",
-        "source": "import festivals-jeu-video-gironde.csv"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.571977,
           44.836902
         ]
