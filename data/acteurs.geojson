@@ -2055,6 +2055,41 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.602359,
+          44.981696
+        ]
+      },
+      "properties": {
+        "id": "ecole-municipale-de-musique-de-ludon-medoc-ludon-medoc",
+        "nom": "École municipale de musique de Ludon-Médoc",
+        "etiquettes": [
+          "institutionnel",
+          "musique"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Enseignement, école de musique"
+        ],
+        "description": "École de musique de la commune : cours individuels (piano, cordes, guitares, synthétiseur), pratiques collectives en musiques actuelles, percussions et chorales, et un atelier de musique assistée par ordinateur pour composer, enregistrer et produire ses morceaux.",
+        "adresse": "10 rue de la Mairie",
+        "code_postal": "33290",
+        "commune": "Ludon-Médoc",
+        "site": "https://ludonmedoc.fr",
+        "email": "ecolemusique@ludonmedoc.fr",
+        "telephone": "05 57 88 44 09",
+        "public": [
+          "Jeunesse",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import ecole-musique-ludon-medoc.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.569367,
           44.832979
         ]
@@ -6329,6 +6364,43 @@
         "rna": "W332012382",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.594351,
+          44.804028
+        ]
+      },
+      "properties": {
+        "id": "scrime-studio-de-creation-et-de-recherche-en-informatique-et",
+        "nom": "SCRIME — Studio de création et de recherche en informatique et musiques expérimentales",
+        "etiquettes": [
+          "institutionnel",
+          "musique"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Studio d'enregistrement",
+          "Réseau, fédération, centre de ressources",
+          "Action culturelle, médiation",
+          "Enseignement, école de musique"
+        ],
+        "description": "Plateforme de l'université de Bordeaux qui réunit chercheurs en informatique et compositeurs : studio, dôme de spatialisation sonore, méta-instruments, résidences d'artistes, enseignement et projets d'éducation artistique et culturelle autour de l'informatique musicale.",
+        "adresse": "351 cours de la Libération",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "site": "https://scrime.u-bordeaux.fr",
+        "public": [
+          "Professionnels",
+          "Jeunesse",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import musique-mao-complement.csv"
       }
     },
     {
