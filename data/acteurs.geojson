@@ -2703,6 +2703,43 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.443699,
+          44.996703
+        ]
+      },
+      "properties": {
+        "id": "foksabouge-studio-de-musique-associatif-saint-andre-de-cubza",
+        "nom": "Foksabouge — studio de musique associatif",
+        "etiquettes": [
+          "musique",
+          "educpop"
+        ],
+        "domaine_musique": "Musiques actuelles",
+        "activites_musique": [
+          "Studio d'enregistrement",
+          "Enseignement, école de musique"
+        ],
+        "description": "Association de Saint-André-de-Cubzac qui gère un studio de musique : enregistrement et mixage à prix associatifs, ateliers à l'année de MAO, production et techniques DJ dès 9 ans, accès libre au studio pour les adhérents, ainsi que des cours de danse.",
+        "adresse": "17 rue de la Dauge",
+        "code_postal": "33240",
+        "commune": "Saint-André-de-Cubzac",
+        "site": "https://www.foksabouge.com",
+        "email": "hello@foksabouge.com",
+        "public": [
+          "Jeunesse",
+          "Tout public"
+        ],
+        "siret": "49960162300014",
+        "rna": "W331001304",
+        "date_ajout": "2026-11-24",
+        "source": "import musique-mao-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.572111,
           44.855846
         ]
@@ -2886,6 +2923,42 @@
         "siret": "88374216500011",
         "date_ajout": "2026-11-23",
         "source": "import inclusion-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.552383,
+          44.813085
+        ]
+      },
+      "properties": {
+        "id": "iddac-institut-departemental-de-developpement-artistique-et-",
+        "nom": "IDDAC — Institut départemental de développement artistique et culturel",
+        "etiquettes": [
+          "institutionnel",
+          "musique"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Réseau, fédération, centre de ressources",
+          "Accompagnement d'artistes",
+          "Action culturelle, médiation"
+        ],
+        "description": "Agence culturelle du Département de la Gironde : accompagnement des artistes et des pratiques amateurs, notamment en musiques actuelles, conseil aux collectivités et aux structures, ressources, formation et soutien à l'éducation artistique et culturelle.",
+        "adresse": "51 rue des Terres Neuves",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "site": "https://www.iddac.net",
+        "public": [
+          "Professionnels",
+          "Tout public"
+        ],
+        "siret": "38389023300141",
+        "date_ajout": "2026-11-24",
+        "source": "import musique-mao-gironde.csv"
       }
     },
     {
