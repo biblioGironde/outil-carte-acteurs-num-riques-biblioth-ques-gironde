@@ -389,7 +389,7 @@
       const groupe = L.featureGroup((visibles.length ? visibles : acteurs).map((a) => a.marqueur));
       // Sur mobile, le tiroir masque le bas de l'écran : on décale le cadrage.
       carte.fitBounds(groupe.getBounds(), estMobile()
-        ? { paddingTopLeft: [30, 30], paddingBottomRight: [30, 150], maxZoom: 13 }
+        ? { paddingTopLeft: [30, 30], paddingBottomRight: [30, 175], maxZoom: 13 }
         : { padding: [40, 40], maxZoom: 13 });
     }
   }
