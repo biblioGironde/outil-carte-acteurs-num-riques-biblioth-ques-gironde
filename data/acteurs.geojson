@@ -896,6 +896,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.073618,
+          44.767035
+        ]
+      },
+      "properties": {
+        "id": "atelier-gironde-makers-andernos-les-bains",
+        "nom": "Atelier Gironde Makers",
+        "etiquettes": [
+          "fabrication"
+        ],
+        "description": "Atelier partagé et fablab du Bassin d'Arcachon : atelier bois équipé, imprimantes 3D, découpe laser, fraiseuse numérique, ateliers thématiques, cours pour enfants et accompagnement de projets.",
+        "adresse": "5 avenue des Frères Montgolfier",
+        "code_postal": "33510",
+        "commune": "Andernos-les-Bains",
+        "site": "https://girondemakers.fr",
+        "email": "contact@girondemakers.fr",
+        "telephone": "05 56 60 15 57",
+        "public": [
+          "Tout public",
+          "Jeunesse",
+          "Professionnels"
+        ],
+        "siret": "98812139800016",
+        "rna": "W336008061",
+        "date_ajout": "2026-11-24",
+        "source": "import libre-reparation-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.576666,
           44.857413
         ]
@@ -4259,6 +4292,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.4581,
+          44.7769
+        ]
+      },
+      "properties": {
+        "id": "libretic-cenac",
+        "nom": "Libretic",
+        "etiquettes": [
+          "numresp"
+        ],
+        "description": "Association d'intérêt général membre du collectif CHATONS : hébergement de services en ligne libres et éthiques, conseil et accompagnement vers les logiciels libres pour les particuliers, associations et collectivités.",
+        "adresse": "Pas de local ouvert au public",
+        "code_postal": "33360",
+        "commune": "Cénac",
+        "site": "https://libretic.fr",
+        "public": [
+          "Tout public",
+          "Professionnels"
+        ],
+        "siret": "91167180800010",
+        "rna": "W332031685",
+        "date_ajout": "2026-11-24",
+        "source": "import libre-reparation-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.497468,
           44.857974
         ]
@@ -5658,6 +5721,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.938616,
+          44.605551
+        ]
+      },
+      "properties": {
+        "id": "pousse-cafe-cafe-associatif-de-mios-mios",
+        "nom": "Pousse Café — café associatif de Mios",
+        "etiquettes": [
+          "numresp",
+          "educpop"
+        ],
+        "description": "Café associatif, solidaire et culturel : concerts, jeux, ateliers créatifs, cafés-débats et un atelier d'informatique libre pour découvrir des alternatives aux services des géants du numérique.",
+        "adresse": "11 place du 11 Novembre",
+        "code_postal": "33380",
+        "commune": "Mios",
+        "site": "https://www.poussecafemios.fr",
+        "email": "contact@poussecafemios.fr",
+        "public": [
+          "Tout public",
+          "Familles"
+        ],
+        "siret": "93815118000016",
+        "rna": "W336007924",
+        "date_ajout": "2026-11-24",
+        "source": "import libre-reparation-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.564006,
           44.872869
         ]
@@ -5862,6 +5957,36 @@
         "rna": "W332022185",
         "date_ajout": "2026-11-23",
         "source": "import numerique-responsable-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.540902,
+          44.818037
+        ]
+      },
+      "properties": {
+        "id": "repair-cafe-bordeaux-begles",
+        "nom": "Repair Café Bordeaux",
+        "etiquettes": [
+          "numresp",
+          "fabrication"
+        ],
+        "description": "Association de co-réparation : ateliers où des bénévoles aident à réparer appareils électriques, électroniques et informatiques, et installent Linux pour prolonger la vie des ordinateurs.",
+        "adresse": "37 bis rue Pauly",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "site": "https://repair-cafe-bordeaux.org",
+        "public": [
+          "Tout public"
+        ],
+        "siret": "81457311900017",
+        "rna": "W332018925",
+        "date_ajout": "2026-11-24",
+        "source": "import libre-reparation-gironde.csv"
       }
     },
     {
@@ -6440,6 +6565,37 @@
         "rna": "W332002934",
         "date_ajout": "2026-11-23",
         "source": "import inclusion-numerique-gironde-generalistes.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.654304,
+          44.845655
+        ]
+      },
+      "properties": {
+        "id": "unbee-informatique-pour-tous-merignac",
+        "nom": "Unbee — Informatique pour tous",
+        "etiquettes": [
+          "numresp",
+          "inclusion"
+        ],
+        "description": "Association mérignacaise d'entraide informatique et de promotion du logiciel libre : permanences numériques deux vendredis par mois, aide à l'installation et à l'usage de logiciels libres, échanges ouverts à tous.",
+        "adresse": "55 avenue du Maréchal de Lattre de Tassigny",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.unbee.fr",
+        "public": [
+          "Tout public",
+          "Seniors"
+        ],
+        "siret": "80836467300026",
+        "rna": "W332016771",
+        "date_ajout": "2026-11-24",
+        "source": "import libre-reparation-gironde.csv"
       }
     },
     {
