@@ -83,6 +83,7 @@ for (const e of ETIQUETTES) for (const k of [e.id, e.libelle, e.court]) indexEti
 // formulations courantes
 for (const [k, id] of [['emi', 'emi'], ['education aux medias', 'emi'], ['fablab', 'fabrication'], ['tiers-lieu', 'fabrication'],
   ['tiers-lieux', 'fabrication'], ['mediation numerique', 'inclusion'], ['micro-folie', 'microfolie'], ['micro-folies', 'microfolie'], ['micro folie', 'microfolie'], ['promeneur du net', 'pdn'], ['education populaire', 'educpop'],
+  ['mao', 'musique'], ['musique assistee par ordinateur', 'musique'],
   ['jeu video', 'jeuvideo'], ['jeux video', 'jeuvideo'], ['jeux videos', 'jeuvideo'], ['retrogaming', 'jeuvideo'], ['esport', 'jeuvideo'], ['e-sport', 'jeuvideo'],
   ['numerique responsable', 'numresp'], ['sobriete numerique', 'numresp'], ['reemploi', 'numresp'], ['reconditionnement', 'numresp'], ['logiciel libre', 'numresp'], ['logiciels libres', 'numresp']]) {
   indexEtiquettes.set(k, ETIQUETTES.find((e) => e.id === id).libelle);

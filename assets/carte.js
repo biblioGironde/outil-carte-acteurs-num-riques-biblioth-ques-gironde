@@ -149,8 +149,8 @@
   const choisies = new Set();
   let recherche = '';
   let activites = [];          // référentiel des activités musicales
-  let domaine = '';            // filtre Musique : domaine (libellé)
-  let activite = '';           // filtre Musique : activité (identifiant)
+  let domaine = '';            // filtre Musique et MAO (étiquette musique) : domaine (libellé)
+  let activite = '';           // filtre Musique et MAO (étiquette musique) : activité (identifiant)
   const libelleActivite = (id) => activites.find((x) => x.id === id)?.libelle;
   const idActivite = (libelle) => activites.find((x) => x.libelle === libelle)?.id;
   let actif = null;

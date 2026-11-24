@@ -15,7 +15,7 @@ import { lireActeurs, ecrireActeurs } from './lib/referentiel.mjs';
 const API_ENTREPRISES = 'https://recherche-entreprises.api.gouv.fr/search';
 const DELAI_MS = 20000;
 const PARALLELE = 4;
-const AGENT = 'Mozilla/5.0 (compatible; verification-carte-acteurs; +https://github.com/biblioGironde/outil-carte-acteurs-num-riques-biblioth-ques-gironde)';
+const AGENT = 'Mozilla/5.0 (compatible; verification-carte-acteurs; +https://github.com/biblioGironde/outil-carte-acteurs-numeriques-bibliotheques-gironde)';
 
 export const STATUT = {
   ACTIF: 'actif',

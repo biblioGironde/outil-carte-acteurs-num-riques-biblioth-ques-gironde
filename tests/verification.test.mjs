@@ -60,7 +60,7 @@ test('vérification complète : dates mises à jour, rapport classé, rien suppr
   const parId = Object.fromEntries(resultats.map((r) => [r.id, r.conclusion]));
   assert.deepEqual(parId, { a: 'ok', b: 'a_retirer', c: 'a_verifier' });
 
-  const rapport = rediger(resultats, { annee: 2027, depot: 'biblioGironde/outil-carte-acteurs-num-riques-biblioth-ques-gironde' });
+  const rapport = rediger(resultats, { annee: 2027, depot: 'biblioGironde/outil-carte-acteurs-numeriques-bibliotheques-gironde' });
   assert.match(rapport, /## Probablement fermés[\s\S]*Dissoute/);
   assert.match(rapport, /## À vérifier[\s\S]*Sans identifiant/);
   assert.match(rapport, /identifiant=b/);

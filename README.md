@@ -24,7 +24,7 @@ Corriger une issue (menu « … » → *Edit*) relance le traitement et met à j
 
 ## Mise en place (une seule fois)
 
-1. Le dépôt est `biblioGironde/outil-carte-acteurs-num-riques-biblioth-ques-gironde`.
+1. Le dépôt est `biblioGironde/outil-carte-acteurs-numeriques-bibliotheques-gironde`.
    Si le nom ou l'organisation change, modifier la balise `<meta name="depot">` de `index.html`.
 2. **Settings → Pages** : *Deploy from a branch*, branche `main`, dossier `/ (root)`.
 3. **Settings → Actions → General → Workflow permissions** :
