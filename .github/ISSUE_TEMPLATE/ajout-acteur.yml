@@ -58,7 +58,6 @@ body:
         - label: "Action culturelle, médiation"
         - label: "Radio, média"
         - label: "Réseau, fédération, centre de ressources"
-        - label: "Disquaire, commerce culturel"
   - type: textarea
     id: description
     attributes:

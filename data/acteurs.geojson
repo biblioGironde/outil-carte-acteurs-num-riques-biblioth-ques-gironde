@@ -4312,39 +4312,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.582988,
-          44.842682
-        ]
-      },
-      "properties": {
-        "id": "les-disques-alienor-bordeaux",
-        "nom": "LES DISQUES ALIENOR",
-        "etiquettes": [
-          "musique"
-        ],
-        "domaine_musique": "Musiques actuelles",
-        "activites_musique": [
-          "Label, production phonographique",
-          "Disquaire, commerce culturel"
-        ],
-        "description": "Structure adhérente du RIM (musiques actuelles), active dans les domaines suivants : musique enregistrée. Activités : production phonographique, export, commerces culturels de proximité.",
-        "adresse": "70 rue Abbé de l'Épée",
-        "code_postal": "33000",
-        "commune": "Bordeaux",
-        "email": "contact@platinumrds.com",
-        "reseaux": [
-          "RIM"
-        ],
-        "siret": "40858426600030",
-        "date_ajout": "2026-11-11",
-        "source": "import rim-gironde.csv"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.226554,
           44.565683
         ]

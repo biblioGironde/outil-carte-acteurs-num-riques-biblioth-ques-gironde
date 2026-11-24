@@ -36,7 +36,7 @@ Règles à respecter strictement :
      `label` (production phonographique), `edition` (édition musicale), `studio` (studio d'enregistrement),
      `repetition` (lieu de répétition), `accompagnement` (accompagnement d'artistes), `enseignement` (école de musique),
      `action-culturelle` (action culturelle, médiation), `media` (radio, média),
-     `ressource` (réseau, fédération, centre de ressources), `disquaire` (disquaire, commerce culturel).
+     `ressource` (réseau, fédération, centre de ressources).
 6. `public` : un ou plusieurs parmi `Jeunesse`, `Familles`, `Tout public`, `Seniors`, `Professionnels`,
    séparés par `|`.
 7. `description` : 1 à 3 phrases rédigées par toi (pas de copier-coller), 500 caractères maximum :
