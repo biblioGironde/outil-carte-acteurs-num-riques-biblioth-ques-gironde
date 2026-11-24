@@ -1,4 +1,4 @@
-# Carte des acteurs du territoire — Gironde
+# Acteurs du numérique culturel et responsable en Gironde
 
 Carte interactive des structures associatives et institutionnelles de Gironde :
 inclusion et médiation numérique, fablabs et tiers-lieux, éducation aux médias,
@@ -186,4 +186,4 @@ Pour un aperçu avec des données fictives : copier `tests/fixtures/exemple.geoj
   doit être publiée sous la même licence, avec son code source.
 - **Données** (`data/acteurs.geojson`, `data/etiquettes.json`, `data/communes-gironde.geojson`) : **Licence Ouverte Etalab 2.0**
   (<https://www.etalab.gouv.fr/licence-ouverte-open-licence/>). Réutilisation libre, sous réserve de citer la source :
-  « Carte des acteurs du territoire — biblio.gironde ».
+  « Acteurs du numérique culturel et responsable en Gironde — biblio.gironde ».
