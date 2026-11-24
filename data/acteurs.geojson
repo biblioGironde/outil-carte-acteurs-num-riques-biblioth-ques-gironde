@@ -2445,7 +2445,7 @@
           "jeuvideo",
           "institutionnel"
         ],
-        "description": "Festival gratuit du jeu porté par la ludothèque de Belin-Béliet et la médiathèque de Salles : jeux de société, jeux vidéo et d'arcade sur PC, consoles et réalité virtuelle, défis de scoring sur jeux rétro.",
+        "description": "Festival gratuit du jeu sous toutes ses formes, porté par la ludothèque des 4 Coins de Belin-Béliet dans le cadre de la convention territoriale du Val de l'Eyre : jeux de société et d'ambiance, escape game, petite enfance et un espace de jeux vidéo (consoles, PC, arcade, réalité virtuelle) avec tournois.",
         "adresse": "29 avenue Aliénor",
         "code_postal": "33830",
         "commune": "Belin-Béliet",
@@ -2454,7 +2454,10 @@
           "Tout public"
         ],
         "date_ajout": "2026-11-24",
-        "source": "import festivals-jeu-video-gironde.csv"
+        "source": "import festivals-jeu-video-gironde.csv",
+        "email": "ludotheque.belinbeliet@orange.fr",
+        "telephone": "05 56 88 56 99",
+        "site": "https://www.belin-beliet.fr/ludotheque"
       }
     },
     {
