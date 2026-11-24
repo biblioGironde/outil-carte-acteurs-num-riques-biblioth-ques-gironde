@@ -2055,6 +2055,41 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.602359,
+          44.981696
+        ]
+      },
+      "properties": {
+        "id": "ecole-municipale-de-musique-de-ludon-medoc-ludon-medoc",
+        "nom": "École municipale de musique de Ludon-Médoc",
+        "etiquettes": [
+          "institutionnel",
+          "musique"
+        ],
+        "domaine_musique": "Tous styles",
+        "activites_musique": [
+          "Enseignement, école de musique"
+        ],
+        "description": "École de musique de la commune : cours individuels (piano, cordes, guitares, synthétiseur), pratiques collectives en musiques actuelles, percussions et chorales, et un atelier de musique assistée par ordinateur pour composer, enregistrer et produire ses morceaux.",
+        "adresse": "10 rue de la Mairie",
+        "code_postal": "33290",
+        "commune": "Ludon-Médoc",
+        "site": "https://ludonmedoc.fr",
+        "email": "ecolemusique@ludonmedoc.fr",
+        "telephone": "05 57 88 44 09",
+        "public": [
+          "Jeunesse",
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-24",
+        "source": "import ecole-musique-ludon-medoc.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.569367,
           44.832979
         ]
