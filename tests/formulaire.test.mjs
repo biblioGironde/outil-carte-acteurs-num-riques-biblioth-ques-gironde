@@ -90,7 +90,7 @@ test('ajout refusé : erreurs listées en clair', async () => {
   );
 });
 
-test('domaine ou activité musicale sans étiquette MAO : refusé', async () => {
+test('domaine ou activité musicale sans étiquette Musique et MAO : refusé', async () => {
   await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, domaine_musique: 'Musiques actuelles' }), /MAO/);
   await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, activites_musique: ['Festival'] }), /MAO/);
 });
@@ -110,7 +110,7 @@ test('modification : seuls les champs remplis changent, « - » vide un champ', 
     titre: '[Modification] Fablab du Port',
     corps: corpsIssue('modification-acteur.yml', {
       identifiant: 'fablab-du-port-bordeaux', action: ACTION_MODIFIER,
-      telephone: '05 56 00 00 00', email: '-', etiquettes: ['MAO (musique assistée par ordinateur)'], domaine_musique: 'Musiques actuelles',
+      telephone: '05 56 00 00 00', email: '-', etiquettes: ['Musique et MAO (musique assistée par ordinateur)'], domaine_musique: 'Musiques actuelles',
       activites_musique: ['Label, production phonographique', 'Salle de concert, lieu de diffusion'],
     }),
     collection, aujourdhui: '2026-12-01', geocoderFn: geocodageFactice,
@@ -127,7 +127,7 @@ test('modification : seuls les champs remplis changent, « - » vide un champ', 
 });
 
 test('étiquette renommée : l’ancien libellé « Musique » d’une issue reste reconnu', () => {
-  assert.deepEqual(versProprietes({ etiquettes: ['Musique', 'MAO', 'Jeu vidéo'] }).etiquettes, ['musique', 'musique', 'jeuvideo']);
+  assert.deepEqual(versProprietes({ etiquettes: ['Musique', 'MAO', 'Musique et MAO', 'Jeu vidéo'] }).etiquettes, ['musique', 'musique', 'musique', 'jeuvideo']);
 });
 
 test('modification : identifiant inconnu ou champ obligatoire vidé', async () => {

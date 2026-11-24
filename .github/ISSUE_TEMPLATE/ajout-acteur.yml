@@ -23,7 +23,7 @@ body:
         - label: "Éducation aux médias et à l'information"
         - label: "Promeneurs du Net"
         - label: "Éducation populaire"
-        - label: "MAO (musique assistée par ordinateur)"
+        - label: "Musique et MAO (musique assistée par ordinateur)"
         - label: "Micro-Folie (musée numérique)"
         - label: "Jeu vidéo (culture, médiation, patrimoine)"
         - label: "Numérique responsable (sobriété, réemploi, logiciel libre)"
@@ -31,7 +31,7 @@ body:
   - type: dropdown
     id: domaine_musique
     attributes:
-      label: "Domaine musical (étiquette MAO uniquement)"
+      label: "Domaine musical (étiquette Musique et MAO uniquement)"
       options:
         - "Musiques actuelles"
         - "Musiques classiques et de répertoire"
@@ -43,7 +43,7 @@ body:
   - type: checkboxes
     id: activites_musique
     attributes:
-      label: "Activités musicales (étiquette MAO uniquement)"
+      label: "Activités musicales (étiquette Musique et MAO uniquement)"
       description: "Cochez toutes les activités de la structure."
       options:
         - label: "Salle de concert, lieu de diffusion"

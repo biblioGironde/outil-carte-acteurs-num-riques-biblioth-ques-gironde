@@ -49,7 +49,7 @@ export class ErreurFormulaire extends Error {
 }
 
 // Libellé, libellé court ou identifiant (insensible à la casse) : une issue rédigée avant un
-// renommage d'étiquette (ex. « Musique », devenue « MAO ») reste lisible.
+// renommage d'étiquette (ex. « Musique », devenue « Musique et MAO ») reste lisible.
 const libelleVersEtiquette = new Map(ETIQUETTES.flatMap((e) => [e.libelle, e.court, e.id].filter(Boolean).map((l) => [l.toLowerCase(), e.id])));
 
 /** Convertit les valeurs saisies en propriétés GeoJSON. */

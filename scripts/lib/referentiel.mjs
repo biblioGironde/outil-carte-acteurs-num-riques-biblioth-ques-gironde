@@ -28,11 +28,11 @@ export const CHAMPS = [
     options: ETIQUETTES.map((e) => e.libelle),
   },
   {
-    cle: 'domaine_musique', libelle: 'Domaine musical (étiquette MAO uniquement)', type: 'dropdown',
+    cle: 'domaine_musique', libelle: 'Domaine musical (étiquette Musique et MAO uniquement)', type: 'dropdown',
     options: REFERENTIEL.domaines_musique,
   },
   {
-    cle: 'activites_musique', libelle: 'Activités musicales (étiquette MAO uniquement)', type: 'checkboxes',
+    cle: 'activites_musique', libelle: 'Activités musicales (étiquette Musique et MAO uniquement)', type: 'checkboxes',
     aide: 'Cochez toutes les activités de la structure.',
     options: REFERENTIEL.activites_musique.map((a) => a.libelle),
   },
@@ -124,7 +124,7 @@ export function validerActeur(f) {
     if (!REFERENTIEL.activites_musique.some((x) => x.libelle === a)) err(`activité musicale inconnue : ${a}`);
   }
   if ((p.domaine_musique || p.activites_musique?.length) && !p.etiquettes?.includes('musique')) {
-    err('un domaine ou une activité musicale est renseigné sans l’étiquette MAO (musique)');
+    err('un domaine ou une activité musicale est renseigné sans l’étiquette Musique et MAO');
   }
   if (p.description && p.description.length > 500) err('description trop longue (500 caractères maximum)');
   if (p.code_postal && !/^33\d{3}$/.test(p.code_postal)) err(`code postal hors Gironde : ${p.code_postal}`);
