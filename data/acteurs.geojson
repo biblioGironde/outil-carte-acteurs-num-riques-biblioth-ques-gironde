@@ -1639,6 +1639,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.202977,
+          44.995376
+        ]
+      },
+      "properties": {
+        "id": "boma-mediatheque-de-saint-denis-de-pile-saint-denis-de-pile",
+        "nom": "BOMA, médiathèque de Saint-Denis-de-Pile",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "« Quartier général culturel » installé dans la médiathèque et la Chartreuse du XVIe siècle : espace numérique et rendez-vous numériques réguliers, espace de fabrication, jeux vidéo et réalité virtuelle, ludothèque, salle de spectacle. Accueille aussi le centre socioculturel Portraits de Familles.",
+        "adresse": "1 route de Guîtres",
+        "code_postal": "33910",
+        "commune": "Saint-Denis-de-Pile",
+        "site": "https://boma-qg.fr/",
+        "email": "mediatheque@mairie-saintdenisdepile.fr",
+        "telephone": "05 57 55 19 45",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import boma.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.571977,
           44.836902
         ]
@@ -5693,6 +5726,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.615257,
+          45.291489
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-danielle-mitterrand-saint-ciers-sur-gironde",
+        "nom": "Médiathèque Danielle Mitterrand",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Médiathèque municipale qui propose une médiation numérique régulière.",
+        "adresse": "5 rue du Petit Village",
+        "code_postal": "33820",
+        "commune": "Saint-Ciers-sur-Gironde",
+        "site": "https://mediatheque.saintcierssurgironde.fr",
+        "email": "mediathequedm@saint-ciers33820.fr",
+        "telephone": "05 57 32 84 36",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import trois.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.516251,
           44.899535
         ]
@@ -5779,6 +5844,68 @@
         ],
         "date_ajout": "2026-11-27",
         "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.685533,
+          44.741994
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-cestas-cestas",
+        "nom": "Médiathèque de Cestas",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Médiathèque municipale qui propose une médiation numérique régulière.",
+        "adresse": "Place du Souvenir",
+        "code_postal": "33610",
+        "commune": "Cestas",
+        "site": "https://www.mediatheque-cestas.fr",
+        "telephone": "05 57 83 53 11",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import trois.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.035076,
+          44.70253
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-lanton-lanton",
+        "nom": "Médiathèque de Lanton",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Médiathèque municipale qui propose une médiation numérique régulière.",
+        "adresse": "15 avenue de la Libération",
+        "code_postal": "33138",
+        "commune": "Lanton",
+        "site": "https://mediatheque.mairie-lanton.fr",
+        "telephone": "05 56 03 86 10",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import trois.csv"
       }
     },
     {
