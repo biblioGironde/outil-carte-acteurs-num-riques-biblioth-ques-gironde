@@ -24,6 +24,8 @@
   const sousFiltres = el('filtres-musique');
   const choixDomaine = el('choix-domaine');
   const choixActivite = el('choix-activite');
+  const sousFiltresBib = el('filtres-bibliotheque');
+  const choixService = el('choix-service');
 
   el('lien-ajout').href = urlFormulaire('ajout-acteur.yml');
   el('lien-depot').href = urlDepot;
@@ -153,6 +155,9 @@
   let activite = '';           // filtre Musique et MAO (étiquette musique) : activité (identifiant)
   const libelleActivite = (id) => activites.find((x) => x.id === id)?.libelle;
   const idActivite = (libelle) => activites.find((x) => x.libelle === libelle)?.id;
+  let services = [];           // référentiel des services d'inclusion numérique en bibliothèque
+  let service = '';            // filtre Bibliothèque numérique : service (identifiant)
+  const libelleService = (id) => services.find((x) => x.id === id)?.libelle;
   let actif = null;
 
   function lireUrl() {
@@ -162,6 +167,7 @@
     champ.value = recherche;
     domaine = p.get('domaine') || '';
     activite = p.get('activite') || '';
+    service = p.get('service') || '';
     communesVisibles = p.get('communes') === '1';
   }
   function ecrireUrl() {
@@ -170,6 +176,7 @@
     if (recherche) p.set('q', recherche);
     if (choisies.has('musique') && domaine) p.set('domaine', domaine);
     if (choisies.has('musique') && activite) p.set('activite', activite);
+    if (choisies.has('bibliotheque') && service) p.set('service', service);
     if (communesVisibles) p.set('communes', '1');
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
@@ -210,6 +217,7 @@
       <h2>${echapper(p.nom)}</h2>
       <div class="etiquettes">${tags}</div>
       ${p.activites_musique?.length ? `<div class="activites">${p.activites_musique.map((l) => `<span>${echapper(activites.find((x) => x.libelle === l)?.court || l)}</span>`).join('')}</div>` : ''}
+      ${p.services_bibliotheque?.length ? `<div class="activites services">${p.services_bibliotheque.map((l) => `<span>${echapper(services.find((x) => x.libelle === l)?.court || l)}</span>`).join('')}</div>` : ''}
       ${p.description ? `<p>${echapper(p.description)}</p>` : ''}
       <dl>${lignes}</dl>
       ${contacts ? `<div class="contacts">${contacts}</div>` : ''}
@@ -222,15 +230,21 @@
   const correspondMusique = (p) => (!domaine || p.domaine_musique === domaine)
     && (!activite || (p.activites_musique || []).includes(libelleActivite(activite)));
 
+  const correspondSousFiltre = (e, p) => {
+    if (e === 'musique') return !filtreMusiqueActif() || correspondMusique(p);
+    if (e === 'bibliotheque') return !service || (p.services_bibliotheque || []).includes(libelleService(service));
+    return true;
+  };
+
   function correspond(a) {
     const p = a.properties;
     const tags = p.etiquettes || [];
-    if (choisies.size && !tags.some((e) => choisies.has(e))) return false;
-    // Le filtre Musique ne s'applique qu'aux acteurs retenus au titre de l'étiquette Musique.
-    if (filtreMusiqueActif() && !tags.some((e) => e !== 'musique' && choisies.has(e)) && !correspondMusique(p)) return false;
+    // Les menus déroulants (Musique et MAO, Bibliothèque numérique) ne s'appliquent qu'aux acteurs
+    // retenus au titre de l'étiquette correspondante : un acteur reste visible s'il est retenu par une autre étiquette.
+    if (choisies.size && !tags.some((e) => choisies.has(e) && correspondSousFiltre(e, p))) return false;
     if (!recherche) return true;
     const texte = normaliser([p.nom, p.commune, p.code_postal, p.description, ...(p.reseaux || []),
-      p.domaine_musique, ...(p.activites_musique || [])].join(' '));
+      p.domaine_musique, ...(p.activites_musique || []), ...(p.services_bibliotheque || [])].join(' '));
     return normaliser(recherche).split(/\s+/).every((mot) => texte.includes(mot));
   }
 
@@ -277,12 +291,31 @@
     sousFiltres.hidden = !choisies.has('musique') || (domaines.size === 0 && acts.size === 0);
   }
 
+  /** Menu Inclusion numérique : visible seulement avec l'étiquette Bibliothèque numérique. */
+  function dessinerSousFiltresBibliotheque() {
+    const nb = new Map();
+    for (const a of acteurs) {
+      if (!a.properties.etiquettes?.includes('bibliotheque')) continue;
+      for (const l of a.properties.services_bibliotheque || []) {
+        const id = services.find((x) => x.libelle === l)?.id;
+        if (id) nb.set(id, (nb.get(id) || 0) + 1);
+      }
+    }
+    if (service && !nb.has(service)) service = '';
+    choixService.innerHTML = `<option value="">Tous</option>` + services.filter((x) => nb.has(x.id))
+      .map((x) => `<option value="${echapper(x.id)}"${x.id === service ? ' selected' : ''}>${echapper(x.court)} (${nb.get(x.id)})</option>`).join('');
+    sousFiltresBib.hidden = !choisies.has('bibliotheque') || nb.size === 0;
+  }
+  choixService.addEventListener('change', () => { service = choixService.value; actualiser(); });
+
   choixDomaine.addEventListener('change', () => { domaine = choixDomaine.value; actualiser(); });
   choixActivite.addEventListener('change', () => { activite = choixActivite.value; actualiser(); });
 
   function actualiser() {
     if (!choisies.has('musique')) { domaine = ''; activite = ''; }
+    if (!choisies.has('bibliotheque')) service = '';
     dessinerSousFiltres();
+    dessinerSousFiltresBibliotheque();
     const visibles = acteurs.filter(correspond);
     calque.clearLayers();
     liste.innerHTML = '';
@@ -313,7 +346,7 @@
       ? `${total} acteur${total > 1 ? 's' : ''}`
       : `${visibles.length} acteur${visibles.length > 1 ? 's' : ''} sur ${total}`;
     el('poignee-texte').textContent = `Liste des acteurs (${visibles.length})`;
-    toutAfficher.hidden = !choisies.size && !recherche && !domaine && !activite;
+    toutAfficher.hidden = !choisies.size && !recherche && !domaine && !activite && !service;
     compterParCommune(visibles);
     ecrireUrl();
   }
@@ -350,6 +383,7 @@
     recherche = '';
     domaine = '';
     activite = '';
+    service = '';
     champ.value = '';
     dessinerFiltres();
     actualiser();
@@ -363,6 +397,7 @@
     ]);
     etiquettes = ref.etiquettes;
     activites = ref.activites_musique || [];
+    services = ref.services_bibliotheque || [];
     parId = new Map(etiquettes.map((e) => [e.id, e]));
     acteurs = (donnees.features || [])
       .filter((f) => f?.geometry?.type === 'Point')

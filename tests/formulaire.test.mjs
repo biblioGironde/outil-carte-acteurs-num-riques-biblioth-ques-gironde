@@ -95,6 +95,14 @@ test('domaine ou activité musicale sans étiquette Musique et MAO : refusé', a
   await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, activites_musique: ['Festival'] }), /MAO/);
 });
 
+test('service de bibliothèque sans étiquette Bibliothèque numérique : refusé', async () => {
+  await assert.rejects(ajouter(collectionVide(), { ...ajoutValide, services_bibliotheque: ['Médiation numérique régulière'] }), /Bibliothèque numérique/);
+  const { collection } = await ajouter(collectionVide(), {
+    ...ajoutValide, etiquettes: ['Bibliothèque numérique (bibliothèques et médiathèques)'], services_bibliotheque: ['Fabrication (fablab, espace de fabrication numérique)'],
+  });
+  assert.deepEqual(collection.features[0].properties.services_bibliotheque, ['Fabrication (fablab, espace de fabrication numérique)']);
+});
+
 test('doublon nom + commune : renvoie vers la modification', async () => {
   const { collection } = await ajouter(collectionVide(), ajoutValide);
   await assert.rejects(ajouter(collection, ajoutValide), /existe déjà/);

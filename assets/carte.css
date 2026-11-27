@@ -80,6 +80,9 @@ a { color: var(--accent); }
 .fiche .activites span {
   font-size: .7rem; padding: .15rem .45rem; border-radius: 4px; border: 1px solid color-mix(in srgb, #db2777 35%, white); color: #9d174d;
 }
+.sous-filtres-bibliotheque { background: color-mix(in srgb, #0f766e 7%, white); border-color: color-mix(in srgb, #0f766e 20%, white); }
+.sous-filtres-bibliotheque .choix { color: #115e59; }
+.fiche .activites.services span { border-color: color-mix(in srgb, #0f766e 35%, white); color: #115e59; }
 .lien-discret {
   margin-top: .5rem; font: inherit; font-size: .8rem; background: none; border: 0; padding: 0;
   color: var(--accent); text-decoration: underline; cursor: pointer;
