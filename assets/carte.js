@@ -64,7 +64,7 @@
   const STYLE_COMMUNE_SURVOL = { weight: 2.2, opacity: 0.9, fillOpacity: 0.14 };
   let communes = null;          // L.GeoJSON, chargé à la première demande
   let communesVisibles = false;
-  let teinte = '';              // teinte des communes : '' | 'population' | 'densite' (données INSEE)
+  let teinte = '';              // teinte des communes : '' | 'population' | 'densite' | 'niveau' (données INSEE)
 
   // Classes et rampes séquentielles (une teinte, du clair au foncé) : bleu = population, orange = densité.
   const TEINTES = {
@@ -80,7 +80,15 @@
       couleurs: ['#fde3d0', '#fbbf94', '#f8975a', '#e9702f', '#c2531a', '#8a3a12'],
       valeur: (p) => (p.population != null && p.surface_km2 ? p.population / p.surface_km2 : null),
     },
+    niveau: {
+      titre: 'Niveau de vie médian (€/an, 2023)', unite: '€',
+      seuils: [22000, 24000, 26000, 28000, 30000],
+      couleurs: ['#e7e1fb', '#c4b7f4', '#9d89ec', '#7a5fe0', '#5a3fc0', '#3b2785'],
+      valeur: (p) => p.niveau_vie_median ?? null,
+      note: 'Gironde : 26 820 €. Non diffusé pour les très petites communes (secret statistique).',
+    },
   };
+  const COULEUR_NON_DIFFUSE = '#d4d4d4';
   const nombre = (n) => Math.round(n).toLocaleString('fr-FR');
   const habitants = (n) => `${nombre(n)} habitant${n > 1 ? 's' : ''}`;
   function styleCommune(couche) {
@@ -89,7 +97,7 @@
     return {
       ...STYLE_COMMUNE,
       ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}),
-      ...(t && v != null ? { fillColor: t.couleurs[t.seuils.filter((s) => v >= s).length], fillOpacity: 0.72, color: '#ffffff', weight: 0.6, opacity: 0.8 } : {}),
+      ...(t ? { fillColor: v != null ? t.couleurs[t.seuils.filter((s) => v >= s).length] : COULEUR_NON_DIFFUSE, fillOpacity: v != null ? 0.72 : 0.5, color: '#ffffff', weight: 0.6, opacity: 0.8 } : {}),
     };
   }
   let chargementCommunes = null;
@@ -128,7 +136,7 @@
       communes = L.geoJSON(geo, {
         style: () => STYLE_COMMUNE,
         onEachFeature: (f, couche) => {
-          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}${f.properties.surface_km2 ? ` · ${nombre(TEINTES.densite.valeur(f.properties))} hab./km²` : ''}<br>` : ''}${couche.nb
+          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}${f.properties.surface_km2 ? ` · ${nombre(TEINTES.densite.valeur(f.properties))} hab./km²` : ''}<br>` : ''}${f.properties.niveau_vie_median ? `Niveau de vie médian : ${nombre(f.properties.niveau_vie_median)} €/an${f.properties.taux_pauvrete != null ? ` · pauvreté ${String(f.properties.taux_pauvrete).replace('.', ',')} %` : ''}<br>` : ''}${couche.nb
             ? `${couche.nb} acteur${couche.nb > 1 ? 's' : ''} affiché${couche.nb > 1 ? 's' : ''}` : 'Aucun acteur affiché'}`,
           { sticky: true, direction: 'top', className: 'infobulle-commune' });
           couche.on('mouseover', () => couche.setStyle(teinte ? { weight: 2.2, color: '#0f5e6b', opacity: 0.9 } : STYLE_COMMUNE_SURVOL));
@@ -147,6 +155,7 @@
     boutonCommunes?.setAttribute('aria-pressed', String(communesVisibles));
     boutonPopulation?.setAttribute('aria-pressed', String(teinte === 'population'));
     boutonDensite?.setAttribute('aria-pressed', String(teinte === 'densite'));
+    boutonNiveau?.setAttribute('aria-pressed', String(teinte === 'niveau'));
     dessinerLegende();
     if (communesVisibles || teinte) {
       const c = await chargerCommunes();
@@ -169,14 +178,16 @@
     const f = (n) => n.toLocaleString('fr-FR');
     legendePopulation.innerHTML = `<p class="legende-titre">${t.titre}</p><ul>${t.couleurs.map((c, i) => {
       const bas = t.seuils[i - 1]; const haut = t.seuils[i];
-      const texte = i === 0 ? `moins de ${f(haut)}` : haut ? `${f(bas)} à ${f(haut - 1)}` : `${f(bas)} et plus`;
+      const e = t.unite === '€' ? ' €' : '';
+      const texte = i === 0 ? `moins de ${f(haut)}${e}` : haut ? `${f(bas)} à ${f(haut - 1)}${e}` : `${f(bas)}${e} et plus`;
       return `<li><span class="legende-carre" style="background:${c}"></span>${texte}</li>`;
-    }).join('')}</ul>`;
+    }).join('')}${t.note ? `<li><span class="legende-carre" style="background:${COULEUR_NON_DIFFUSE}"></span>non diffusé</li>` : ''}</ul>${t.note ? `<p class="legende-note">${t.note}</p>` : ''}`;
   }
 
   let boutonCommunes;
   let boutonPopulation;
   let boutonDensite;
+  let boutonNiveau;
   const ControleCommunes = L.Control.extend({
     options: { position: 'topright' },
     onAdd() {
@@ -196,6 +207,11 @@
       boutonDensite.setAttribute('aria-pressed', 'false');
       boutonDensite.title = 'Teinter les communes selon leur densité de population (habitants par km², INSEE)';
       boutonDensite.innerHTML = '<span class="icone-population icone-densite" aria-hidden="true"></span>Densité';
+      boutonNiveau = L.DomUtil.create('button', 'bouton-calque', div);
+      boutonNiveau.type = 'button';
+      boutonNiveau.setAttribute('aria-pressed', 'false');
+      boutonNiveau.title = 'Teinter les communes selon le niveau de vie médian de leurs habitants (INSEE, Filosofi 2023)';
+      boutonNiveau.innerHTML = '<span class="icone-niveau" aria-hidden="true">€</span>Niveau de vie';
       div.append(legendePopulation);
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
@@ -203,6 +219,7 @@
       L.DomEvent.on(boutonCommunes, 'click', () => afficherCommunes(!communesVisibles).catch(echec));
       L.DomEvent.on(boutonPopulation, 'click', () => choisirTeinte('population').catch(echec));
       L.DomEvent.on(boutonDensite, 'click', () => choisirTeinte('densite').catch(echec));
+      L.DomEvent.on(boutonNiveau, 'click', () => choisirTeinte('niveau').catch(echec));
       return div;
     },
   });
@@ -233,7 +250,7 @@
     activite = p.get('activite') || '';
     service = p.get('service') || '';
     communesVisibles = p.get('communes') === '1';
-    teinte = p.get('densite') === '1' ? 'densite' : p.get('population') === '1' ? 'population' : '';
+    teinte = ['niveau', 'densite', 'population'].find((t) => p.get(t) === '1') || '';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();
