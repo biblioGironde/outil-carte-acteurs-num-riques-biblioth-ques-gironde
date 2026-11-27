@@ -112,45 +112,53 @@ Lancement manuel à tout moment : *Actions → Vérification annuelle des acteur
 > Le workflow tourne donc chaque mois pour se réactiver, et ne fait la vérification complète que le mois choisi.
 > Si un bandeau signale malgré tout qu'il est désactivé, le réactiver depuis l'onglet *Actions*.
 
-## Calque des communes
+## Calque des communes et données INSEE
 
 Le bouton « Communes » de la carte affiche les limites des 534 communes de Gironde
 (fichier `data/communes-gironde.geojson`, chargé seulement à la demande). Au survol, une info-bulle
-donne le nom de la commune et le nombre d'acteurs affichés (selon les filtres en cours) ;
+donne le nom de la commune, sa population et le nombre d'acteurs affichés (selon les filtres en cours) ;
 un clic cadre la carte sur la commune. Les communes qui comptent au moins un acteur affiché sont légèrement teintées.
 Le calque est mémorisé dans l'adresse de la page (`?communes=1`).
 
-Source : contours de l'API Découpage administratif (geo.api.gouv.fr, d'après IGN Admin Express), simplifiés.
+Le menu déroulant « Données INSEE… », sous ce bouton, teinte les communes selon un indicateur (un seul à la fois),
+avec une légende et la valeur de la commune dans l'info-bulle. L'indicateur choisi est mémorisé dans l'adresse
+(`?insee=diplomes`, par exemple ; les anciens liens `?population=1`, `?densite=1`, `?niveau=1`, `?age=1` restent valides).
+Les classes et les couleurs sont définies dans `assets/carte.js` (objet `INDICATEURS`).
 
-Le bouton « Population » teinte chaque commune selon sa population municipale INSEE (populations légales,
-via geo.api.gouv.fr ; propriété `population` du même fichier), en 6 classes : moins de 1 000, 1 000 à 1 999,
-2 000 à 4 999, 5 000 à 9 999, 10 000 à 49 999, 50 000 habitants et plus. Une légende s'affiche sous le bouton
-et l'info-bulle donne le nombre d'habitants. Mémorisé dans l'adresse (`?population=1`), combinable avec « Communes ».
-Le bouton « Densité » teinte les communes selon leur densité (habitants par km² : population / `surface_km2`,
-surface issue de geo.api.gouv.fr), sur une rampe orange en 6 classes : moins de 25, 25 à 49, 50 à 99, 100 à 249,
-250 à 999, 1 000 hab./km² et plus (`?densite=1`). Population et densité s'excluent : un seul remplissage à la fois.
-Le bouton « Niveau de vie » teinte les communes selon le niveau de vie médian de leurs habitants (revenu disponible
-par unité de consommation, INSEE Filosofi 2023, propriété `niveau_vie_median`), rampe violette en 6 classes :
-moins de 22 000 €, puis par tranches de 2 000 € jusqu'à 30 000 € et plus (médiane de la Gironde : 26 820 €), `?niveau=1`.
-Le taux de pauvreté (`taux_pauvrete`, seuil de 60 % de la médiane) s'affiche dans l'info-bulle quand il est diffusé
-(communes d'au moins 2 000 habitants environ). Les communes sans donnée (secret statistique) sont en gris.
-Source : « Indicateurs sur les revenus et la pauvreté au niveau local en 2023 », fichier `FILOSOFI_CC_csv.zip`
-(<https://www.insee.fr/fr/statistiques/8984752>), indicateurs `MED_SL` et `PR_MD60`.
-Le bouton « Âge » teinte les communes selon l'âge moyen de leurs habitants (rampe verte, du clair = jeune au foncé = âgé),
-en 6 classes : moins de 40 ans, 40 à 41,9, 42 à 43,9, 44 à 45,9, 46 à 47,9, 48 ans et plus (Gironde : 41,8 ans), `?age=1`.
-L'info-bulle donne aussi la part des moins de 30 ans et des 60 ans et plus. Âge moyen calculé à partir de la population
-par âge détaillé du recensement 2022 (tableau `TD_POP1B_2022`, <https://www.insee.fr/fr/statistiques/8581810>),
-en prenant le milieu de chaque année d'âge ; propriétés `age_moyen`, `part_moins_30`, `part_60_plus`.
-Pour les petites communes, ces chiffres issus du recensement par sondage sont des estimations.
-Pour actualiser les chiffres : reprendre `population` et `surface` (en hectares, à diviser par 100) de
-`https://geo.api.gouv.fr/departements/33/communes?fields=code,population,surface`.
-Pour les mettre à jour (fusions de communes au 1er janvier) :
+| Groupe | Indicateur (`?insee=`) | Propriété(s) du fichier | Source |
+|---|---|---|---|
+| Population et territoire | Population (`population`) | `population` | INSEE, populations légales (geo.api.gouv.fr) |
+| | Densité (`densite`) | `population` / `surface_km2` | idem, surface officielle des communes |
+| | Type de commune (`typologie`) | `densite7` (1 à 7) | INSEE, grille communale de densité 2025 |
+| Revenus et emploi | Niveau de vie médian (`niveau`) | `niveau_vie_median`, `taux_pauvrete` | INSEE Filosofi 2023 (`FILOSOFI_CC_csv.zip`, <https://www.insee.fr/fr/statistiques/8984752>) |
+| | Ouvriers et employés (`ouvriers`) | `part_ouvriers_employes`, `part_cadres` | recensement 2023, actifs de 15-64 ans |
+| | Taux de chômage (`chomage`) | `taux_chomage` | recensement 2023, 15-64 ans |
+| Formation et jeunesse | Peu ou pas diplômés (`diplomes`) | `part_peu_diplomes` | recensement 2023 : aucun diplôme ou brevet des collèges, parmi les 15 ans et plus non scolarisés |
+| | Jeunes ni en emploi ni en études (`jeunes`) | `part_jeunes_non_inseres` | recensement 2023 : 15-24 ans hors actifs occupés et élèves/étudiants |
+| Âge et familles | Âge moyen (`age`) | `age_moyen`, `part_moins_30`, `part_60_plus` | recensement 2022, âge détaillé (`TD_POP1B_2022`, <https://www.insee.fr/fr/statistiques/8581810>) |
+| | 80 ans et plus vivant seuls (`seniors`) | `part_80_seuls` | recensement 2023 (les 75 ans et plus ne sont pas publiés par commune) |
+| | Familles monoparentales (`monoparentales`) | `part_familles_monoparentales` | recensement 2023 |
+| Accès et services | Ménages sans voiture (`voiture`) | `part_menages_sans_voiture` | recensement 2023, résidences principales |
+| | Bibliothèques et France services (`equipements`) | `nb_bibliotheques`, `nb_france_services` | INSEE, base permanente des équipements 2025 (codes F307 et A128) |
+
+Recensement 2023 : bases des principaux indicateurs (diplômes-formation, emploi-population active, couples-familles-ménages,
+logement), <https://www.insee.fr/fr/information/8971128>. Les indicateurs du recensement sont des estimations, fragiles pour les
+petites communes : une part n'est pas affichée (commune en gris) quand l'effectif de référence est trop faible
+(moins de 30 jeunes de 15-24 ans, 20 personnes de 80 ans et plus, 30 familles ou ménages, 50 actifs ou adultes non scolarisés).
+Le niveau de vie n'est pas diffusé par l'INSEE pour les très petites communes (secret statistique).
+
+Contours : API Découpage administratif (geo.api.gouv.fr, d'après IGN Admin Express), simplifiés.
+Pour actualiser population et surface : `https://geo.api.gouv.fr/departements/33/communes?fields=code,population,surface`
+(surface en hectares, à diviser par 100).
+Pour mettre à jour les contours (fusions de communes au 1er janvier) :
 
 ```sh
 curl -o contours.geojson "https://geo.api.gouv.fr/departements/33/communes?fields=nom,code&format=geojson&geometry=contour"
 npx mapshaper contours.geojson -filter-fields nom,code -simplify 12% keep-shapes \
   -o precision=0.00001 format=geojson data/communes-gironde.geojson
 ```
+
+Attention : cette commande ne garde que `nom` et `code` ; il faut ensuite réintégrer les indicateurs ci-dessus.
 
 ## Étiquettes
 

@@ -156,6 +156,12 @@ a { color: var(--accent); }
   border: 1.5px solid currentColor; border-radius: 50%; font-size: 9px; font-weight: 800; line-height: 1;
 }
 .legende-note { margin: .4rem 0 0; max-width: 15rem; white-space: normal; color: var(--encre-douce); font-size: .68rem; }
+.choix-indicateur { display: block; }
+.choix-indicateur select { width: 100%; max-width: 16rem; padding-right: 1.6rem; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 13px) 52%, calc(100% - 8px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+.choix-indicateur select.actif { background-color: var(--accent); border-color: var(--accent); color: #fff; }
+.choix-indicateur select option, .choix-indicateur select optgroup { color: var(--encre); background: var(--papier); }
 .legende-population {
   background: var(--papier); border: 1px solid var(--trait); border-radius: 10px; padding: .55rem .7rem;
   font-size: .72rem; line-height: 1.3; color: var(--encre); box-shadow: var(--ombre);
@@ -166,7 +172,9 @@ a { color: var(--accent); }
 .legende-population li { display: flex; align-items: center; gap: .4rem; white-space: nowrap; }
 .legende-carre { width: 14px; height: 10px; border-radius: 2px; flex: none; border: 1px solid rgba(0,0,0,.08); }
 @media (max-width: 760px) {
-  .legende-population { font-size: .68rem; padding: .4rem .55rem; }
+  .legende-population { font-size: .66rem; padding: .4rem .55rem; max-width: 13.5rem; }
+  .legende-population .legende-note { display: none; }
+  .legende-population ul { gap: .1rem; }
   .controle-calques { gap: .25rem; }
   .controle-calques .bouton-calque { padding: .4rem .55rem; font-size: .74rem; }
 }
