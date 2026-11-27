@@ -62,11 +62,12 @@ body:
   - type: checkboxes
     id: services_bibliotheque
     attributes:
-      label: "Inclusion numérique en bibliothèque (étiquette Bibliothèque numérique uniquement)"
-      description: "Médiation régulière : au moins une dizaine d’ateliers ou d’accompagnements par an."
+      label: "Activités numériques de la bibliothèque (étiquette Bibliothèque numérique uniquement)"
+      description: "Médiation régulière : au moins une dizaine d’ateliers par an. Inclusion numérique : lieu référencé sur la cartographie nationale des lieux d’inclusion numérique."
       options:
         - label: "Fabrication (fablab, espace de fabrication numérique)"
         - label: "Médiation numérique régulière"
+        - label: "Inclusion numérique (lieu référencé sur la cartographie nationale)"
   - type: textarea
     id: description
     attributes:

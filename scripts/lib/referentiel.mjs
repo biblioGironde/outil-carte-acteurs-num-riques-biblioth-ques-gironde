@@ -37,8 +37,8 @@ export const CHAMPS = [
     options: REFERENTIEL.activites_musique.map((a) => a.libelle),
   },
   {
-    cle: 'services_bibliotheque', libelle: 'Inclusion numérique en bibliothèque (étiquette Bibliothèque numérique uniquement)', type: 'checkboxes',
-    aide: 'Médiation régulière : au moins une dizaine d’ateliers ou d’accompagnements par an.',
+    cle: 'services_bibliotheque', libelle: 'Activités numériques de la bibliothèque (étiquette Bibliothèque numérique uniquement)', type: 'checkboxes',
+    aide: 'Médiation régulière : au moins une dizaine d’ateliers par an. Inclusion numérique : lieu référencé sur la cartographie nationale des lieux d’inclusion numérique.',
     options: REFERENTIEL.services_bibliotheque.map((a) => a.libelle),
   },
   {

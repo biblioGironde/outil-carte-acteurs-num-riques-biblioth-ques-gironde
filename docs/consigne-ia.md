@@ -38,9 +38,10 @@ Règles à respecter strictement :
      `repetition` (lieu de répétition), `accompagnement` (accompagnement d'artistes), `enseignement` (école de musique),
      `action-culturelle` (action culturelle, médiation), `media` (radio, média),
      `ressource` (réseau, fédération, centre de ressources).
-5 bis. Seulement avec l'étiquette `bibliotheque`, `services_bibliotheque` : un ou deux de ces codes, séparés par `|` :
+5 bis. Seulement avec l'étiquette `bibliotheque`, `services_bibliotheque` : un ou plusieurs de ces codes, séparés par `|` :
    `fabrication` (fablab ou espace de fabrication numérique dans la bibliothèque),
-   `mediation` (médiation numérique régulière : au moins une dizaine d'ateliers ou d'accompagnements par an).
+   `mediation` (médiation numérique régulière : au moins une dizaine d'ateliers ou d'accompagnements par an),
+   `inclusion` (lieu référencé sur la cartographie nationale des lieux d'inclusion numérique, cartographie.societenumerique.gouv.fr).
 6. `public` : un ou plusieurs parmi `Jeunesse`, `Familles`, `Tout public`, `Seniors`, `Professionnels`,
    séparés par `|`.
 7. `description` : 1 à 3 phrases rédigées par toi (pas de copier-coller), 500 caractères maximum :

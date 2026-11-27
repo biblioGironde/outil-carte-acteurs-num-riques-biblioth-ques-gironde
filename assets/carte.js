@@ -291,7 +291,7 @@
     sousFiltres.hidden = !choisies.has('musique') || (domaines.size === 0 && acts.size === 0);
   }
 
-  /** Menu Inclusion numérique : visible seulement avec l'étiquette Bibliothèque numérique. */
+  /** Menu Activité (bibliothèques) : visible seulement avec l'étiquette Bibliothèque numérique. */
   function dessinerSousFiltresBibliotheque() {
     const nb = new Map();
     for (const a of acteurs) {

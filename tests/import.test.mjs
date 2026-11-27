@@ -106,7 +106,7 @@ test('bibliothèque numérique : services reconnus, ignorés sans l’étiquette
   const csv = [
     'nom;etiquettes;services_bibliotheque;description;adresse;code_postal;commune',
     'Médiathèque A;médiathèque;fablab|médiation numérique régulière;Ateliers.;1 rue;33000;Bordeaux',
-    'Médiathèque B;bibliotheque;mediation|inconnu;Ateliers.;2 rue;33000;Bordeaux',
+    'Médiathèque B;bibliotheque;mediation|inclusion numérique|inconnu;Ateliers.;2 rue;33000;Bordeaux',
     'Fablab C;fabrication;fablab;Atelier.;3 rue;33000;Bordeaux',
   ].join('\n');
   const c = collectionVide();
@@ -115,7 +115,7 @@ test('bibliothèque numérique : services reconnus, ignorés sans l’étiquette
   const [a, b, f] = c.features.map((x) => x.properties);
   assert.deepEqual(a.etiquettes, ['bibliotheque']);
   assert.deepEqual(a.services_bibliotheque, ['Fabrication (fablab, espace de fabrication numérique)', 'Médiation numérique régulière']);
-  assert.deepEqual(b.services_bibliotheque, ['Médiation numérique régulière']);
+  assert.deepEqual(b.services_bibliotheque, ['Médiation numérique régulière', 'Inclusion numérique (lieu référencé sur la cartographie nationale)']);
   assert.equal(f.services_bibliotheque, undefined);
   const rapport = rapportImport(r, 'x.csv');
   assert.match(rapport, /service de bibliothèque ignoré « inconnu »/);

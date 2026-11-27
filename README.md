@@ -86,8 +86,8 @@ Pour la première alimentation, plusieurs acteurs peuvent être ajoutés d'un co
 Colonnes `etiquettes`, `activites_musique`, `services_bibliotheque` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
 (`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `microfolie`, `jeuvideo`, `numresp`, `bibliotheque`, `institutionnel`) ou le libellé ;
 les activités musicales aussi (`label`, `diffusion`, `studio`… voir `docs/consigne-ia.md`), ainsi que le vocabulaire
-de l'annuaire du RIM (« Booking / tour », « Cafés-culture »…). Les services de bibliothèque : `fabrication` (fablab) et `mediation`
-(médiation numérique régulière).
+de l'annuaire du RIM (« Booking / tour », « Cafés-culture »…). Les activités de bibliothèque : `fabrication` (fablab), `mediation`
+(médiation numérique régulière) et `inclusion` (lieu référencé sur la cartographie nationale des lieux d'inclusion numérique).
 Séparateur `;` ou `,`, encodage UTF-8 ou celui d'Excel : les deux sont reconnus.
 Un SIRET, un RNA, un courriel ou un site mal formé est ignoré sans bloquer la ligne.
 
@@ -151,7 +151,7 @@ Chaque acteur est un point GeoJSON dont les propriétés sont :
 | `etiquettes` | liste d'identifiants de `data/etiquettes.json` (au moins un) |
 | `domaine_musique` | un domaine, si l'étiquette `musique` est présente |
 | `activites_musique` | liste d'activités (`data/etiquettes.json`), si l'étiquette `musique` est présente |
-| `services_bibliotheque` | « Fabrication » et/ou « Médiation numérique régulière », si l'étiquette `bibliotheque` est présente |
+| `services_bibliotheque` | « Fabrication », « Médiation numérique régulière », « Inclusion numérique », si l'étiquette `bibliotheque` est présente |
 | `site`, `email`, `telephone` | contacts de la structure |
 | `reseaux`, `public` | listes |
 | `siret`, `rna` | identifiants pour la vérification annuelle |
@@ -190,5 +190,5 @@ Pour un aperçu avec des données fictives : copier `tests/fixtures/exemple.geoj
   (<https://www.etalab.gouv.fr/licence-ouverte-open-licence/>). Réutilisation libre, sous réserve de citer la source :
   « Acteurs du numérique culturel et citoyen en Gironde — biblio.gironde ».
 - **Bibliothèques numériques** : fiches établies à partir de la [cartographie nationale des lieux d'inclusion numérique](https://cartographie.societenumerique.gouv.fr)
-  (données ouvertes sur data.gouv.fr, Licence Ouverte) et du rapport annuel d'activité 2025 des bibliothèques (fablab déclaré ;
+  (données ouvertes sur data.gouv.fr, Licence Ouverte ; activité « Inclusion numérique ») et du rapport annuel d'activité 2025 des bibliothèques (fablab déclaré ;
   médiation numérique « régulière » = au moins 10 actions dans l'année, tous publics et enfants confondus).

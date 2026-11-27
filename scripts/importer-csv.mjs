@@ -117,7 +117,8 @@ for (const [id, mots] of Object.entries(synonymes)) {
 const indexServices = new Map();
 for (const a of REFERENTIEL.services_bibliotheque) for (const k of [a.id, a.libelle, a.court]) indexServices.set(norm(k), a.libelle);
 for (const [k, id] of [['fablab', 'fabrication'], ['espace de fabrication', 'fabrication'], ['makerspace', 'fabrication'],
-  ['mediation', 'mediation'], ['mediation numerique', 'mediation'], ['ateliers numeriques', 'mediation']]) {
+  ['mediation', 'mediation'], ['mediation numerique', 'mediation'], ['ateliers numeriques', 'mediation'],
+  ['inclusion', 'inclusion'], ['inclusion numerique', 'inclusion'], ['cartographie nationale', 'inclusion']]) {
   indexServices.set(k, REFERENTIEL.services_bibliotheque.find((a) => a.id === id).libelle);
 }
 // ancienne colonne specialite_musique (fichiers préparés avant 2026-11)

@@ -146,6 +146,11 @@
       "id": "mediation",
       "libelle": "Médiation numérique régulière",
       "court": "Médiation numérique régulière"
+    },
+    {
+      "id": "inclusion",
+      "libelle": "Inclusion numérique (lieu référencé sur la cartographie nationale)",
+      "court": "Inclusion numérique"
     }
   ],
   "publics": [
