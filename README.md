@@ -129,6 +129,13 @@ et l'info-bulle donne le nombre d'habitants. Mémorisé dans l'adresse (`?popula
 Le bouton « Densité » teinte les communes selon leur densité (habitants par km² : population / `surface_km2`,
 surface issue de geo.api.gouv.fr), sur une rampe orange en 6 classes : moins de 25, 25 à 49, 50 à 99, 100 à 249,
 250 à 999, 1 000 hab./km² et plus (`?densite=1`). Population et densité s'excluent : un seul remplissage à la fois.
+Le bouton « Niveau de vie » teinte les communes selon le niveau de vie médian de leurs habitants (revenu disponible
+par unité de consommation, INSEE Filosofi 2023, propriété `niveau_vie_median`), rampe violette en 6 classes :
+moins de 22 000 €, puis par tranches de 2 000 € jusqu'à 30 000 € et plus (médiane de la Gironde : 26 820 €), `?niveau=1`.
+Le taux de pauvreté (`taux_pauvrete`, seuil de 60 % de la médiane) s'affiche dans l'info-bulle quand il est diffusé
+(communes d'au moins 2 000 habitants environ). Les communes sans donnée (secret statistique) sont en gris.
+Source : « Indicateurs sur les revenus et la pauvreté au niveau local en 2023 », fichier `FILOSOFI_CC_csv.zip`
+(<https://www.insee.fr/fr/statistiques/8984752>), indicateurs `MED_SL` et `PR_MD60`.
 Pour actualiser les chiffres : reprendre `population` et `surface` (en hectares, à diviser par 100) de
 `https://geo.api.gouv.fr/departements/33/communes?fields=code,population,surface`.
 Pour les mettre à jour (fusions de communes au 1er janvier) :
