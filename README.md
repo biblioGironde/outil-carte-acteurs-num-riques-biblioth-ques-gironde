@@ -126,7 +126,11 @@ Le bouton « Population » teinte chaque commune selon sa population municipale 
 via geo.api.gouv.fr ; propriété `population` du même fichier), en 6 classes : moins de 1 000, 1 000 à 1 999,
 2 000 à 4 999, 5 000 à 9 999, 10 000 à 49 999, 50 000 habitants et plus. Une légende s'affiche sous le bouton
 et l'info-bulle donne le nombre d'habitants. Mémorisé dans l'adresse (`?population=1`), combinable avec « Communes ».
-Pour actualiser les chiffres : reprendre `population` de `https://geo.api.gouv.fr/departements/33/communes?fields=code,population`.
+Le bouton « Densité » teinte les communes selon leur densité (habitants par km² : population / `surface_km2`,
+surface issue de geo.api.gouv.fr), sur une rampe orange en 6 classes : moins de 25, 25 à 49, 50 à 99, 100 à 249,
+250 à 999, 1 000 hab./km² et plus (`?densite=1`). Population et densité s'excluent : un seul remplissage à la fois.
+Pour actualiser les chiffres : reprendre `population` et `surface` (en hectares, à diviser par 100) de
+`https://geo.api.gouv.fr/departements/33/communes?fields=code,population,surface`.
 Pour les mettre à jour (fusions de communes au 1er janvier) :
 
 ```sh
