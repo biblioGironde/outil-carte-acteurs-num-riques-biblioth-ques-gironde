@@ -165,7 +165,11 @@ a { color: var(--accent); }
 .legende-population ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2rem; }
 .legende-population li { display: flex; align-items: center; gap: .4rem; white-space: nowrap; }
 .legende-carre { width: 14px; height: 10px; border-radius: 2px; flex: none; border: 1px solid rgba(0,0,0,.08); }
-@media (max-width: 760px) { .legende-population { font-size: .68rem; padding: .4rem .55rem; } }
+@media (max-width: 760px) {
+  .legende-population { font-size: .68rem; padding: .4rem .55rem; }
+  .controle-calques { gap: .25rem; }
+  .controle-calques .bouton-calque { padding: .4rem .55rem; font-size: .74rem; }
+}
 .infobulle-commune { font-size: .78rem; line-height: 1.35; }
 
 /* Fiche (popup) */
