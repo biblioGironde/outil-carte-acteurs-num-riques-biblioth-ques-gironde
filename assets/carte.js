@@ -64,6 +64,21 @@
   const STYLE_COMMUNE_SURVOL = { weight: 2.2, opacity: 0.9, fillOpacity: 0.14 };
   let communes = null;          // L.GeoJSON, chargé à la première demande
   let communesVisibles = false;
+  let populationVisible = false; // teinte des communes selon la population INSEE
+
+  // Classes de population (habitants) et rampe séquentielle bleue, du clair au foncé.
+  const SEUILS_POPULATION = [1000, 2000, 5000, 10000, 50000];
+  const COULEURS_POPULATION = ['#cce3fd', '#84b9f3', '#338ced', '#2370cd', '#1757ac', '#0e3d7e'];
+  const classePopulation = (n) => SEUILS_POPULATION.filter((s) => n >= s).length;
+  const habitants = (n) => `${Number(n).toLocaleString('fr-FR')} habitant${n > 1 ? 's' : ''}`;
+  function styleCommune(couche) {
+    const pop = couche.feature.properties.population;
+    return {
+      ...STYLE_COMMUNE,
+      ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}),
+      ...(populationVisible && pop != null ? { fillColor: COULEURS_POPULATION[classePopulation(pop)], fillOpacity: 0.72, color: '#ffffff', weight: 0.6, opacity: 0.8 } : {}),
+    };
+  }
   let chargementCommunes = null;
 
   /** Point dans un polygone (règle pair-impair) ; anneaux GeoJSON [lon, lat]. */
@@ -91,7 +106,7 @@
         const ll = a.marqueur.getLatLng();
         return b.contains(ll) && dansGeometrie([ll.lng, ll.lat], g);
       }).length;
-      couche.setStyle({ ...STYLE_COMMUNE, ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}) });
+      couche.setStyle(styleCommune(couche));
     });
   }
 
@@ -100,11 +115,11 @@
       communes = L.geoJSON(geo, {
         style: () => STYLE_COMMUNE,
         onEachFeature: (f, couche) => {
-          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${couche.nb
+          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}<br>` : ''}${couche.nb
             ? `${couche.nb} acteur${couche.nb > 1 ? 's' : ''} affiché${couche.nb > 1 ? 's' : ''}` : 'Aucun acteur affiché'}`,
           { sticky: true, direction: 'top', className: 'infobulle-commune' });
-          couche.on('mouseover', () => couche.setStyle(STYLE_COMMUNE_SURVOL));
-          couche.on('mouseout', () => couche.setStyle({ ...STYLE_COMMUNE, ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}) }));
+          couche.on('mouseover', () => couche.setStyle(populationVisible ? { weight: 2.2, color: '#0f5e6b', opacity: 0.9 } : STYLE_COMMUNE_SURVOL));
+          couche.on('mouseout', () => couche.setStyle(styleCommune(couche)));
           couche.on('click', () => carte.fitBounds(couche.getBounds(), { padding: [30, 30], maxZoom: 14 }));
         },
       });
@@ -114,15 +129,33 @@
     return chargementCommunes;
   }
 
-  async function afficherCommunes(oui) {
-    communesVisibles = oui;
-    boutonCommunes?.setAttribute('aria-pressed', String(oui));
-    if (oui) (await chargerCommunes()).addTo(carte);
-    else communes?.remove();
+  /** Le fond des communes est affiché dès que l'un des deux calques (contours, population) est actif. */
+  async function majCalqueCommunes() {
+    boutonCommunes?.setAttribute('aria-pressed', String(communesVisibles));
+    boutonPopulation?.setAttribute('aria-pressed', String(populationVisible));
+    legendePopulation.hidden = !populationVisible;
+    if (communesVisibles || populationVisible) {
+      const c = await chargerCommunes();
+      c.eachLayer((couche) => couche.setStyle(styleCommune(couche)));
+      c.addTo(carte);
+    } else communes?.remove();
     ecrireUrl();
   }
+  function afficherCommunes(oui) { communesVisibles = oui; return majCalqueCommunes(); }
+  function afficherPopulation(oui) { populationVisible = oui; return majCalqueCommunes(); }
+
+  const legendePopulation = document.createElement('div');
+  legendePopulation.className = 'legende-population';
+  legendePopulation.hidden = true;
+  legendePopulation.innerHTML = `<p class="legende-titre">Population (INSEE)</p><ul>${COULEURS_POPULATION.map((c, i) => {
+    const bas = SEUILS_POPULATION[i - 1]; const haut = SEUILS_POPULATION[i];
+    const f = (n) => n.toLocaleString('fr-FR');
+    const texte = i === 0 ? `moins de ${f(haut)}` : haut ? `${f(bas)} à ${f(haut - 1)}` : `${f(bas)} et plus`;
+    return `<li><span class="legende-carre" style="background:${c}"></span>${texte}</li>`;
+  }).join('')}</ul>`;
 
   let boutonCommunes;
+  let boutonPopulation;
   const ControleCommunes = L.Control.extend({
     options: { position: 'topright' },
     onAdd() {
@@ -132,13 +165,17 @@
       boutonCommunes.setAttribute('aria-pressed', 'false');
       boutonCommunes.title = 'Afficher ou masquer les limites des communes';
       boutonCommunes.innerHTML = '<span class="icone-calque" aria-hidden="true"></span>Communes';
+      boutonPopulation = L.DomUtil.create('button', 'bouton-calque', div);
+      boutonPopulation.type = 'button';
+      boutonPopulation.setAttribute('aria-pressed', 'false');
+      boutonPopulation.title = 'Teinter les communes selon leur population (INSEE)';
+      boutonPopulation.innerHTML = '<span class="icone-population" aria-hidden="true"></span>Population';
+      div.append(legendePopulation);
       L.DomEvent.disableClickPropagation(div);
-      L.DomEvent.on(boutonCommunes, 'click', () => {
-        afficherCommunes(!communesVisibles).catch((e) => {
-          console.error(e);
-          afficherCommunes(false);
-        });
-      });
+      L.DomEvent.disableScrollPropagation(div);
+      const echec = (e) => { console.error(e); communesVisibles = false; populationVisible = false; majCalqueCommunes(); };
+      L.DomEvent.on(boutonCommunes, 'click', () => afficherCommunes(!communesVisibles).catch(echec));
+      L.DomEvent.on(boutonPopulation, 'click', () => afficherPopulation(!populationVisible).catch(echec));
       return div;
     },
   });
@@ -169,6 +206,7 @@
     activite = p.get('activite') || '';
     service = p.get('service') || '';
     communesVisibles = p.get('communes') === '1';
+    populationVisible = p.get('population') === '1';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();
@@ -178,6 +216,7 @@
     if (choisies.has('musique') && activite) p.set('activite', activite);
     if (choisies.has('bibliotheque') && service) p.set('service', service);
     if (communesVisibles) p.set('communes', '1');
+    if (populationVisible) p.set('population', '1');
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
   }
@@ -418,7 +457,7 @@
     lireUrl();
     dessinerFiltres();
     actualiser();
-    if (communesVisibles) afficherCommunes(true).catch((e) => { console.error(e); afficherCommunes(false); });
+    if (communesVisibles || populationVisible) majCalqueCommunes().catch((e) => { console.error(e); communesVisibles = false; populationVisible = false; majCalqueCommunes(); });
     if (acteurs.length) {
       const visibles = acteurs.filter(correspond);
       const groupe = L.featureGroup((visibles.length ? visibles : acteurs).map((a) => a.marqueur));

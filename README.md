@@ -121,6 +121,12 @@ un clic cadre la carte sur la commune. Les communes qui comptent au moins un act
 Le calque est mémorisé dans l'adresse de la page (`?communes=1`).
 
 Source : contours de l'API Découpage administratif (geo.api.gouv.fr, d'après IGN Admin Express), simplifiés.
+
+Le bouton « Population » teinte chaque commune selon sa population municipale INSEE (populations légales,
+via geo.api.gouv.fr ; propriété `population` du même fichier), en 6 classes : moins de 1 000, 1 000 à 1 999,
+2 000 à 4 999, 5 000 à 9 999, 10 000 à 49 999, 50 000 habitants et plus. Une légende s'affiche sous le bouton
+et l'info-bulle donne le nombre d'habitants. Mémorisé dans l'adresse (`?population=1`), combinable avec « Communes ».
+Pour actualiser les chiffres : reprendre `population` de `https://geo.api.gouv.fr/departements/33/communes?fields=code,population`.
 Pour les mettre à jour (fusions de communes au 1er janvier) :
 
 ```sh
