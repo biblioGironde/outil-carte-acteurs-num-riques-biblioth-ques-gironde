@@ -64,7 +64,7 @@
   const STYLE_COMMUNE_SURVOL = { weight: 2.2, opacity: 0.9, fillOpacity: 0.14 };
   let communes = null;          // L.GeoJSON, chargé à la première demande
   let communesVisibles = false;
-  let teinte = '';              // teinte des communes : '' | 'population' | 'densite' | 'niveau' (données INSEE)
+  let teinte = '';              // teinte des communes : '' | 'population' | 'densite' | 'niveau' | 'age' (données INSEE)
 
   // Classes et rampes séquentielles (une teinte, du clair au foncé) : bleu = population, orange = densité.
   const TEINTES = {
@@ -86,8 +86,18 @@
       couleurs: ['#e7e1fb', '#c4b7f4', '#9d89ec', '#7a5fe0', '#5a3fc0', '#3b2785'],
       valeur: (p) => p.niveau_vie_median ?? null,
       note: 'Gironde : 26 820 €. Non diffusé pour les très petites communes (secret statistique).',
+      nonDiffuse: true,
+    },
+    age: {
+      titre: 'Âge moyen (recensement 2022)',
+      seuils: [40, 42, 44, 46, 48],
+      couleurs: ['#dcf3dd', '#addfae', '#78c47b', '#43a047', '#2e7d32', '#1b4d20'],
+      libelles: ['moins de 40 ans', '40 à 41,9 ans', '42 à 43,9 ans', '44 à 45,9 ans', '46 à 47,9 ans', '48 ans et plus'],
+      valeur: (p) => p.age_moyen ?? null,
+      note: 'Gironde : 41,8 ans. Du plus clair (communes jeunes) au plus foncé (communes âgées).',
     },
   };
+  const decimal = (n) => String(n).replace('.', ',');
   const COULEUR_NON_DIFFUSE = '#d4d4d4';
   const nombre = (n) => Math.round(n).toLocaleString('fr-FR');
   const habitants = (n) => `${nombre(n)} habitant${n > 1 ? 's' : ''}`;
@@ -136,7 +146,7 @@
       communes = L.geoJSON(geo, {
         style: () => STYLE_COMMUNE,
         onEachFeature: (f, couche) => {
-          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}${f.properties.surface_km2 ? ` · ${nombre(TEINTES.densite.valeur(f.properties))} hab./km²` : ''}<br>` : ''}${f.properties.niveau_vie_median ? `Niveau de vie médian : ${nombre(f.properties.niveau_vie_median)} €/an${f.properties.taux_pauvrete != null ? ` · pauvreté ${String(f.properties.taux_pauvrete).replace('.', ',')} %` : ''}<br>` : ''}${couche.nb
+          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}${f.properties.surface_km2 ? ` · ${nombre(TEINTES.densite.valeur(f.properties))} hab./km²` : ''}<br>` : ''}${f.properties.niveau_vie_median ? `Niveau de vie médian : ${nombre(f.properties.niveau_vie_median)} €/an${f.properties.taux_pauvrete != null ? ` · pauvreté ${String(f.properties.taux_pauvrete).replace('.', ',')} %` : ''}<br>` : ''}${f.properties.age_moyen ? `Âge moyen : ${decimal(f.properties.age_moyen)} ans · moins de 30 ans : ${decimal(f.properties.part_moins_30)} % · 60 ans et plus : ${decimal(f.properties.part_60_plus)} %<br>` : ''}${couche.nb
             ? `${couche.nb} acteur${couche.nb > 1 ? 's' : ''} affiché${couche.nb > 1 ? 's' : ''}` : 'Aucun acteur affiché'}`,
           { sticky: true, direction: 'top', className: 'infobulle-commune' });
           couche.on('mouseover', () => couche.setStyle(teinte ? { weight: 2.2, color: '#0f5e6b', opacity: 0.9 } : STYLE_COMMUNE_SURVOL));
@@ -156,6 +166,7 @@
     boutonPopulation?.setAttribute('aria-pressed', String(teinte === 'population'));
     boutonDensite?.setAttribute('aria-pressed', String(teinte === 'densite'));
     boutonNiveau?.setAttribute('aria-pressed', String(teinte === 'niveau'));
+    boutonAge?.setAttribute('aria-pressed', String(teinte === 'age'));
     dessinerLegende();
     if (communesVisibles || teinte) {
       const c = await chargerCommunes();
@@ -179,15 +190,16 @@
     legendePopulation.innerHTML = `<p class="legende-titre">${t.titre}</p><ul>${t.couleurs.map((c, i) => {
       const bas = t.seuils[i - 1]; const haut = t.seuils[i];
       const e = t.unite === '€' ? ' €' : '';
-      const texte = i === 0 ? `moins de ${f(haut)}${e}` : haut ? `${f(bas)} à ${f(haut - 1)}${e}` : `${f(bas)}${e} et plus`;
+      const texte = t.libelles ? t.libelles[i] : i === 0 ? `moins de ${f(haut)}${e}` : haut ? `${f(bas)} à ${f(haut - 1)}${e}` : `${f(bas)}${e} et plus`;
       return `<li><span class="legende-carre" style="background:${c}"></span>${texte}</li>`;
-    }).join('')}${t.note ? `<li><span class="legende-carre" style="background:${COULEUR_NON_DIFFUSE}"></span>non diffusé</li>` : ''}</ul>${t.note ? `<p class="legende-note">${t.note}</p>` : ''}`;
+    }).join('')}${t.nonDiffuse ? `<li><span class="legende-carre" style="background:${COULEUR_NON_DIFFUSE}"></span>non diffusé</li>` : ''}</ul>${t.note ? `<p class="legende-note">${t.note}</p>` : ''}`;
   }
 
   let boutonCommunes;
   let boutonPopulation;
   let boutonDensite;
   let boutonNiveau;
+  let boutonAge;
   const ControleCommunes = L.Control.extend({
     options: { position: 'topright' },
     onAdd() {
@@ -212,6 +224,11 @@
       boutonNiveau.setAttribute('aria-pressed', 'false');
       boutonNiveau.title = 'Teinter les communes selon le niveau de vie médian de leurs habitants (INSEE, Filosofi 2023)';
       boutonNiveau.innerHTML = '<span class="icone-niveau" aria-hidden="true">€</span>Niveau de vie';
+      boutonAge = L.DomUtil.create('button', 'bouton-calque', div);
+      boutonAge.type = 'button';
+      boutonAge.setAttribute('aria-pressed', 'false');
+      boutonAge.title = 'Teinter les communes selon l’âge moyen de leurs habitants (INSEE, recensement 2022)';
+      boutonAge.innerHTML = '<span class="icone-niveau" aria-hidden="true">â</span>Âge';
       div.append(legendePopulation);
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
@@ -220,6 +237,7 @@
       L.DomEvent.on(boutonPopulation, 'click', () => choisirTeinte('population').catch(echec));
       L.DomEvent.on(boutonDensite, 'click', () => choisirTeinte('densite').catch(echec));
       L.DomEvent.on(boutonNiveau, 'click', () => choisirTeinte('niveau').catch(echec));
+      L.DomEvent.on(boutonAge, 'click', () => choisirTeinte('age').catch(echec));
       return div;
     },
   });
@@ -250,7 +268,7 @@
     activite = p.get('activite') || '';
     service = p.get('service') || '';
     communesVisibles = p.get('communes') === '1';
-    teinte = ['niveau', 'densite', 'population'].find((t) => p.get(t) === '1') || '';
+    teinte = ['age', 'niveau', 'densite', 'population'].find((t) => p.get(t) === '1') || '';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();

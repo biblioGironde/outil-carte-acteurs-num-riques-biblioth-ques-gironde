@@ -136,6 +136,12 @@ Le taux de pauvreté (`taux_pauvrete`, seuil de 60 % de la médiane) s'affiche d
 (communes d'au moins 2 000 habitants environ). Les communes sans donnée (secret statistique) sont en gris.
 Source : « Indicateurs sur les revenus et la pauvreté au niveau local en 2023 », fichier `FILOSOFI_CC_csv.zip`
 (<https://www.insee.fr/fr/statistiques/8984752>), indicateurs `MED_SL` et `PR_MD60`.
+Le bouton « Âge » teinte les communes selon l'âge moyen de leurs habitants (rampe verte, du clair = jeune au foncé = âgé),
+en 6 classes : moins de 40 ans, 40 à 41,9, 42 à 43,9, 44 à 45,9, 46 à 47,9, 48 ans et plus (Gironde : 41,8 ans), `?age=1`.
+L'info-bulle donne aussi la part des moins de 30 ans et des 60 ans et plus. Âge moyen calculé à partir de la population
+par âge détaillé du recensement 2022 (tableau `TD_POP1B_2022`, <https://www.insee.fr/fr/statistiques/8581810>),
+en prenant le milieu de chaque année d'âge ; propriétés `age_moyen`, `part_moins_30`, `part_60_plus`.
+Pour les petites communes, ces chiffres issus du recensement par sondage sont des estimations.
 Pour actualiser les chiffres : reprendre `population` et `surface` (en hectares, à diviser par 100) de
 `https://geo.api.gouv.fr/departements/33/communes?fields=code,population,surface`.
 Pour les mettre à jour (fusions de communes au 1er janvier) :
