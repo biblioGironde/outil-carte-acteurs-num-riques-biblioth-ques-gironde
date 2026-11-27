@@ -64,51 +64,139 @@
   const STYLE_COMMUNE_SURVOL = { weight: 2.2, opacity: 0.9, fillOpacity: 0.14 };
   let communes = null;          // L.GeoJSON, chargé à la première demande
   let communesVisibles = false;
-  let teinte = '';              // teinte des communes : '' | 'population' | 'densite' | 'niveau' | 'age' (données INSEE)
+  let teinte = '';              // indicateur INSEE affiché en remplissage (clé de INDICATEURS), '' = aucun
 
-  // Classes et rampes séquentielles (une teinte, du clair au foncé) : bleu = population, orange = densité.
-  const TEINTES = {
-    population: {
-      titre: 'Population (INSEE)', unite: 'habitants',
-      seuils: [1000, 2000, 5000, 10000, 50000],
-      couleurs: ['#cce3fd', '#84b9f3', '#338ced', '#2370cd', '#1757ac', '#0e3d7e'],
-      valeur: (p) => p.population,
-    },
-    densite: {
-      titre: 'Densité (hab./km²)', unite: 'hab./km²',
-      seuils: [25, 50, 100, 250, 1000],
-      couleurs: ['#fde3d0', '#fbbf94', '#f8975a', '#e9702f', '#c2531a', '#8a3a12'],
-      valeur: (p) => (p.population != null && p.surface_km2 ? p.population / p.surface_km2 : null),
-    },
-    niveau: {
-      titre: 'Niveau de vie médian (€/an, 2023)', unite: '€',
-      seuils: [22000, 24000, 26000, 28000, 30000],
-      couleurs: ['#e7e1fb', '#c4b7f4', '#9d89ec', '#7a5fe0', '#5a3fc0', '#3b2785'],
-      valeur: (p) => p.niveau_vie_median ?? null,
-      note: 'Gironde : 26 820 €. Non diffusé pour les très petites communes (secret statistique).',
-      nonDiffuse: true,
-    },
-    age: {
-      titre: 'Âge moyen (recensement 2022)',
-      seuils: [40, 42, 44, 46, 48],
-      couleurs: ['#dcf3dd', '#addfae', '#78c47b', '#43a047', '#2e7d32', '#1b4d20'],
-      libelles: ['moins de 40 ans', '40 à 41,9 ans', '42 à 43,9 ans', '44 à 45,9 ans', '46 à 47,9 ans', '48 ans et plus'],
-      valeur: (p) => p.age_moyen ?? null,
-      note: 'Gironde : 41,8 ans. Du plus clair (communes jeunes) au plus foncé (communes âgées).',
-    },
+  // ---------- Indicateurs INSEE par commune ----------
+  // Chaque indicateur : classes (seuils) et rampe séquentielle d'une seule teinte, du clair au foncé.
+  // Une seule couleur par thème : bleu population, orange territoire, violet revenus, rouge fragilités sociales,
+  // vert âge, ardoise isolement et mobilité. Les indicateurs s'excluent : un seul remplissage à la fois.
+  const RAMPES = {
+    bleu: ['#cce3fd', '#84b9f3', '#338ced', '#2370cd', '#1757ac', '#0e3d7e'],
+    orange: ['#fde3d0', '#fbbf94', '#f8975a', '#e9702f', '#c2531a', '#8a3a12'],
+    violet: ['#e7e1fb', '#c4b7f4', '#9d89ec', '#7a5fe0', '#5a3fc0', '#3b2785'],
+    rouge: ['#fde2e1', '#f9b4b2', '#f28482', '#e05353', '#b83232', '#7f1d1d'],
+    vert: ['#dcf3dd', '#addfae', '#78c47b', '#43a047', '#2e7d32', '#1b4d20'],
+    ardoise: ['#e2e8f0', '#cbd5e1', '#94a3b8', '#64748b', '#475569', '#1e293b'],
   };
-  const decimal = (n) => String(n).replace('.', ',');
-  const COULEUR_NON_DIFFUSE = '#d4d4d4';
+  const decimal = (n, d = 1) => Number(n).toLocaleString('fr-FR', { maximumFractionDigits: d });
   const nombre = (n) => Math.round(n).toLocaleString('fr-FR');
   const habitants = (n) => `${nombre(n)} habitant${n > 1 ? 's' : ''}`;
+  const pourcent = (n) => `${decimal(n)} %`;
+  /** Libellés de légende : « moins de a », « a à b », « b et plus ». */
+  const libellesClasses = (seuils, u = '') => seuils.map((s, i) => (i === 0 ? `moins de ${decimal(s)}${u}` : `${decimal(seuils[i - 1])} à ${decimal(s)}${u}`))
+    .concat(`${decimal(seuils.at(-1))}${u} et plus`);
+  const RP = 'INSEE, recensement 2023';
+  const PETITS = 'Gris : effectif trop faible pour être significatif.';
+  const DENS7 = ['Grands centres urbains', 'Centres urbains intermédiaires', 'Ceintures urbaines', 'Petites villes',
+    'Bourgs ruraux', 'Rural à habitat dispersé', 'Rural à habitat très dispersé'];
+  const EQUIPEMENTS = ['Ni bibliothèque ni France services', 'France services seulement', 'Bibliothèque seulement', 'Bibliothèque et France services'];
+  const pct = (cle) => (p) => p[cle] ?? null;
+  const INDICATEURS = {
+    population: {
+      groupe: 'Population et territoire', menu: 'Population', titre: 'Population municipale (INSEE)', rampe: 'bleu',
+      seuils: [1000, 2000, 5000, 10000, 50000], valeur: (p) => p.population ?? null,
+      libelles: ['moins de 1 000', '1 000 à 1 999', '2 000 à 4 999', '5 000 à 9 999', '10 000 à 49 999', '50 000 et plus'],
+      texte: (v) => habitants(v),
+    },
+    densite: {
+      groupe: 'Population et territoire', menu: 'Densité', titre: 'Densité (habitants par km²)', rampe: 'orange',
+      seuils: [25, 50, 100, 250, 1000], valeur: (p) => (p.population != null && p.surface_km2 ? p.population / p.surface_km2 : null),
+      texte: (v) => `${nombre(v)} hab./km²`,
+    },
+    typologie: {
+      groupe: 'Population et territoire', menu: 'Type de commune (urbain / rural)', titre: 'Grille communale de densité (INSEE 2025)',
+      couleurs: ['#8a3a12', '#b34a17', '#d9622a', '#f08442', '#f8a66f', '#fbc79f', '#fde3d0'], libelles: DENS7,
+      categorie: (p) => (p.densite7 ? p.densite7 - 1 : null), texte: (v) => DENS7[v],
+    },
+    niveau: {
+      groupe: 'Revenus et emploi', menu: 'Niveau de vie médian', titre: 'Niveau de vie médian (€ par an, INSEE 2023)', rampe: 'violet',
+      seuils: [22000, 24000, 26000, 28000, 30000], valeur: pct('niveau_vie_median'),
+      libelles: ['moins de 22 000 €', '22 000 à 23 999 €', '24 000 à 25 999 €', '26 000 à 27 999 €', '28 000 à 29 999 €', '30 000 € et plus'],
+      texte: (v, p) => `Niveau de vie médian : ${nombre(v)} €/an${p.taux_pauvrete != null ? ` · pauvreté ${pourcent(p.taux_pauvrete)}` : ''}`,
+      note: 'Gironde : 26 820 €. Gris : non diffusé (secret statistique).',
+    },
+    ouvriers: {
+      groupe: 'Revenus et emploi', menu: 'Ouvriers et employés', titre: 'Part des ouvriers et employés parmi les actifs (%)', rampe: 'rouge',
+      seuils: [40, 45, 50, 55, 60], valeur: pct('part_ouvriers_employes'), unite: ' %',
+      texte: (v, p) => `Ouvriers et employés : ${pourcent(v)} des actifs${p.part_cadres != null ? ` · cadres : ${pourcent(p.part_cadres)}` : ''}`,
+      note: `Gironde : 43,3 % (cadres : 21,9 %). ${RP}. ${PETITS}`,
+    },
+    chomage: {
+      groupe: 'Revenus et emploi', menu: 'Taux de chômage', titre: 'Taux de chômage des 15-64 ans (%)', rampe: 'rouge',
+      seuils: [6, 8, 10, 12, 14], valeur: pct('taux_chomage'), unite: ' %',
+      texte: (v) => `Taux de chômage : ${pourcent(v)}`,
+      note: `Gironde : 10,5 %. Au sens du recensement (déclaratif), ${RP}. ${PETITS}`,
+    },
+    diplomes: {
+      groupe: 'Formation et jeunesse', menu: 'Peu ou pas diplômés', titre: 'Sans diplôme ou brevet des collèges seulement (%)', rampe: 'rouge',
+      seuils: [16, 20, 24, 28, 32], valeur: pct('part_peu_diplomes'), unite: ' %',
+      texte: (v) => `Peu ou pas diplômés : ${pourcent(v)} des 15 ans et plus sortis de l’école`,
+      note: `Parmi les 15 ans et plus non scolarisés. Gironde : 20,5 %. ${RP}.`,
+    },
+    jeunes: {
+      groupe: 'Formation et jeunesse', menu: 'Jeunes ni en emploi ni en études', titre: 'Jeunes de 15-24 ans ni en emploi ni en études (%)', rampe: 'rouge',
+      seuils: [8, 12, 16, 20, 25], valeur: pct('part_jeunes_non_inseres'), unite: ' %',
+      texte: (v) => `15-24 ans ni en emploi ni en études : ${pourcent(v)}`,
+      note: `Gironde : 14 %. ${RP}. ${PETITS}`,
+    },
+    age: {
+      groupe: 'Âge et familles', menu: 'Âge moyen', titre: 'Âge moyen (recensement 2022)', rampe: 'vert',
+      seuils: [40, 42, 44, 46, 48], valeur: pct('age_moyen'),
+      libelles: ['moins de 40 ans', '40 à 41,9 ans', '42 à 43,9 ans', '44 à 45,9 ans', '46 à 47,9 ans', '48 ans et plus'],
+      texte: (v, p) => `Âge moyen : ${decimal(v)} ans · moins de 30 ans : ${pourcent(p.part_moins_30)} · 60 ans et plus : ${pourcent(p.part_60_plus)}`,
+      note: 'Gironde : 41,8 ans. Du plus clair (communes jeunes) au plus foncé (communes âgées).',
+    },
+    seniors: {
+      groupe: 'Âge et familles', menu: '80 ans et plus vivant seuls', titre: 'Part des 80 ans et plus vivant seuls (%)', rampe: 'ardoise',
+      seuils: [30, 35, 40, 45, 50], valeur: pct('part_80_seuls'), unite: ' %',
+      texte: (v) => `80 ans et plus vivant seuls : ${pourcent(v)}`,
+      note: `Gironde : 42,2 %. Le recensement ne publie pas les 75 ans et plus vivant seuls par commune. ${RP}. ${PETITS}`,
+    },
+    monoparentales: {
+      groupe: 'Âge et familles', menu: 'Familles monoparentales', titre: 'Part des familles monoparentales (%)', rampe: 'rouge',
+      seuils: [6, 9, 12, 15, 18], valeur: pct('part_familles_monoparentales'), unite: ' %',
+      texte: (v) => `Familles monoparentales : ${pourcent(v)} des familles`,
+      note: `Gironde : 16,7 %. ${RP}. ${PETITS}`,
+    },
+    voiture: {
+      groupe: 'Accès et services', menu: 'Ménages sans voiture', titre: 'Part des ménages sans voiture (%)', rampe: 'ardoise',
+      seuils: [3, 4, 5, 7, 10], valeur: pct('part_menages_sans_voiture'), unite: ' %',
+      texte: (v) => `Ménages sans voiture : ${pourcent(v)}`,
+      note: `Gironde : 15,8 % (37,6 % à Bordeaux). ${RP}.`,
+    },
+    equipements: {
+      groupe: 'Accès et services', menu: 'Bibliothèques et France services', titre: 'Bibliothèques et France services (INSEE BPE 2025)',
+      couleurs: ['#f47230', '#00a888', '#84b9f3', '#1757ac'], libelles: EQUIPEMENTS,
+      categorie: (p) => (p.nb_bibliotheques > 0 ? 2 : 0) + (p.nb_france_services > 0 ? 1 : 0),
+      texte: (v, p) => `Bibliothèques : ${p.nb_bibliotheques ?? 0} · France services : ${p.nb_france_services ?? 0}`,
+      note: 'Base permanente des équipements : bibliothèques et médiathèques publiques, espaces France services.',
+    },
+  };
+  for (const t of Object.values(INDICATEURS)) {
+    t.couleurs ??= RAMPES[t.rampe];
+    t.libelles ??= libellesClasses(t.seuils, t.unite || '');
+  }
+  const COULEUR_NON_DIFFUSE = '#d4d4d4';
+  /** Indice de classe (ou de catégorie) d'une commune pour l'indicateur t ; null si pas de donnée. */
+  function classe(t, p) {
+    if (t.categorie) return t.categorie(p);
+    const v = t.valeur(p);
+    return v == null ? null : t.seuils.filter((s) => v >= s).length;
+  }
   function styleCommune(couche) {
-    const t = TEINTES[teinte];
-    const v = t?.valeur(couche.feature.properties);
+    const t = INDICATEURS[teinte];
+    const c = t ? classe(t, couche.feature.properties) : null;
     return {
       ...STYLE_COMMUNE,
       ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}),
-      ...(t ? { fillColor: v != null ? t.couleurs[t.seuils.filter((s) => v >= s).length] : COULEUR_NON_DIFFUSE, fillOpacity: v != null ? 0.72 : 0.5, color: '#ffffff', weight: 0.6, opacity: 0.8 } : {}),
+      ...(t ? { fillColor: c != null ? t.couleurs[c] : COULEUR_NON_DIFFUSE, fillOpacity: c != null ? 0.72 : 0.5, color: '#ffffff', weight: 0.6, opacity: 0.8 } : {}),
     };
+  }
+  function texteIndicateur(p) {
+    const t = INDICATEURS[teinte];
+    if (!t || teinte === 'population') return '';
+    const v = t.categorie ? t.categorie(p) : t.valeur(p);
+    return v == null ? 'Donnée non disponible<br>' : `${t.texte(v, p)}<br>`;
   }
   let chargementCommunes = null;
 
@@ -146,7 +234,7 @@
       communes = L.geoJSON(geo, {
         style: () => STYLE_COMMUNE,
         onEachFeature: (f, couche) => {
-          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}${f.properties.surface_km2 ? ` · ${nombre(TEINTES.densite.valeur(f.properties))} hab./km²` : ''}<br>` : ''}${f.properties.niveau_vie_median ? `Niveau de vie médian : ${nombre(f.properties.niveau_vie_median)} €/an${f.properties.taux_pauvrete != null ? ` · pauvreté ${String(f.properties.taux_pauvrete).replace('.', ',')} %` : ''}<br>` : ''}${f.properties.age_moyen ? `Âge moyen : ${decimal(f.properties.age_moyen)} ans · moins de 30 ans : ${decimal(f.properties.part_moins_30)} % · 60 ans et plus : ${decimal(f.properties.part_60_plus)} %<br>` : ''}${couche.nb
+          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}<br>` : ''}${texteIndicateur(f.properties)}${couche.nb
             ? `${couche.nb} acteur${couche.nb > 1 ? 's' : ''} affiché${couche.nb > 1 ? 's' : ''}` : 'Aucun acteur affiché'}`,
           { sticky: true, direction: 'top', className: 'infobulle-commune' });
           couche.on('mouseover', () => couche.setStyle(teinte ? { weight: 2.2, color: '#0f5e6b', opacity: 0.9 } : STYLE_COMMUNE_SURVOL));
@@ -160,13 +248,11 @@
     return chargementCommunes;
   }
 
-  /** Le fond des communes est affiché dès que l'un des deux calques (contours, population) est actif. */
+  /** Le fond des communes est affiché dès que le contour ou un indicateur INSEE est actif. */
   async function majCalqueCommunes() {
     boutonCommunes?.setAttribute('aria-pressed', String(communesVisibles));
-    boutonPopulation?.setAttribute('aria-pressed', String(teinte === 'population'));
-    boutonDensite?.setAttribute('aria-pressed', String(teinte === 'densite'));
-    boutonNiveau?.setAttribute('aria-pressed', String(teinte === 'niveau'));
-    boutonAge?.setAttribute('aria-pressed', String(teinte === 'age'));
+    if (choixIndicateur) choixIndicateur.value = teinte;
+    choixIndicateur?.classList.toggle('actif', Boolean(teinte));
     dessinerLegende();
     if (communesVisibles || teinte) {
       const c = await chargerCommunes();
@@ -176,30 +262,22 @@
     ecrireUrl();
   }
   function afficherCommunes(oui) { communesVisibles = oui; return majCalqueCommunes(); }
-  /** Population et densité s'excluent : un seul remplissage à la fois. */
-  function choisirTeinte(t) { teinte = teinte === t ? '' : t; return majCalqueCommunes(); }
 
   const legendePopulation = document.createElement('div');
   legendePopulation.className = 'legende-population';
   legendePopulation.hidden = true;
   function dessinerLegende() {
-    const t = TEINTES[teinte];
+    const t = INDICATEURS[teinte];
     legendePopulation.hidden = !t;
     if (!t) return;
-    const f = (n) => n.toLocaleString('fr-FR');
-    legendePopulation.innerHTML = `<p class="legende-titre">${t.titre}</p><ul>${t.couleurs.map((c, i) => {
-      const bas = t.seuils[i - 1]; const haut = t.seuils[i];
-      const e = t.unite === '€' ? ' €' : '';
-      const texte = t.libelles ? t.libelles[i] : i === 0 ? `moins de ${f(haut)}${e}` : haut ? `${f(bas)} à ${f(haut - 1)}${e}` : `${f(bas)}${e} et plus`;
-      return `<li><span class="legende-carre" style="background:${c}"></span>${texte}</li>`;
-    }).join('')}${t.nonDiffuse ? `<li><span class="legende-carre" style="background:${COULEUR_NON_DIFFUSE}"></span>non diffusé</li>` : ''}</ul>${t.note ? `<p class="legende-note">${t.note}</p>` : ''}`;
+    // Données absentes : seulement si au moins une commune est concernée.
+    const manque = communes ? communes.getLayers().some((c) => classe(t, c.feature.properties) == null) : Boolean(t.note?.includes('Gris'));
+    legendePopulation.innerHTML = `<p class="legende-titre">${t.titre}</p><ul>${t.couleurs.map((c, i) => `<li><span class="legende-carre" style="background:${c}"></span>${t.libelles[i]}</li>`).join('')}${
+      manque ? `<li><span class="legende-carre" style="background:${COULEUR_NON_DIFFUSE}"></span>non disponible</li>` : ''}</ul>${t.note ? `<p class="legende-note">${t.note}</p>` : ''}`;
   }
 
   let boutonCommunes;
-  let boutonPopulation;
-  let boutonDensite;
-  let boutonNiveau;
-  let boutonAge;
+  let choixIndicateur;
   const ControleCommunes = L.Control.extend({
     options: { position: 'topright' },
     onAdd() {
@@ -209,35 +287,23 @@
       boutonCommunes.setAttribute('aria-pressed', 'false');
       boutonCommunes.title = 'Afficher ou masquer les limites des communes';
       boutonCommunes.innerHTML = '<span class="icone-calque" aria-hidden="true"></span>Communes';
-      boutonPopulation = L.DomUtil.create('button', 'bouton-calque', div);
-      boutonPopulation.type = 'button';
-      boutonPopulation.setAttribute('aria-pressed', 'false');
-      boutonPopulation.title = 'Teinter les communes selon leur population (INSEE)';
-      boutonPopulation.innerHTML = '<span class="icone-population" aria-hidden="true"></span>Population';
-      boutonDensite = L.DomUtil.create('button', 'bouton-calque', div);
-      boutonDensite.type = 'button';
-      boutonDensite.setAttribute('aria-pressed', 'false');
-      boutonDensite.title = 'Teinter les communes selon leur densité de population (habitants par km², INSEE)';
-      boutonDensite.innerHTML = '<span class="icone-population icone-densite" aria-hidden="true"></span>Densité';
-      boutonNiveau = L.DomUtil.create('button', 'bouton-calque', div);
-      boutonNiveau.type = 'button';
-      boutonNiveau.setAttribute('aria-pressed', 'false');
-      boutonNiveau.title = 'Teinter les communes selon le niveau de vie médian de leurs habitants (INSEE, Filosofi 2023)';
-      boutonNiveau.innerHTML = '<span class="icone-niveau" aria-hidden="true">€</span>Niveau de vie';
-      boutonAge = L.DomUtil.create('button', 'bouton-calque', div);
-      boutonAge.type = 'button';
-      boutonAge.setAttribute('aria-pressed', 'false');
-      boutonAge.title = 'Teinter les communes selon l’âge moyen de leurs habitants (INSEE, recensement 2022)';
-      boutonAge.innerHTML = '<span class="icone-niveau" aria-hidden="true">â</span>Âge';
+      const etiquette = L.DomUtil.create('label', 'choix-indicateur', div);
+      etiquette.innerHTML = '<span class="visuellement-cache">Données INSEE par commune</span>';
+      choixIndicateur = L.DomUtil.create('select', 'bouton-calque', etiquette);
+      choixIndicateur.title = 'Teinter les communes selon un indicateur INSEE';
+      const groupes = new Map();
+      for (const [cle, t] of Object.entries(INDICATEURS)) {
+        if (!groupes.has(t.groupe)) groupes.set(t.groupe, []);
+        groupes.get(t.groupe).push(`<option value="${cle}">${echapper(t.menu)}</option>`);
+      }
+      choixIndicateur.innerHTML = '<option value="">Données INSEE…</option>'
+        + [...groupes].map(([g, o]) => `<optgroup label="${echapper(g)}">${o.join('')}</optgroup>`).join('');
       div.append(legendePopulation);
       L.DomEvent.disableClickPropagation(div);
       L.DomEvent.disableScrollPropagation(div);
       const echec = (e) => { console.error(e); communesVisibles = false; teinte = ''; majCalqueCommunes(); };
       L.DomEvent.on(boutonCommunes, 'click', () => afficherCommunes(!communesVisibles).catch(echec));
-      L.DomEvent.on(boutonPopulation, 'click', () => choisirTeinte('population').catch(echec));
-      L.DomEvent.on(boutonDensite, 'click', () => choisirTeinte('densite').catch(echec));
-      L.DomEvent.on(boutonNiveau, 'click', () => choisirTeinte('niveau').catch(echec));
-      L.DomEvent.on(boutonAge, 'click', () => choisirTeinte('age').catch(echec));
+      L.DomEvent.on(choixIndicateur, 'change', () => { teinte = choixIndicateur.value; majCalqueCommunes().catch(echec); });
       return div;
     },
   });
@@ -268,7 +334,9 @@
     activite = p.get('activite') || '';
     service = p.get('service') || '';
     communesVisibles = p.get('communes') === '1';
-    teinte = ['age', 'niveau', 'densite', 'population'].find((t) => p.get(t) === '1') || '';
+    // ?insee=<indicateur> ; anciens liens ?population=1, ?densite=1, ?niveau=1, ?age=1 encore reconnus.
+    teinte = p.get('insee') || ['age', 'niveau', 'densite', 'population'].find((t) => p.get(t) === '1') || '';
+    if (!INDICATEURS[teinte]) teinte = '';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();
@@ -278,7 +346,7 @@
     if (choisies.has('musique') && activite) p.set('activite', activite);
     if (choisies.has('bibliotheque') && service) p.set('service', service);
     if (communesVisibles) p.set('communes', '1');
-    if (teinte) p.set(teinte, '1');
+    if (teinte) p.set('insee', teinte);
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
   }
