@@ -140,6 +140,27 @@ a { color: var(--accent); }
     linear-gradient(currentColor, currentColor) 45% 0 / 1.5px 100% no-repeat,
     linear-gradient(currentColor, currentColor) 0 60% / 100% 1.5px no-repeat;
 }
+.controle-calques { display: flex; flex-direction: column; align-items: stretch; gap: .35rem; background: none !important; box-shadow: none !important; }
+.controle-calques .bouton-calque { box-shadow: var(--ombre); }
+.icone-population {
+  width: 14px; height: 14px; flex: none; border-radius: 3px; border: 1.5px solid currentColor;
+  background: linear-gradient(90deg, transparent 33%, currentColor 33% 40%, transparent 40% 66%, currentColor 66% 73%, transparent 73%),
+    linear-gradient(currentColor, currentColor) 0 100% / 100% 40% no-repeat;
+  opacity: .9;
+}
+.icone-densite {
+  background: radial-gradient(currentColor 1.2px, transparent 1.6px) 0 0 / 4px 4px;
+}
+.legende-population {
+  background: var(--papier); border: 1px solid var(--trait); border-radius: 10px; padding: .55rem .7rem;
+  font-size: .72rem; line-height: 1.3; color: var(--encre); box-shadow: var(--ombre);
+}
+.legende-population[hidden] { display: none; }
+.legende-titre { margin: 0 0 .35rem; font-weight: 700; }
+.legende-population ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2rem; }
+.legende-population li { display: flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.legende-carre { width: 14px; height: 10px; border-radius: 2px; flex: none; border: 1px solid rgba(0,0,0,.08); }
+@media (max-width: 760px) { .legende-population { font-size: .68rem; padding: .4rem .55rem; } }
 .infobulle-commune { font-size: .78rem; line-height: 1.35; }
 
 /* Fiche (popup) */

@@ -64,6 +64,34 @@
   const STYLE_COMMUNE_SURVOL = { weight: 2.2, opacity: 0.9, fillOpacity: 0.14 };
   let communes = null;          // L.GeoJSON, chargé à la première demande
   let communesVisibles = false;
+  let teinte = '';              // teinte des communes : '' | 'population' | 'densite' (données INSEE)
+
+  // Classes et rampes séquentielles (une teinte, du clair au foncé) : bleu = population, orange = densité.
+  const TEINTES = {
+    population: {
+      titre: 'Population (INSEE)', unite: 'habitants',
+      seuils: [1000, 2000, 5000, 10000, 50000],
+      couleurs: ['#cce3fd', '#84b9f3', '#338ced', '#2370cd', '#1757ac', '#0e3d7e'],
+      valeur: (p) => p.population,
+    },
+    densite: {
+      titre: 'Densité (hab./km²)', unite: 'hab./km²',
+      seuils: [25, 50, 100, 250, 1000],
+      couleurs: ['#fde3d0', '#fbbf94', '#f8975a', '#e9702f', '#c2531a', '#8a3a12'],
+      valeur: (p) => (p.population != null && p.surface_km2 ? p.population / p.surface_km2 : null),
+    },
+  };
+  const nombre = (n) => Math.round(n).toLocaleString('fr-FR');
+  const habitants = (n) => `${nombre(n)} habitant${n > 1 ? 's' : ''}`;
+  function styleCommune(couche) {
+    const t = TEINTES[teinte];
+    const v = t?.valeur(couche.feature.properties);
+    return {
+      ...STYLE_COMMUNE,
+      ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}),
+      ...(t && v != null ? { fillColor: t.couleurs[t.seuils.filter((s) => v >= s).length], fillOpacity: 0.72, color: '#ffffff', weight: 0.6, opacity: 0.8 } : {}),
+    };
+  }
   let chargementCommunes = null;
 
   /** Point dans un polygone (règle pair-impair) ; anneaux GeoJSON [lon, lat]. */
@@ -91,7 +119,7 @@
         const ll = a.marqueur.getLatLng();
         return b.contains(ll) && dansGeometrie([ll.lng, ll.lat], g);
       }).length;
-      couche.setStyle({ ...STYLE_COMMUNE, ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}) });
+      couche.setStyle(styleCommune(couche));
     });
   }
 
@@ -100,11 +128,11 @@
       communes = L.geoJSON(geo, {
         style: () => STYLE_COMMUNE,
         onEachFeature: (f, couche) => {
-          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${couche.nb
+          couche.bindTooltip(() => `<strong>${echapper(f.properties.nom)}</strong><br>${f.properties.population != null ? `${habitants(f.properties.population)}${f.properties.surface_km2 ? ` · ${nombre(TEINTES.densite.valeur(f.properties))} hab./km²` : ''}<br>` : ''}${couche.nb
             ? `${couche.nb} acteur${couche.nb > 1 ? 's' : ''} affiché${couche.nb > 1 ? 's' : ''}` : 'Aucun acteur affiché'}`,
           { sticky: true, direction: 'top', className: 'infobulle-commune' });
-          couche.on('mouseover', () => couche.setStyle(STYLE_COMMUNE_SURVOL));
-          couche.on('mouseout', () => couche.setStyle({ ...STYLE_COMMUNE, ...(couche.nb ? STYLE_COMMUNE_OCCUPEE : {}) }));
+          couche.on('mouseover', () => couche.setStyle(teinte ? { weight: 2.2, color: '#0f5e6b', opacity: 0.9 } : STYLE_COMMUNE_SURVOL));
+          couche.on('mouseout', () => couche.setStyle(styleCommune(couche)));
           couche.on('click', () => carte.fitBounds(couche.getBounds(), { padding: [30, 30], maxZoom: 14 }));
         },
       });
@@ -114,15 +142,41 @@
     return chargementCommunes;
   }
 
-  async function afficherCommunes(oui) {
-    communesVisibles = oui;
-    boutonCommunes?.setAttribute('aria-pressed', String(oui));
-    if (oui) (await chargerCommunes()).addTo(carte);
-    else communes?.remove();
+  /** Le fond des communes est affiché dès que l'un des deux calques (contours, population) est actif. */
+  async function majCalqueCommunes() {
+    boutonCommunes?.setAttribute('aria-pressed', String(communesVisibles));
+    boutonPopulation?.setAttribute('aria-pressed', String(teinte === 'population'));
+    boutonDensite?.setAttribute('aria-pressed', String(teinte === 'densite'));
+    dessinerLegende();
+    if (communesVisibles || teinte) {
+      const c = await chargerCommunes();
+      c.eachLayer((couche) => couche.setStyle(styleCommune(couche)));
+      c.addTo(carte);
+    } else communes?.remove();
     ecrireUrl();
+  }
+  function afficherCommunes(oui) { communesVisibles = oui; return majCalqueCommunes(); }
+  /** Population et densité s'excluent : un seul remplissage à la fois. */
+  function choisirTeinte(t) { teinte = teinte === t ? '' : t; return majCalqueCommunes(); }
+
+  const legendePopulation = document.createElement('div');
+  legendePopulation.className = 'legende-population';
+  legendePopulation.hidden = true;
+  function dessinerLegende() {
+    const t = TEINTES[teinte];
+    legendePopulation.hidden = !t;
+    if (!t) return;
+    const f = (n) => n.toLocaleString('fr-FR');
+    legendePopulation.innerHTML = `<p class="legende-titre">${t.titre}</p><ul>${t.couleurs.map((c, i) => {
+      const bas = t.seuils[i - 1]; const haut = t.seuils[i];
+      const texte = i === 0 ? `moins de ${f(haut)}` : haut ? `${f(bas)} à ${f(haut - 1)}` : `${f(bas)} et plus`;
+      return `<li><span class="legende-carre" style="background:${c}"></span>${texte}</li>`;
+    }).join('')}</ul>`;
   }
 
   let boutonCommunes;
+  let boutonPopulation;
+  let boutonDensite;
   const ControleCommunes = L.Control.extend({
     options: { position: 'topright' },
     onAdd() {
@@ -132,13 +186,23 @@
       boutonCommunes.setAttribute('aria-pressed', 'false');
       boutonCommunes.title = 'Afficher ou masquer les limites des communes';
       boutonCommunes.innerHTML = '<span class="icone-calque" aria-hidden="true"></span>Communes';
+      boutonPopulation = L.DomUtil.create('button', 'bouton-calque', div);
+      boutonPopulation.type = 'button';
+      boutonPopulation.setAttribute('aria-pressed', 'false');
+      boutonPopulation.title = 'Teinter les communes selon leur population (INSEE)';
+      boutonPopulation.innerHTML = '<span class="icone-population" aria-hidden="true"></span>Population';
+      boutonDensite = L.DomUtil.create('button', 'bouton-calque', div);
+      boutonDensite.type = 'button';
+      boutonDensite.setAttribute('aria-pressed', 'false');
+      boutonDensite.title = 'Teinter les communes selon leur densité de population (habitants par km², INSEE)';
+      boutonDensite.innerHTML = '<span class="icone-population icone-densite" aria-hidden="true"></span>Densité';
+      div.append(legendePopulation);
       L.DomEvent.disableClickPropagation(div);
-      L.DomEvent.on(boutonCommunes, 'click', () => {
-        afficherCommunes(!communesVisibles).catch((e) => {
-          console.error(e);
-          afficherCommunes(false);
-        });
-      });
+      L.DomEvent.disableScrollPropagation(div);
+      const echec = (e) => { console.error(e); communesVisibles = false; teinte = ''; majCalqueCommunes(); };
+      L.DomEvent.on(boutonCommunes, 'click', () => afficherCommunes(!communesVisibles).catch(echec));
+      L.DomEvent.on(boutonPopulation, 'click', () => choisirTeinte('population').catch(echec));
+      L.DomEvent.on(boutonDensite, 'click', () => choisirTeinte('densite').catch(echec));
       return div;
     },
   });
@@ -169,6 +233,7 @@
     activite = p.get('activite') || '';
     service = p.get('service') || '';
     communesVisibles = p.get('communes') === '1';
+    teinte = p.get('densite') === '1' ? 'densite' : p.get('population') === '1' ? 'population' : '';
   }
   function ecrireUrl() {
     const p = new URLSearchParams();
@@ -178,6 +243,7 @@
     if (choisies.has('musique') && activite) p.set('activite', activite);
     if (choisies.has('bibliotheque') && service) p.set('service', service);
     if (communesVisibles) p.set('communes', '1');
+    if (teinte) p.set(teinte, '1');
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}${location.hash}` : location.pathname + location.hash);
   }
@@ -418,7 +484,7 @@
     lireUrl();
     dessinerFiltres();
     actualiser();
-    if (communesVisibles) afficherCommunes(true).catch((e) => { console.error(e); afficherCommunes(false); });
+    if (communesVisibles || teinte) majCalqueCommunes().catch((e) => { console.error(e); communesVisibles = false; teinte = ''; majCalqueCommunes(); });
     if (acteurs.length) {
       const visibles = acteurs.filter(correspond);
       const groupe = L.featureGroup((visibles.length ? visibles : acteurs).map((a) => a.marqueur));
