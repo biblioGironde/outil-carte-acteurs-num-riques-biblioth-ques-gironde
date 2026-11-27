@@ -1639,6 +1639,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.202977,
+          44.995376
+        ]
+      },
+      "properties": {
+        "id": "boma-mediatheque-de-saint-denis-de-pile-saint-denis-de-pile",
+        "nom": "BOMA, médiathèque de Saint-Denis-de-Pile",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "« Quartier général culturel » installé dans la médiathèque et la Chartreuse du XVIe siècle : espace numérique et rendez-vous numériques réguliers, espace de fabrication, jeux vidéo et réalité virtuelle, ludothèque, salle de spectacle. Accueille aussi le centre socioculturel Portraits de Familles.",
+        "adresse": "1 route de Guîtres",
+        "code_postal": "33910",
+        "commune": "Saint-Denis-de-Pile",
+        "site": "https://boma-qg.fr/",
+        "email": "mediatheque@mairie-saintdenisdepile.fr",
+        "telephone": "05 57 55 19 45",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import boma.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.571977,
           44.836902
         ]
