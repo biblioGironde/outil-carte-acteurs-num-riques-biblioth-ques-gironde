@@ -15,7 +15,7 @@ import { geocoder, lireCoordonnees } from './lib/geocodage.mjs';
 import { versProprietes, ordonner } from './issue-vers-acteur.mjs';
 
 export const COLONNES = [
-  'nom', 'etiquettes', 'domaine_musique', 'activites_musique', 'description', 'adresse', 'code_postal', 'commune',
+  'nom', 'etiquettes', 'domaine_musique', 'activites_musique', 'services_bibliotheque', 'description', 'adresse', 'code_postal', 'commune',
   'latitude', 'longitude', 'site', 'email', 'telephone', 'reseaux', 'public', 'siret', 'rna', 'source_web',
 ];
 const OBLIGATOIRES = ['nom', 'etiquettes', 'description', 'adresse', 'code_postal', 'commune'];
@@ -84,6 +84,7 @@ for (const e of ETIQUETTES) for (const k of [e.id, e.libelle, e.court]) indexEti
 for (const [k, id] of [['emi', 'emi'], ['education aux medias', 'emi'], ['fablab', 'fabrication'], ['tiers-lieu', 'fabrication'],
   ['tiers-lieux', 'fabrication'], ['mediation numerique', 'inclusion'], ['micro-folie', 'microfolie'], ['micro-folies', 'microfolie'], ['micro folie', 'microfolie'], ['promeneur du net', 'pdn'], ['education populaire', 'educpop'],
   ['mao', 'musique'], ['musique assistee par ordinateur', 'musique'],
+  ['bibliotheque', 'bibliotheque'], ['mediatheque', 'bibliotheque'], ['bibliotheques', 'bibliotheque'], ['mediatheques', 'bibliotheque'],
   ['jeu video', 'jeuvideo'], ['jeux video', 'jeuvideo'], ['jeux videos', 'jeuvideo'], ['retrogaming', 'jeuvideo'], ['esport', 'jeuvideo'], ['e-sport', 'jeuvideo'],
   ['numerique responsable', 'numresp'], ['sobriete numerique', 'numresp'], ['reemploi', 'numresp'], ['reconditionnement', 'numresp'], ['logiciel libre', 'numresp'], ['logiciels libres', 'numresp']]) {
   indexEtiquettes.set(k, ETIQUETTES.find((e) => e.id === id).libelle);
@@ -112,6 +113,13 @@ const synonymes = {
 for (const [id, mots] of Object.entries(synonymes)) {
   const libelle = REFERENTIEL.activites_musique.find((a) => a.id === id).libelle;
   for (const m of mots) indexActivites.set(norm(m), libelle);
+}
+const indexServices = new Map();
+for (const a of REFERENTIEL.services_bibliotheque) for (const k of [a.id, a.libelle, a.court]) indexServices.set(norm(k), a.libelle);
+for (const [k, id] of [['fablab', 'fabrication'], ['espace de fabrication', 'fabrication'], ['makerspace', 'fabrication'],
+  ['mediation', 'mediation'], ['mediation numerique', 'mediation'], ['ateliers numeriques', 'mediation'],
+  ['inclusion', 'inclusion'], ['inclusion numerique', 'inclusion'], ['cartographie nationale', 'inclusion']]) {
+  indexServices.set(k, REFERENTIEL.services_bibliotheque.find((a) => a.id === id).libelle);
 }
 // ancienne colonne specialite_musique (fichiers préparés avant 2026-11)
 const ANCIENNE_SPECIALITE = {
@@ -156,6 +164,12 @@ export function lireLigne(l) {
     if (ancien?.domaine && !domaine) domaine = ancien.domaine;
     if (ancien?.activite) activites.push(ancien.activite);
   }
+  const services = [];
+  for (const brut of valeurs(l.services_bibliotheque, indexServices)) {
+    const a = indexServices.get(norm(brut));
+    if (a) services.push(a); else avertissements.push(`service de bibliothèque ignoré « ${brut} »`);
+  }
+  if (services.length) saisie.services_bibliotheque = [...new Set(services)];
   if (domaine) saisie.domaine_musique = domaine;
   if (activites.length) saisie.activites_musique = [...new Set(activites)];
   for (const c of ['site', 'email', 'telephone', 'reseaux', 'siret', 'rna']) if (l[c]) saisie[c] = l[c];
@@ -169,6 +183,10 @@ export function lireLigne(l) {
   if ((p.domaine_musique || p.activites_musique) && !p.etiquettes?.includes('musique')) {
     avertissements.push('domaine et activités musicales ignorés (pas d’étiquette Musique)');
     delete p.domaine_musique; delete p.activites_musique;
+  }
+  if (p.services_bibliotheque && !p.etiquettes?.includes('bibliotheque')) {
+    avertissements.push('services de bibliothèque ignorés (pas d’étiquette Bibliothèque numérique)');
+    delete p.services_bibliotheque;
   }
   if (p.description && p.description.length > 500) {
     avertissements.push('description coupée à 500 caractères');

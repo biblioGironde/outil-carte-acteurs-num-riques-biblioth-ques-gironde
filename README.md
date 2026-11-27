@@ -2,7 +2,7 @@
 
 Carte interactive des structures associatives et institutionnelles de Gironde :
 inclusion et médiation numérique, fablabs et tiers-lieux, éducation aux médias,
-Promeneurs du Net, éducation populaire, musique, Micro-Folies, jeu vidéo, numérique responsable, institutions.
+Promeneurs du Net, éducation populaire, musique, Micro-Folies, jeu vidéo, numérique responsable, bibliothèques numériques, institutions.
 
 - **Carte** : page statique (GitHub Pages + Leaflet + OpenStreetMap), aucune base de données ni serveur.
 - **Données** : un seul fichier, `data/acteurs.geojson`, versionné dans ce dépôt.
@@ -83,10 +83,11 @@ Pour la première alimentation, plusieurs acteurs peuvent être ajoutés d'un co
    ajoute le résultat à la même branche et ouvre la pull request (ou la complète) avec le rapport :
    acteurs ajoutés, champs ignorés, lignes refusées et pourquoi.
 
-Colonnes `etiquettes`, `activites_musique` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
-(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `microfolie`, `jeuvideo`, `numresp`, `institutionnel`) ou le libellé ;
+Colonnes `etiquettes`, `activites_musique`, `services_bibliotheque` et `public` : plusieurs valeurs séparées par `|`. Les étiquettes acceptent le code
+(`inclusion`, `fabrication`, `emi`, `pdn`, `educpop`, `musique`, `microfolie`, `jeuvideo`, `numresp`, `bibliotheque`, `institutionnel`) ou le libellé ;
 les activités musicales aussi (`label`, `diffusion`, `studio`… voir `docs/consigne-ia.md`), ainsi que le vocabulaire
-de l'annuaire du RIM (« Booking / tour », « Cafés-culture »…).
+de l'annuaire du RIM (« Booking / tour », « Cafés-culture »…). Les activités de bibliothèque : `fabrication` (fablab), `mediation`
+(médiation numérique régulière) et `inclusion` (lieu référencé sur la cartographie nationale des lieux d'inclusion numérique).
 Séparateur `;` ou `,`, encodage UTF-8 ou celui d'Excel : les deux sont reconnus.
 Un SIRET, un RNA, un courriel ou un site mal formé est ignoré sans bloquer la ligne.
 
@@ -150,6 +151,7 @@ Chaque acteur est un point GeoJSON dont les propriétés sont :
 | `etiquettes` | liste d'identifiants de `data/etiquettes.json` (au moins un) |
 | `domaine_musique` | un domaine, si l'étiquette `musique` est présente |
 | `activites_musique` | liste d'activités (`data/etiquettes.json`), si l'étiquette `musique` est présente |
+| `services_bibliotheque` | « Fabrication », « Médiation numérique régulière », « Inclusion numérique », si l'étiquette `bibliotheque` est présente |
 | `site`, `email`, `telephone` | contacts de la structure |
 | `reseaux`, `public` | listes |
 | `siret`, `rna` | identifiants pour la vérification annuelle |
@@ -187,3 +189,6 @@ Pour un aperçu avec des données fictives : copier `tests/fixtures/exemple.geoj
 - **Données** (`data/acteurs.geojson`, `data/etiquettes.json`, `data/communes-gironde.geojson`) : **Licence Ouverte Etalab 2.0**
   (<https://www.etalab.gouv.fr/licence-ouverte-open-licence/>). Réutilisation libre, sous réserve de citer la source :
   « Acteurs du numérique culturel et citoyen en Gironde — biblio.gironde ».
+- **Bibliothèques numériques** : fiches établies à partir de la [cartographie nationale des lieux d'inclusion numérique](https://cartographie.societenumerique.gouv.fr)
+  (données ouvertes sur data.gouv.fr, Licence Ouverte ; activité « Inclusion numérique ») et du rapport annuel d'activité 2025 des bibliothèques (fablab déclaré ;
+  médiation numérique « régulière » = au moins 10 actions dans l'année, tous publics et enfants confondus).

@@ -64,13 +64,13 @@ test('le fichier d’exemple est refusé ligne par ligne (lignes « Exemple »)'
 test('import : étiquettes souples, champs mal formés ignorés, doublons et erreurs signalés', async () => {
   const csv = [
     ENTETE,
-    'Fablab du Port;Fablabs & tiers-lieux|EMI;;;Atelier ouvert.;12 rue des Bassins;33300;Bordeaux;;;fablab.example.org;pas-un-mail;;Hubikoop, Réseau fablabs;jeunesse|Inconnu;123;;https://source.example',
-    'École de musique;musique;classique;enseignement|Salle de concert, lieu de diffusion|Booking / tour|inconnue;Cours.;1 place;33500;Libourne;44,92;-0,24;;;;;;;;',
-    'Fablab du Port;fabrication;;;Doublon.;12 rue des Bassins;33300;Bordeaux;;;;;;;;;;',
-    'Sans étiquette;;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
-    'Mauvaise étiquette;cinéma;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
-    'Introuvable;inclusion;;;Desc.;1 rue;33000;Introuvable;;;;;;;;;;',
-  ].join('\n');
+    'Fablab du Port;Fablabs & tiers-lieux|EMI;;;;Atelier ouvert.;12 rue des Bassins;33300;Bordeaux;;;fablab.example.org;pas-un-mail;;Hubikoop, Réseau fablabs;jeunesse|Inconnu;123;;https://source.example',
+    'École de musique;musique;classique;enseignement|Salle de concert, lieu de diffusion|Booking / tour|inconnue;;Cours.;1 place;33500;Libourne;44,92;-0,24;;;;;;;;',
+    'Fablab du Port;fabrication;;;;Doublon.;12 rue des Bassins;33300;Bordeaux;;;;;;;;;;',
+    'Sans étiquette;;;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
+    'Mauvaise étiquette;cinéma;;;;Desc.;1 rue;33000;Bordeaux;;;;;;;;;;',
+    'Introuvable;inclusion;;;;Desc.;1 rue;33000;Introuvable;;;;;;;;;;',
+  ].join('\n');;
   const collection = collectionVide();
   const r = await importer(lireCsv(csv), collection, { geocoderFn: geocodageFactice, aujourdhui: '2026-11-11', fichier: 'test.csv' });
 
@@ -100,4 +100,25 @@ test('import : étiquettes souples, champs mal formés ignorés, doublons et err
   assert.match(rapport, /SIRET ignoré/);
   assert.match(rapport, /activité musicale ignorée « inconnue »/);
   assert.match(rapport, /https:\/\/source\.example/);
+});
+
+test('bibliothèque numérique : services reconnus, ignorés sans l’étiquette', async () => {
+  const csv = [
+    'nom;etiquettes;services_bibliotheque;description;adresse;code_postal;commune',
+    'Médiathèque A;médiathèque;fablab|médiation numérique régulière;Ateliers.;1 rue;33000;Bordeaux',
+    'Médiathèque B;bibliotheque;mediation|inclusion numérique|inconnu;Ateliers.;2 rue;33000;Bordeaux',
+    'Fablab C;fabrication;fablab;Atelier.;3 rue;33000;Bordeaux',
+  ].join('\n');
+  const c = collectionVide();
+  const r = await importer(lireCsv(csv), c, { geocoderFn: geocodageFactice });
+  assert.equal(r.refuses.length, 0, JSON.stringify(r.refuses));
+  const [a, b, f] = c.features.map((x) => x.properties);
+  assert.deepEqual(a.etiquettes, ['bibliotheque']);
+  assert.deepEqual(a.services_bibliotheque, ['Fabrication (fablab, espace de fabrication numérique)', 'Médiation numérique régulière']);
+  assert.deepEqual(b.services_bibliotheque, ['Médiation numérique régulière', 'Inclusion numérique (lieu référencé sur la cartographie nationale)']);
+  assert.equal(f.services_bibliotheque, undefined);
+  const rapport = rapportImport(r, 'x.csv');
+  assert.match(rapport, /service de bibliothèque ignoré « inconnu »/);
+  assert.match(rapport, /pas d’étiquette Bibliothèque numérique/);
+  assert.deepEqual(validerCollection(c), []);
 });

@@ -37,6 +37,11 @@ export const CHAMPS = [
     options: REFERENTIEL.activites_musique.map((a) => a.libelle),
   },
   {
+    cle: 'services_bibliotheque', libelle: 'Activités numériques de la bibliothèque (étiquette Bibliothèque numérique uniquement)', type: 'checkboxes',
+    aide: 'Médiation régulière : au moins une dizaine d’ateliers par an. Inclusion numérique : lieu référencé sur la cartographie nationale des lieux d’inclusion numérique.',
+    options: REFERENTIEL.services_bibliotheque.map((a) => a.libelle),
+  },
+  {
     cle: 'description', libelle: 'Description courte', type: 'textarea', requisAjout: true,
     aide: '2 ou 3 phrases : ce que fait la structure, pour qui. 500 caractères maximum.',
   },
@@ -65,7 +70,7 @@ export const CHAMPS = [
   { cle: 'rna', libelle: 'Numéro RNA', type: 'input', aide: 'W suivi de 9 chiffres (ex. W332012345).' },
 ];
 
-export const CHAMPS_LISTE = new Set(['etiquettes', 'public', 'reseaux', 'activites_musique']);
+export const CHAMPS_LISTE = new Set(['etiquettes', 'public', 'reseaux', 'activites_musique', 'services_bibliotheque']);
 export const LIBELLES_ACTIVITES = REFERENTIEL.activites_musique.map((a) => a.libelle);
 
 export function slugifier(texte) {
@@ -125,6 +130,13 @@ export function validerActeur(f) {
   }
   if ((p.domaine_musique || p.activites_musique?.length) && !p.etiquettes?.includes('musique')) {
     err('un domaine ou une activité musicale est renseigné sans l’étiquette Musique et MAO');
+  }
+  if (p.services_bibliotheque !== undefined && !Array.isArray(p.services_bibliotheque)) err('le champ services_bibliotheque doit être une liste');
+  for (const a of p.services_bibliotheque ?? []) {
+    if (!REFERENTIEL.services_bibliotheque.some((x) => x.libelle === a)) err(`service de bibliothèque inconnu : ${a}`);
+  }
+  if (p.services_bibliotheque?.length && !p.etiquettes?.includes('bibliotheque')) {
+    err('un service d’inclusion numérique est renseigné sans l’étiquette Bibliothèque numérique');
   }
   if (p.description && p.description.length > 500) err('description trop longue (500 caractères maximum)');
   if (p.code_postal && !/^33\d{3}$/.test(p.code_postal)) err(`code postal hors Gironde : ${p.code_postal}`);

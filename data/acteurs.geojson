@@ -257,6 +257,39 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.361599,
+          44.920296
+        ]
+      },
+      "properties": {
+        "id": "aiga-mediatheque-d-izon-izon",
+        "nom": "Aïga, médiathèque d’Izon",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "207 avenue du Général de Gaulle",
+        "code_postal": "33450",
+        "commune": "Izon",
+        "site": "https://aiga.izon.fr",
+        "email": "aiga@izon.fr",
+        "telephone": "05 57 55 49 68",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.203277,
           44.995176
         ]
@@ -1112,6 +1145,493 @@
         "siret": "91894632800013",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.566897,
+          44.830777
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-capucins-saint-michel-bordeaux",
+        "nom": "Bibliothèque Capucins / Saint-Michel",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : accès à internet et au matériel, aide aux démarches administratives, maîtrise des outils du quotidien, usages sécurisés du numérique.",
+        "adresse": "12 Place des Capucins",
+        "code_postal": "33800",
+        "commune": "Bordeaux",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.680534,
+          44.844169
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-beaudesert-merignac",
+        "nom": "Bibliothèque de Beaudésert",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)"
+        ],
+        "description": "Bibliothèque publique. Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "81 avenue des Marronniers",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.mediatheque.merignac.com",
+        "telephone": "05 56 47 89 31",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.78586,
+          44.500613
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-belin-beliet-belin-beliet",
+        "nom": "Bibliothèque de Belin-Béliet",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "4 Avenue Plantagenet",
+        "code_postal": "33830",
+        "commune": "Belin-Béliet",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.072964,
+          44.748492
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-blasimon-blasimon",
+        "nom": "Bibliothèque de Blasimon",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "28-30 rue Eugène Lescourt",
+        "code_postal": "33540",
+        "commune": "Blasimon",
+        "site": "https://ruralesdelentre2mers.reseaubibli.fr",
+        "email": "bibliotheque@blasimon.fr",
+        "telephone": "09 53 84 29 70",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.937663,
+          45.042236
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-brach-brach",
+        "nom": "Bibliothèque de Brach",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : compréhension du monde numérique, loisirs et créations numériques, parentalité numérique.",
+        "adresse": "1 Espace Allienor",
+        "code_postal": "33480",
+        "commune": "Brach",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.79899,
+          45.027586
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-castelnau-de-medoc-castelnau-de-medoc",
+        "nom": "Bibliothèque de Castelnau-de-Médoc",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "34 rue Victor Hugo",
+        "code_postal": "33480",
+        "commune": "Castelnau-de-Médoc",
+        "site": "https://www.bibliotheques-medullienne.fr",
+        "email": "bibliotheque@mairie-castelnau-medoc.fr",
+        "telephone": "05 56 69 69 73",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.242925,
+          44.871719
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-genissac-genissac",
+        "nom": "Bibliothèque de Génissac",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Gérée par l’association Familles Rurales de Génissac.",
+        "adresse": "92 rue de l'ancienne école",
+        "code_postal": "33420",
+        "commune": "Génissac",
+        "site": "https://mabib.fr/genissac/",
+        "email": "biblio.genissac@gmail.com",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.792663,
+          45.074378
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-listrac-medoc-listrac-medoc",
+        "nom": "Bibliothèque de Listrac-Médoc",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "15 Avenue de Soulac",
+        "code_postal": "33480",
+        "commune": "Listrac-Médoc",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.830975,
+          44.936307
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-de-salaunes-salaunes",
+        "nom": "Bibliothèque de Salaunes",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "1 place de l'Eglise",
+        "code_postal": "33160",
+        "commune": "Salaunes",
+        "site": "https://www.mairie-salaunes.fr/vie-pratique/bibliotheque",
+        "email": "biblio.salaunes@hotmail.fr",
+        "telephone": "05 57 88 97 18",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.54308,
+          44.80568
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-elsa-triolet-et-louis-aragon-begles",
+        "nom": "Bibliothèque Elsa Triolet et Louis Aragon",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "58 avenue du Maréchal de Lattre de Tassigny",
+        "code_postal": "33130",
+        "commune": "Bègles",
+        "site": "https://bibliotheque.mairie-begles.fr/",
+        "telephone": "05 56 49 54 81",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.48834,
+          44.925291
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-francois-mitterrand-ambares-et-lagrave",
+        "nom": "Bibliothèque François Mitterrand",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "9 Rue Edmond Faulat",
+        "code_postal": "33440",
+        "commune": "Ambarès-et-Lagrave",
+        "site": "https://bibliotheque.ambaresetlagrave.fr",
+        "email": "biblio@ambaresetlagrave.fr",
+        "telephone": "05 57 80 15 20",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.58412,
+          44.857944
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-grand-parc-bordeaux",
+        "nom": "Bibliothèque Grand-Parc",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : compréhension du monde numérique, maîtrise des outils du quotidien.",
+        "adresse": "34 Rue Pierre Trébod",
+        "code_postal": "33300",
+        "commune": "Bordeaux",
+        "telephone": "05 56 50 28 35",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.586759,
+          44.835117
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-meriadeck-bordeaux",
+        "nom": "Bibliothèque Mériadeck",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "85 Cours Maréchal Juin",
+        "code_postal": "33000",
+        "commune": "Bordeaux",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.437457,
+          44.850979
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-municipale-de-pompignac-pompignac",
+        "nom": "Bibliothèque municipale de Pompignac",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "3 Route de l’Eglise",
+        "code_postal": "33370",
+        "commune": "Pompignac",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.806844,
+          44.805329
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-olympe-de-gouges-saint-jean-d-illac",
+        "nom": "Bibliothèque Olympe de Gouges",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "avenue du Las",
+        "code_postal": "33127",
+        "commune": "Saint-Jean-d'Illac",
+        "site": "https://stjeandillac.bibenligne.fr/",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.631407,
+          44.789527
+        ]
+      },
+      "properties": {
+        "id": "bibliotheque-pablo-neruda-pessac",
+        "nom": "Bibliothèque Pablo Neruda",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "16 Bis allée des Mimosas",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://www.mediatheques.pessac.fr",
+        "telephone": "05 57 93 67 20",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
       }
     },
     {
@@ -3548,6 +4068,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -1.148187,
+          44.630785
+        ]
+      },
+      "properties": {
+        "id": "la-biblio-cultures-partagees-la-teste-de-buch",
+        "nom": "La Biblio, cultures partagées",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "2 allée Clémenceau",
+        "code_postal": "33260",
+        "commune": "La Teste-de-Buch",
+        "site": "https://mediatheques.agglo-cobas.fr/",
+        "email": "bibliotheque@latestedebuch.fr",
+        "telephone": "05 57 52 41 22",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.556808,
           45.040413
         ]
@@ -3802,6 +4354,38 @@
         "rna": "W333003311",
         "date_ajout": "2026-11-11",
         "source": "import rim-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.245963,
+          44.553951
+        ]
+      },
+      "properties": {
+        "id": "la-quincaillerie-mediatheque-de-langon-langon",
+        "nom": "La Quincaillerie, médiathèque de Langon",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Dispose d’un fablab (espace de fabrication numérique) au sein du réseau des bibliothèques de la CdC du Sud Gironde.",
+        "adresse": "33 rue Maubec",
+        "code_postal": "33210",
+        "commune": "Langon",
+        "site": "https://bibliotheques.cdcsudgironde.fr",
+        "telephone": "05 56 62 33 39",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
       }
     },
     {
@@ -4595,6 +5179,131 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.616109,
+          44.882062
+        ]
+      },
+      "properties": {
+        "id": "ludo-mediatheque-de-bruges-bruges",
+        "nom": "Ludo-médiathèque de Bruges",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)"
+        ],
+        "description": "Bibliothèque publique. Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "6 rue du Carros",
+        "code_postal": "33520",
+        "commune": "Bruges",
+        "site": "https://ludomediatheque-bruges.fr/",
+        "telephone": "05 56 16 64 18",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.074512,
+          44.618916
+        ]
+      },
+      "properties": {
+        "id": "ludo-mediatheque-de-gujan-mestras-gujan-mestras",
+        "nom": "Ludo-médiathèque de Gujan-Mestras",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "allée Mozart",
+        "code_postal": "33470",
+        "commune": "Gujan-Mestras",
+        "site": "https://mediatheques.agglo-cobas.fr/",
+        "telephone": "05 57 52 54 62",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.744044,
+          44.89891
+        ]
+      },
+      "properties": {
+        "id": "ludo-mediatheque-de-saint-medard-en-jalles-saint-medard-en-j",
+        "nom": "Ludo-médiathèque de Saint-Médard-en-Jalles",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "26 rue Aurel Chazeau",
+        "code_postal": "33160",
+        "commune": "Saint-Médard-en-Jalles",
+        "site": "https://mediatheques.saint-medard-en-jalles.fr",
+        "telephone": "05 57 93 18 50",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.68012,
+          44.912329
+        ]
+      },
+      "properties": {
+        "id": "ludo-mediatheque-du-polca-le-taillan-medoc",
+        "nom": "Ludo-médiathèque du Polca",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "8 rue de Calavet",
+        "code_postal": "33320",
+        "commune": "Le Taillan-Médoc",
+        "site": "https://ludomediatheque.taillan-medoc.fr",
+        "email": "ludomediatheque@taillan-medoc.fr",
+        "telephone": "05 56 35 60 96",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.576184,
           44.837027
         ]
@@ -4726,6 +5435,1005 @@
         "rna": "W332006620",
         "date_ajout": "2026-11-23",
         "source": "import parentalite-numerique-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.633184,
+          44.910698
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-assia-djebar-blanquefort",
+        "nom": "Médiathèque Assia Djebar",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "4 rue du Docteur Castéra",
+        "code_postal": "33290",
+        "commune": "Blanquefort",
+        "site": "http://mediatheque.ville-blanquefort.fr",
+        "telephone": "05 56 57 48 40",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.590092,
+          44.807365
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-castagnera-talence",
+        "nom": "Médiathèque Castagnéra",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "1 allée Peixotto",
+        "code_postal": "33400",
+        "commune": "Talence",
+        "site": "https://mediatheques.talence.fr",
+        "telephone": "05 56 84 78 90",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.24135,
+          44.914715
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-condorcet-espace-numerique-libourne",
+        "nom": "Médiathèque Condorcet — Espace numérique",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : accès à internet et au matériel, matériel informatique à prix solidaire, aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "74 Rue Etienne Sabatié",
+        "code_postal": "33500",
+        "commune": "Libourne",
+        "site": "https://mediatheque.libourne.fr/services/sur-place",
+        "email": "cyberbase@libourne.fr",
+        "telephone": "05 57 55 57 42",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.532699,
+          45.011754
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-d-ambes-ambes",
+        "nom": "Médiathèque d'Ambès",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "5 Rue du Docteur Gustave Couaillac",
+        "code_postal": "33810",
+        "commune": "Ambès",
+        "site": "https://ambes.c3rb.org/",
+        "email": "biblio@villeambes.fr",
+        "telephone": "05 56 77 02 69",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.095497,
+          44.746156
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-d-andernos-les-bains-andernos-les-bains",
+        "nom": "Médiathèque d'Andernos-les-Bains",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "parc du Broustic",
+        "code_postal": "33510",
+        "commune": "Andernos-les-Bains",
+        "site": "https://andernos.bibenligne.fr",
+        "email": "mediatheque.andernoslesbains@gmail.com",
+        "telephone": "05 56 03 93 93",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.127808,
+          44.773722
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-d-ares-ares",
+        "nom": "Médiathèque d'Arès",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : compréhension du monde numérique, maîtrise des outils du quotidien.",
+        "adresse": "Rue du Temple",
+        "code_postal": "33740",
+        "commune": "Arès",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.585051,
+          44.764571
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-d-ornon-villenave-d-ornon",
+        "nom": "Médiathèque d'Ornon",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "46 Bis rue Jean-Jacques Rousseau",
+        "code_postal": "33140",
+        "commune": "Villenave-d'Ornon",
+        "site": "https://mediatheques.villenavedornon.fr",
+        "telephone": "05 57 96 56 30",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.462004,
+          44.880781
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-d-yvrac-yvrac",
+        "nom": "Médiathèque d'Yvrac",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "7 avenue de Blanzac",
+        "code_postal": "33370",
+        "commune": "Yvrac",
+        "site": "https://www.ombel.fr",
+        "email": "mediatheque@yvrac.fr",
+        "telephone": "05 56 23 78 99",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.516251,
+          44.899535
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-bassens-bassens",
+        "nom": "Médiathèque de Bassens",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "Rue du 8 Mai 1945",
+        "code_postal": "33530",
+        "commune": "Bassens",
+        "site": "https://mediatheque-bassens.c3rb.org/",
+        "telephone": "05 57 80 81 78",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.184377,
+          44.826644
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-branne-branne",
+        "nom": "Médiathèque de Branne",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "Rue du Fort Bayard",
+        "code_postal": "33420",
+        "commune": "Branne",
+        "telephone": "05 57 25 03 80",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.616042,
+          45.29265
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-braud-et-saint-louis-braud-et-saint-louis",
+        "nom": "Médiathèque de Braud-et-Saint-Louis",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "15 Avenue de la République",
+        "code_postal": "33820",
+        "commune": "Braud-et-Saint-Louis",
+        "site": "https://www.mairie-braud.fr",
+        "email": "mediatheque-braud@orange.fr",
+        "telephone": "05 57 32 67 37",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.484868,
+          44.787106
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-latresne-latresne",
+        "nom": "Médiathèque de Latresne",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "3 Rue des Arpeges",
+        "code_postal": "33360",
+        "commune": "Latresne",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.185502,
+          44.788678
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-naujan-et-postiac-naujan-et-postiac",
+        "nom": "Médiathèque de Naujan-et-Postiac",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "32 Route de Bordeaux",
+        "code_postal": "33420",
+        "commune": "Naujan-et-Postiac",
+        "telephone": "05 57 24 18 52",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.001032,
+          45.01611
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-saint-seurin-sur-l-isle-saint-seurin-sur-l-is",
+        "nom": "Médiathèque de Saint-Seurin-sur-l'Isle",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "4 avenue Georges Clémenceau",
+        "code_postal": "33660",
+        "commune": "Saint-Seurin-sur-l'Isle",
+        "site": "https://www.mediatheque.stseurinsurlisle.com",
+        "email": "mediatheque@stseurinsurlisle.com",
+        "telephone": "05 24 24 01 01",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.190493,
+          44.876167
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-saint-sulpice-de-faleyrens-saint-sulpice-de-f",
+        "nom": "Médiathèque de Saint-Sulpice-de-Faleyrens",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "10 avenue Général de Gaulle",
+        "code_postal": "33330",
+        "commune": "Saint-Sulpice-de-Faleyrens",
+        "site": "https://saintsulpicedefaleyrens.com/mediatheque/",
+        "email": "mediatheque@saintsulpicedefaleyrens.com",
+        "telephone": "05 57 51 22 68",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.464725,
+          44.846127
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-de-tresses-tresses",
+        "nom": "Médiathèque de Tresses",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : accès à internet et au matériel, maîtrise des outils du quotidien.",
+        "adresse": "Le Bourg",
+        "code_postal": "33370",
+        "commune": "Tresses",
+        "site": "http://www.tresses.org/mediatheque-587",
+        "email": "mediatheque@tresses.org",
+        "telephone": "05 57 34 04 24",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.526151,
+          44.872732
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-du-bois-fleuri-lormont",
+        "nom": "Médiathèque du Bois Fleuri",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "route de Bordeaux",
+        "code_postal": "33310",
+        "commune": "Lormont",
+        "site": "http://mediatheque.lormont.fr",
+        "telephone": "05 56 74 52 60",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.497168,
+          44.858174
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-gabriela-mistral-artigues-pres-bordeaux",
+        "nom": "Médiathèque Gabriela Mistral",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière",
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique. Actions de médiation numérique régulières (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "72 Avenue de l'Eglise Romane",
+        "code_postal": "33370",
+        "commune": "Artigues-près-Bordeaux",
+        "site": "https://mediatheque-artigues.com/",
+        "email": "mediatheque@artigues-pres-bordeaux.fr",
+        "telephone": "05 56 33 86 90",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.358722,
+          44.649511
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-intercommunale-de-podensac-podensac",
+        "nom": "Médiathèque intercommunale de Podensac",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "12 rue du Maréchal Leclerc de Hauteclocque",
+        "code_postal": "33720",
+        "commune": "Podensac",
+        "site": "https://mediatheque.convergence-garonne.fr/",
+        "email": "mediatheque@convergence-garonne.fr",
+        "telephone": "05 56 27 01 58",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.642405,
+          44.800113
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-jacques-ellul-pessac",
+        "nom": "Médiathèque Jacques Ellul",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Fabrication (fablab, espace de fabrication numérique)",
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025). Dispose d’un fablab (espace de fabrication numérique).",
+        "adresse": "21 rue de Camponac",
+        "code_postal": "33600",
+        "commune": "Pessac",
+        "site": "https://mediatheques.pessac.fr/",
+        "telephone": "05 57 93 67 10",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.647717,
+          44.885362
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-jean-degoul-eysines",
+        "nom": "Médiathèque Jean Degoul",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "Rue de l'Eglise",
+        "code_postal": "33320",
+        "commune": "Eysines",
+        "site": "https://www.eysines-culture.fr/les-lieux/mediatheque-jean-degoul/",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.611461,
+          44.768007
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-jean-vautrin-gradignan",
+        "nom": "Médiathèque Jean Vautrin",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière",
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique. Actions de médiation numérique régulières (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "32 Route de Léognan",
+        "code_postal": "33170",
+        "commune": "Gradignan",
+        "site": "http://www.lamediathequedegradignan.fr/exploitation/",
+        "telephone": "05 57 12 18 90",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.490156,
+          44.427675
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-jean-vautrin-saint-symphorien",
+        "nom": "Médiathèque Jean Vautrin",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière",
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : accès à internet et au matériel, aide aux démarches administratives, loisirs et créations numériques, maîtrise des outils du quotidien. Actions de médiation numérique régulières (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "15 Place de la République",
+        "code_postal": "33113",
+        "commune": "Saint-Symphorien",
+        "site": "https://mediatheque-jean-vautrin.fr",
+        "email": "lapasserellenumerique@mediatheque-jean-vautrin.fr",
+        "telephone": "05 56 25 72 89",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3636,
+          44.831959
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-la-cabane-a-lire-camarsac",
+        "nom": "Médiathèque La Cabane à lire",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "8 Avenue Hector Dorgan",
+        "code_postal": "33750",
+        "commune": "Camarsac",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.600343,
+          44.865591
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-la-source-le-bouscat",
+        "nom": "Médiathèque La Source",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "Place Gambetta",
+        "code_postal": "33110",
+        "commune": "Le Bouscat",
+        "site": "https://www.mediatheque-bouscat.fr/",
+        "telephone": "05 57 22 26 62",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.396522,
+          44.842498
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-la-source-salleb-uf",
+        "nom": "Médiathèque La Source",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "6 Avenue des Vignes",
+        "code_postal": "33370",
+        "commune": "Sallebœuf",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.770181,
+          44.605661
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-le-chalet-le-barp",
+        "nom": "Médiathèque Le Chalet",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "37 avenue des Pyrénées",
+        "code_postal": "33114",
+        "commune": "Le Barp",
+        "site": "https://mediatheque.ville-le-barp.fr/",
+        "email": "mediatheque@lebarp.fr",
+        "telephone": "05 56 88 63 90",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2148,
+          44.4314
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-le-polyedre-bazas",
+        "nom": "Médiathèque Le Polyèdre",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "17 esplanade Saint Sauveur",
+        "code_postal": "33430",
+        "commune": "Bazas",
+        "site": "https://www.lepolyedre.net/",
+        "email": "polyedre@ville-bazas.fr",
+        "telephone": "05 56 65 12 46",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bazas.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.71508,
+          44.893626
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-leopold-sedar-senghor-saint-medard-en-jalles",
+        "nom": "Médiathèque Léopold Sédar Senghor",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "place de la République",
+        "code_postal": "33160",
+        "commune": "Saint-Médard-en-Jalles",
+        "site": "https://mediatheques.saint-medard-en-jalles.fr",
+        "telephone": "05 57 93 18 50",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.532773,
+          44.77676
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-les-etoiles-villenave-d-ornon",
+        "nom": "Médiathèque Les Étoiles",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière"
+        ],
+        "description": "Bibliothèque publique qui propose des actions de médiation numérique tout au long de l’année (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "7 rue Colette Besson",
+        "code_postal": "33140",
+        "commune": "Villenave-d'Ornon",
+        "site": "https://mediatheques.villenavedornon.fr",
+        "telephone": "05 57 96 56 30",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.64688,
+          44.842184
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-michel-sainte-marie-merignac",
+        "nom": "Médiathèque Michel Sainte-Marie",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Médiation numérique régulière",
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique. Actions de médiation numérique régulières (au moins une dizaine par an selon le rapport annuel d’activité 2025).",
+        "adresse": "Place Charles de Gaulle",
+        "code_postal": "33700",
+        "commune": "Mérignac",
+        "site": "https://www.mediatheque.merignac.com/default/acces-horaires.aspx?_lg=fr-fr",
+        "telephone": "05 57 00 02 27",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.425405,
+          44.915425
+        ]
+      },
+      "properties": {
+        "id": "mediatheque-municipale-francois-mitterrand-saint-loubes",
+        "nom": "Médiathèque municipale François Mitterrand",
+        "etiquettes": [
+          "bibliotheque"
+        ],
+        "services_bibliotheque": [
+          "Inclusion numérique (lieu référencé sur la cartographie nationale)"
+        ],
+        "description": "Bibliothèque publique référencée sur la cartographie nationale des lieux d’inclusion numérique : aide aux démarches administratives, compréhension du monde numérique, insertion professionnelle, loisirs et créations numériques, maîtrise des outils du quotidien, parentalité numérique, usages sécurisés du numérique.",
+        "adresse": "32 Chemin de Nice",
+        "code_postal": "33450",
+        "commune": "Saint-Loubès",
+        "public": [
+          "Tout public"
+        ],
+        "date_ajout": "2026-11-27",
+        "source": "import bibliotheques-numeriques-gironde.csv"
       }
     },
     {

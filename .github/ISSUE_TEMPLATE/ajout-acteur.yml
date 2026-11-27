@@ -27,6 +27,7 @@ body:
         - label: "Micro-Folie (musée numérique)"
         - label: "Jeu vidéo (culture, médiation, patrimoine)"
         - label: "Numérique responsable (sobriété, réemploi, logiciel libre)"
+        - label: "Bibliothèque numérique (bibliothèques et médiathèques)"
         - label: "Institutionnel"
   - type: dropdown
     id: domaine_musique
@@ -58,6 +59,15 @@ body:
         - label: "Action culturelle, médiation"
         - label: "Radio, média"
         - label: "Réseau, fédération, centre de ressources"
+  - type: checkboxes
+    id: services_bibliotheque
+    attributes:
+      label: "Activités numériques de la bibliothèque (étiquette Bibliothèque numérique uniquement)"
+      description: "Médiation régulière : au moins une dizaine d’ateliers par an. Inclusion numérique : lieu référencé sur la cartographie nationale des lieux d’inclusion numérique."
+      options:
+        - label: "Fabrication (fablab, espace de fabrication numérique)"
+        - label: "Médiation numérique régulière"
+        - label: "Inclusion numérique (lieu référencé sur la cartographie nationale)"
   - type: textarea
     id: description
     attributes:

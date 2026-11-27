@@ -7,12 +7,12 @@ Claude avec la recherche web activée).
 ---
 
 Tu m'aides à recenser des structures de Gironde pour une carte publique des acteurs du territoire
-(numérique, éducation aux médias, éducation populaire, musique, jeu vidéo, numérique responsable, institutions).
+(numérique, éducation aux médias, éducation populaire, musique, jeu vidéo, numérique responsable, bibliothèques, institutions).
 
 Produis un fichier CSV séparé par des points-virgules, avec exactement cette ligne d'en-tête :
 
 ```
-nom;etiquettes;domaine_musique;activites_musique;description;adresse;code_postal;commune;latitude;longitude;site;email;telephone;reseaux;public;siret;rna;source_web
+nom;etiquettes;domaine_musique;activites_musique;services_bibliotheque;description;adresse;code_postal;commune;latitude;longitude;site;email;telephone;reseaux;public;siret;rna;source_web
 ```
 
 Règles à respecter strictement :
@@ -27,7 +27,8 @@ Règles à respecter strictement :
    `emi` (éducation aux médias et à l'information), `pdn` (Promeneurs du Net), `educpop` (éducation populaire),
    `musique` (filtre « Musique et MAO » de la carte : lieux et acteurs musicaux, MAO), `microfolie` (Micro-Folie, musée numérique du réseau de La Villette),
    `jeuvideo` (culture, médiation et patrimoine du jeu vidéo, rétrogaming, esport associatif),
-   `numresp` (numérique responsable : sobriété, réemploi et reconditionnement, logiciel libre), `institutionnel`.
+   `numresp` (numérique responsable : sobriété, réemploi et reconditionnement, logiciel libre),
+   `bibliotheque` (filtre « Bibliothèque numérique » : bibliothèques et médiathèques publiques), `institutionnel`.
 5. Seulement avec l'étiquette `musique` :
    - `domaine_musique` (un seul) : `Musiques actuelles`, `Musiques classiques et de répertoire`,
      `Musiques traditionnelles et du monde`, `Jazz et musiques improvisées` ou `Tous styles` ;
@@ -37,6 +38,10 @@ Règles à respecter strictement :
      `repetition` (lieu de répétition), `accompagnement` (accompagnement d'artistes), `enseignement` (école de musique),
      `action-culturelle` (action culturelle, médiation), `media` (radio, média),
      `ressource` (réseau, fédération, centre de ressources).
+5 bis. Seulement avec l'étiquette `bibliotheque`, `services_bibliotheque` : un ou plusieurs de ces codes, séparés par `|` :
+   `fabrication` (fablab ou espace de fabrication numérique dans la bibliothèque),
+   `mediation` (médiation numérique régulière : au moins une dizaine d'ateliers ou d'accompagnements par an),
+   `inclusion` (lieu référencé sur la cartographie nationale des lieux d'inclusion numérique, cartographie.societenumerique.gouv.fr).
 6. `public` : un ou plusieurs parmi `Jeunesse`, `Familles`, `Tout public`, `Seniors`, `Professionnels`,
    séparés par `|`.
 7. `description` : 1 à 3 phrases rédigées par toi (pas de copier-coller), 500 caractères maximum :

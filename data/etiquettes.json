@@ -55,6 +55,12 @@
       "couleur": "#65a30d"
     },
     {
+      "id": "bibliotheque",
+      "libelle": "Bibliothèque numérique (bibliothèques et médiathèques)",
+      "court": "Bibliothèque numérique",
+      "couleur": "#0f766e"
+    },
+    {
       "id": "institutionnel",
       "libelle": "Institutionnel",
       "court": "Institutionnel",
@@ -128,6 +134,23 @@
       "id": "ressource",
       "libelle": "Réseau, fédération, centre de ressources",
       "court": "Réseau, ressources"
+    }
+  ],
+  "services_bibliotheque": [
+    {
+      "id": "fabrication",
+      "libelle": "Fabrication (fablab, espace de fabrication numérique)",
+      "court": "Fabrication"
+    },
+    {
+      "id": "mediation",
+      "libelle": "Médiation numérique régulière",
+      "court": "Médiation numérique régulière"
+    },
+    {
+      "id": "inclusion",
+      "libelle": "Inclusion numérique (lieu référencé sur la cartographie nationale)",
+      "court": "Inclusion numérique"
     }
   ],
   "publics": [
